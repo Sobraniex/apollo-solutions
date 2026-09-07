@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Namestitev — Hermes Dental</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .install-wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
+    .install-wrap h1 { font-size: 36px; margin: 0 0 8px; }
+    .install-wrap .kicker { color: var(--muted); text-transform: uppercase; letter-spacing: 1.4px; font-size: 12px; margin: 0 0 12px; }
+    .install-wrap h2 { font-size: 22px; margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--border, #e5e8ef); }
+    .install-wrap p { line-height: 1.6; }
+    .install-wrap ol { line-height: 1.8; }
+    .install-wrap .step-no { display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center; background: var(--navy, #3A4258); color: white; border-radius: 50%; font-weight: 600; margin-right: 12px; vertical-align: middle; }
+    .install-wrap .big-btn { display: inline-block; background: var(--navy, #3A4258); color: white; padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 17px; text-decoration: none; margin: 16px 0; }
+    .install-wrap .big-btn:hover { opacity: 0.92; }
+    .install-wrap .note { background: #f4f6fa; border-left: 3px solid var(--navy, #3A4258); padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+    .install-wrap .warn { background: #fff4e6; border-left: 3px solid #c47a00; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+    .install-wrap code { background: #f4f6fa; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, monospace; font-size: 13px; }
+    .install-wrap .back { display: inline-block; margin-bottom: 24px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="install-wrap">
+    <a class="back" href="index.html">← Nazaj</a>
+    <p class="kicker">Namestitev</p>
+    <h1>Hermes Dental — namestitev na macOS</h1>
+    <p>Potrebujete: macOS 12 Monterey ali novejši. Apple silicon (M1/M2/M3/M4) ali Intel. Približu 350 MB prostora na disku. Internet samo za prenos — potem deluje brez njega.</p>
+
+    <a class="big-btn" href="https://github.com/Sobraniex/apollo-solutions/releases/download/v0.3.3/Hermes-Dental-v0.3.3.zip" download>Prenesi Hermes Dental.app · 101 MB</a>
+
+    <h2><span class="step-no">1</span> Prenesite .app</h2>
+    <p>Kliknite gumb zgoraj. Brskalnik shrani ZIP v mapo <code>Prenosi</code>. Datoteka je 101 MB — prenos traja od 30 sekund do 2 minut, odvisno od hitrosti interneta.</p>
+
+    <h2><span class="step-no">2</span> Razširite ZIP</h2>
+    <p>V mapi <code>Prenosi</code> dwakrat kliknite <code>Hermes-Dental-v0.3.3.zip</code>. macOS samodejno ustvari mapo <code>Hermes Dental</code> z datoteko <code>Hermes Dental.app</code> znotraj. ZIP lahko po tem pobrišete.</p>
+
+    <div class="note">
+      <strong>Namig:</strong> ZIP se razširi v isto mapo, kjer je — če želite drugam, prestavite ZIP prej.
+    </div>
+
+    <h2><span class="step-no">3</span> Povlecite v Aplikacije</h2>
+    <p>Odprite <strong>Aplikacije</strong> v Finderju (Cmd+Shift+A ali kliknite <strong>Go → Applications</strong> v meniju). Povlecite <code>Hermes Dental.app</code> iz Razširjene mape v <strong>Aplikacije</strong>. To je vse — datoteka je nameščena.</p>
+
+    <h2><span class="step-no">4</span> Prvi zagon</h2>
+    <p>V <strong>Aplikacijah</strong> dwakrat kliknite <strong>Hermes Dental</strong>.</p>
+
+    <div class="warn">
+      <strong>macOS pravi “ne more odpreti, ker razvijalec ni preverjen”</strong><br/>
+      To se zgodi, ker .app ni podpisan z Apple Developer ID (to stane $99/leto, mi tega (še) ne plačujemo). Enkratni workaround:
+      <ol style="margin-top: 8px; padding-left: 20px;">
+        <li>Zaprite pojavno okno.</li>
+        <li>Z <strong>desno tipko</strong> (ali Control+klik) kliknite <code>Hermes Dental.app</code> v Aplikacijah.</li>
+        <li>Izberite <strong>Odpri</strong> iz menija.</li>
+        <li>V novem oknu kliknite <strong>Odpri</strong>.</li>
+      </ol>
+      To morate storiti samo enkrat. Naslednjič se app odpre normalno.
+    </div>
+
+    <p>App se odpre. Prvič traja 5–10 sekund (zažene se vgrajen strežnik). Videli boste čarovnika za nastavitev:</p>
+    <ol>
+      <li><strong>Ime ordinacije</strong> — prikaže se na računih in v glavi.</li>
+      <li><strong>Vaše ime</strong> — zdravnik/ca, ki bo prijavljen/a.</li>
+      <li><strong>Geslo</strong> — minimalno 6 znakov.</li>
+      <li><strong>Cenik</strong> — privzeto 2025/26, lahko ga pozneje uredite.</li>
+    </ol>
+    <p>Demo pacient (Darinka Ambrožič z varnostnimi opozorili, RTG, zgodovino obiskov) je že vnešen — lahko ga pustite za testiranje ali izbrišete.</p>
+
+    <h2><span class="step-no">5</span> Posodobitve</h2>
+    <p>Ko izide nova različica:</p>
+    <ol>
+      <li>Zaprite Hermes Dental (Cmd+Q).</li>
+      <li>Povlecite staro <code>Hermes Dental.app</code> iz Aplikacij v Smeti.</li>
+      <li>Prenesite novo različico in ponovite koraka 2–4.</li>
+    </ol>
+    <div class="note">
+      <strong>Vaši podatki se ne izbrišejo.</strong> Baza živi v <code>~/Library/Application Support/HermesDental/clinic.db</code> — izven .app, zato posodobitev ne pride do nje.
+    </div>
+
+    <h2><span class="step-no">6</span> Varnostna kopija</h2>
+    <p>Vsi vaši podatki (bolniki, računi, nastavitve) so v eni datoteki:</p>
+    <p style="text-align:center"><code>~/Library/Application Support/HermesDental/clinic.db</code></p>
+    <p>To datoteko redno kopirajte na zunanji disk ali v oblak (OneDrive, iCloud, Dropbox — sync mape, v katero shranite kopijo). To je celotna varnostna kopija.</p>
+
+    <h2>Odpravljanje težav</h2>
+    <p><strong>App se noče odpreti.</strong> Z desno tipko → Odpri (korak 4 zgoraj).</p>
+    <p><strong>“Poškodovana datoteka”.</strong> Prenos se je prekinil. Izbrišite ZIP, prenesite znova.</p>
+    <p><strong>Počasen prvi zagon.</strong> Normalno — 5–10 sekund, vgrajen strežnik se zaganja. Drugič je hitro.</p>
+    <p><strong>Portal zavrnitve (“can’t be opened because Apple cannot check it for malicious software”).</strong> Sistemske nastavitve → Zasebnost in varnost → na dnu “Vseeno odpri”.</p>
+    <p><strong>Ne najdem Aplikacij.</strong> V Finderju kliknite <strong>Go</strong> v menijski vrstici → <strong>Applications</strong>, ali pa Cmd+Shift+A.</p>
+
+    <h2>Odstranitev</h2>
+    <ol>
+      <li>Zaprite app (Cmd+Q).</li>
+      <li>Povlecite <code>Hermes Dental.app</code> iz Aplikacij v Smeti.</li>
+      <li>(Izbirno) izbrišite podatke: <code>~/Library/Application Support/HermesDental/</code>.</li>
+    </ol>
+
+    <hr style="margin: 48px 0; border: 0; border-top: 1px solid #e5e8ef;" />
+    <p style="color: var(--muted); font-size: 14px;">
+      Težave? Pišite na GitHub: <a href="https://github.com/Sobraniex/Hermes-Dental-V.0.2.0/issues">Sobraniex/Hermes-Dental-V.0.2.0</a>.
+    </p>
+  </main>
+</body>
+</html>

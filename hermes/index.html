@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Dental — program za zobno ordinacijo</title>
+  <meta name="description" content="Manj časa za papirje. Več časa za zobe. Zastonj in na vašem računalniku. Urnik, kartoteka, odontogram, načrt zdravljenja, finance, varnostna kopija." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
+          <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+        <span>Hermes <em>Dental</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#vrednost" data-i18n="nav.product">Produkt</a>
+        <a href="#slike" data-i18n="nav.screens">Zasloni</a>
+        <a href="#demo">Demo</a>
+        <a href="#stanje" data-i18n="nav.status">Stanje</a>
+        <a href="#namestitev" data-i18n="nav.install">Namesti</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" type="button" id="langBtn" aria-label="Language">EN</button>
+        <a class="btn btn-navy" href="/" data-i18n="nav.home">← Apollo Solutions</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <p class="kicker" data-i18n="hero.kicker">Odprta koda · lokalno · zastonj</p>
+        <h1 data-i18n="hero.title">Manj časa za papirje.<br/>Več časa za zobe.</h1>
+        <p class="lede" data-i18n="hero.lede">Diplomatski urnik, kartoteka, odontogram, načrt zdravljenja in blagajna — na vašem računalniku, brez naročnine, brez oblaka.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="https://github.com/Sobraniex/apollo-solutions/releases/download/v0.3.3/Hermes-Dental-v0.3.3.zip" download data-i18n="hero.cta1">Prenesi za macOS</a>
+          <a class="btn btn-ghost btn-lg" href="#demo" data-i18n="hero.cta2">Poizkusite v brskalniku →</a>
+        </div>
+        <div class="meta-row">
+          <span class="pill pill-green" data-i18n="hero.free">Brez naročnine</span>
+          <span class="pill pill-amber" data-i18n="hero.wip">macOS · Apple silicon · 101 MB</span>
+          <span class="pill" data-i18n="hero.self">MIT · podatki pri vas</span>
+        </div>
+      </div>
+      <figure class="device-frame">
+        <img src="images/shots/domov.png" alt="Hermes Dental — Domov: današnji termini, recare, odprti računi, čakalna vrsta" />
+        <figcaption class="device-cap" data-i18n="hero.cap">Vaše jutro, preden je odprta vrata.<span class="dot-sep">·</span>Stol 1 · slovenski vmesnik</figcaption>
+      </figure>
+    </section>
+
+    <!-- subtle divider row -->
+    <div class="wrap stack-strip">
+      <span>eZdravje</span><span>ZZZS</span><span>eDavki</span><span>NIJZ</span><span>Zbornica</span>
+    </div>
+
+    <!-- ============ VREDNOST — three deep rows ============ -->
+    <section class="band" id="vrednost">
+      <div class="wrap">
+        <p class="kicker" data-i18n="val.kicker">Kaj dobite</p>
+        <h2 data-i18n="val.title">Vse, kar danes delate ročno.</h2>
+        <p class="sub" data-i18n="val.sub">Hermes naloži vaš dan v računalnik. Vsak element je zasnovan za 30 sekund v živo — med telefonskim klicom, med obiskom, med naslednjim naročilom.</p>
+
+        <!-- A: Urnik -->
+        <div class="value-row">
+          <figure class="vr-media">
+            <img src="images/shots/urnik.png" alt="Urnik — Stol 1, cel dan" loading="lazy" />
+          </figure>
+          <div class="vr-body">
+            <div class="vr-tag" data-i18n="va.tag">Urnik</div>
+            <h3 data-i18n="va.t">Dan v enem pogledu. Rezervacija med klicem.</h3>
+            <p class="vr-sub" data-i18n="va.p">Vtipkate ime, dobite termin. Now-line vam pove, kje ste. Odpoved se sama ponudi čakalni vrsti. Now-line vam pove točno, kje v dnevu ste.</p>
+            <ul class="drawer-bullets" data-i18n-group="va">
+              <li>15-minutni korak 08–18 · Teden / Mesec z zasedenostjo</li>
+              <li>Čakalna vrsta — en klik zapolni odpovedan termin</li>
+              <li>Recare: po zaključku predlaga naslednji termin (7 / 14 / 182 dni)</li>
+              <li>Blokade — malica, dopust, nujni buffer, prazniki</li>
+              <li>Slovenski prazniki, now-line, detekcija prekrivanj</li>
+              <li>Opomniki: e-pošta · SMS · WhatsApp</li>
+            </ul>
+            <details class="drawer">
+              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="va.more">Kaj točno dobi zobozdravnik</span></summary>
+              <div class="drawer-body">
+                <p><strong data-i18n="va.d1.t">Vsak termin:</strong> ime, trajalnost, status, potrjen/ne, barva po tipu obiska — Pregled, Higiena, Karies, Ekstrakcija, RTG.</p>
+                <p><strong data-i18n="va.d2.t">Preklici:</strong> ko nekdo odpove, sistem ponudi isti slot prvemu v čakalni vrsti. Ni več "nismo videli prostega mesta".</p>
+                <p><strong data-i18n="va.d3.t">Recare:</strong> po zaključenem obisku sistem priporoči ponovni termin glede na tip obiska. Vam pove kdaj poklicati bolniha.</p>
+                <p><strong data-i18n="va.d4.t">Kopiraj cel teden:</strong> ponedeljek–nedeljo kopirate z enim klikom. Ena sezona, ena ura dela.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- B: Bolniki -->
+        <div class="value-row rev">
+          <figure class="vr-media">
+            <img src="images/shots/bolniki.png" alt="Bolniki — kartoteka + odontogram + načrt" loading="lazy" />
+          </figure>
+          <div class="vr-body">
+            <div class="vr-tag" data-i18n="vb.tag">Bolniki</div>
+            <h3 data-i18n="vb.t">Kartoteka, ki jo res uporabljate.</h3>
+            <p class="vr-sub" data-i18n="vb.p">Odontogram, načrt zdravljenja, obiski, CAVE opozorila, priponke. Vse v istem oknu. Soglasje imate zabeleženo, alergije so rdeča zastavica.</p>
+            <ul class="drawer-bullets" data-i18n-group="vb">
+              <li>Slovensko abecedno urejanje · iskanje po priimku / telefonu / KZZ</li>
+              <li>FDI odontogram — kliknite zob, izberite stanje, povežite s storitvijo</li>
+              <li>CAVE banner v glavi kartona (alergije, opombe)</li>
+              <li>Soglasje za zdravljenje — v časovnem žigu</li>
+              <li>Priponke: RTG, fotografije, napotnice — na vašem disku</li>
+            </ul>
+            <details class="drawer">
+              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="vb.more">Kaj točno dobi zobozdravnik</span></summary>
+              <div class="drawer-body">
+                <p><strong data-i18n="vb.d1.t">Urejanje kartona:</strong> ime · priimek · telefon · email · KZZ · rojstvo · naslov · CAVE · soglasje · opombe — v eni formi, brez prehajanja med zavihki.</p>
+                <p><strong data-i18n="vb.d2.t">Odontogram:</strong> 7 stanj (zdrav/karies/zalivka/prevleka/manjka/implantat/endo), FDI oznake, modra pika za načrtovan.</p>
+                <p><strong data-i18n="vb.d3.t">Načrt zdravljenja:</strong> storitev × zob × cena. Statusi: odprto → opravljeno → preklicano. En klik → predračun.</p>
+                <p><strong data-i18n="vb.d4.t">Datoteke:</strong> RTG, fotografije, PDF napotnice. Nič se ne prenaša nikamor, vse je na vašem disku.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- C: Finance -->
+        <div class="value-row">
+          <figure class="vr-media">
+            <img src="images/shots/finance-izdani.png" alt="Izdani računi — tabela s statusi in akcijami" loading="lazy" />
+          </figure>
+          <div class="vr-body">
+            <div class="vr-tag" data-i18n="vc.tag">Blagajna</div>
+            <h3 data-i18n="vc.t">Račun iz načrta. Plačilo en klik.</h3>
+            <p class="vr-sub" data-i18n="vc.p">Predračuni, izdani računi, prejeti računi, pregled, predloga. En klik "Plačano" — račun se zaključi. En klik "V račun" — predračun postane račun.</p>
+            <ul class="drawer-bullets" data-i18n-group="vc">
+              <li>Večjezični PDF (SL · EN · DE) · reverse-charge stikalo (76.a člen)</li>
+              <li>8 KPI-jev: izdano · plačano · zapadlo · popusti · storno · predračuni</li>
+              <li>Pregled: prihodki po mesecih, načini plačila, naj storitve, naj bolniki</li>
+              <li>Prejeti računi: drag&drop, dobavitelji, avtomatsko izpolnjevanje</li>
+              <li>Predloga PDF: logo, barvni poudarek, pisave, legal, FURS</li>
+              <li>CSV izvoz za računovodjo po letu</li>
+            </ul>
+            <details class="drawer">
+              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="vc.more">Kaj točno dobi zobozdravnik</span></summary>
+              <div class="drawer-body">
+                <p><strong data-i18n="vc.d1.t">Načrt → predračun:</strong> zakažete postavko po postavko iz načrta zdravljenja, vsaka dobi FDI oznako ("storitev · zob 36"). Predračun je pripravljen.</p>
+                <p><strong data-i18n="vc.d2.t">Plačilo:</strong> "Plačano" postane gumb. Zapise se v bazi in v pregledu. Delna plačila so podprta.</p>
+                <p><strong data-i18n="vc.d3.t">FURS ko pride:</strong> račun je pripravljen kot PDF in CSV. Ko FURS fiscalization pride, se bo priklopilo.</p>
+                <p><strong data-i18n="vc.d4.t">Predloga:</strong> svoj logo, svojo barvo, svoj podpis. Live PDF predogled. Vklopite FURS opombo ali jo skrijete.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY — tabbed showcase ============ -->
+    <section class="band band-muted" id="slike">
+      <div class="wrap">
+        <p class="kicker" data-i18n="img.kicker">Pošteno</p>
+        <h2 data-i18n="img.title">Takole izgleda, delno zvečer.</h2>
+        <p class="sub" data-i18n="img.sub">Ni mock. Zajeto med delom, v ponedeljek.</p>
+
+        <div class="gallery-tabs" id="galleryTabs" role="tablist">
+          <button class="gtab on" data-tab="domov" role="tab" aria-selected="true" data-i18n="g.domov">Domov</button>
+          <button class="gtab" data-tab="urnik" role="tab" aria-selected="false" data-i18n="g.urnik">Urnik</button>
+          <button class="gtab" data-tab="bolniki" role="tab" aria-selected="false" data-i18n="g.bolniki">Bolniki</button>
+          <button class="gtab" data-tab="finance-izdani" role="tab" aria-selected="false" data-i18n="g.bills">Računi</button>
+          <button class="gtab" data-tab="finance-pregled" role="tab" aria-selected="false" data-i18n="g.overview">Pregled</button>
+          <button class="gtab" data-tab="kolektiv" role="tab" aria-selected="false" data-i18n="g.kolektiv">Ekipa</button>
+        </div>
+
+        <p class="gallery-caption" id="galleryCaption" data-i18n="cap.domov">Štiri kartice, ki povejo dan. Univerzalno iskanje, kliki danes, čakalna, recare.</p>
+
+        <div class="gallery-frame-wrap">
+          <div class="gallery-frame" id="galleryFrame" role="button" tabindex="0" aria-label="Odpri galerijo v polno velikost">
+            <img id="galleryImg" src="images/shots/domov.png" alt="Hermes Dental — screenshot" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Zapri">×</button>
+      <div class="lightbox-frame">
+        <img id="lightboxImg" src="images/shots/domov.png" alt="" />
+      </div>
+      <p class="lightbox-caption" id="lightboxCap"></p>
+    </div>
+
+    <!-- ============ DEMO ============ -->
+    <section class="band" id="demo">
+      <div class="wrap">
+        <p class="kicker" data-i18n="dm.kicker">Demo</p>
+        <h2 data-i18n="dm.title">Ne slika — vse deluje.</h2>
+        <p class="sub" data-i18n="dm.sub">Stanje živi v vašem brskalniku. Nič ni poslano nikamor. Kliknite termin, da ga zaključite. Pojdite na Finance → kliknite "Plačano".</p>
+        <div class="demo-badges">
+          <span class="pill">In-browser</span>
+          <span class="pill">Brez registracije</span>
+          <span class="pill">Ponastavi na gumb</span>
+        </div>
+
+        <div class="demo-app" id="demoApp">
+          <aside class="demo-side">
+            <div class="demo-brand">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="10" fill="#3A4258"/><path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/><path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/></svg>
+              <span>Hermes<br/><em>Dental</em></span>
+            </div>
+            <nav class="demo-nav">
+              <button class="dtab active" data-tab="domov"><span class="side-icon">⌂</span><span data-i18n="nav.domov">Domov</span></button>
+              <button class="dtab" data-tab="urnik"><span class="side-icon">▦</span><span data-i18n="nav.urnik">Urnik</span></button>
+              <button class="dtab" data-tab="bolniki"><span class="side-icon">☺</span><span data-i18n="nav.bolniki">Bolniki</span></button>
+              <button class="dtab" data-tab="finance"><span class="side-icon">€</span><span data-i18n="nav.finance">Finance</span></button>
+              <button class="dtab" data-tab="kolektiv"><span class="side-icon">◫</span><span data-i18n="nav.kolektiv">Kolektiv</span></button>
+              <button class="dtab" data-tab="nastavitve"><span class="side-icon">⚙</span><span data-i18n="nav.nastavitve">Nastavitve</span></button>
+            </nav>
+            <div class="demo-user">
+              <div class="avatar">L</div>
+              <div><b id="duName">Lata K.</b><span data-i18n="side.role">Zobozdravnica</span></div>
+            </div>
+          </aside>
+          <main class="demo-main">
+            <header class="demo-topbar">
+              <div class="demo-title" id="dTitle">Domov</div>
+              <div class="demo-status">
+                <span class="online-dot" id="onlineDot"></span>
+                <span id="onlineText">API · povezan</span>
+                <button id="resetBtn" class="demo-reset" data-i18n="dm.reset">Ponastavi</button>
+                <button id="logoutBtn" class="demo-logout" data-i18n="dm.logout">Odjava</button>
+              </div>
+            </header>
+            <div class="demo-pane" id="demoPane"></div>
+            <div class="demo-toast" id="demoToast" aria-live="polite"></div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS STRIP ============ -->
+    <div class="wrap stats-strip">
+      <span><b>1</b> stol</span>
+      <span class="sep">·</span>
+      <span><b>6</b> zavihkov</span>
+      <span class="sep">·</span>
+      <span><b>0 €</b>/mesec</span>
+      <span class="sep">·</span>
+      <span><b>100%</b> lokalno</span>
+      <span class="sep">·</span>
+      <span><b>MIT</b> licenca</span>
+    </div>
+
+    <!-- ============ NAMESTITEV ============ -->
+    <section class="band band-muted" id="namestitev">
+      <div class="wrap">
+        <p class="kicker" data-i18n="in.kicker">Namestitev</p>
+        <h2 data-i18n="in.title">Trije kliki. Pet minut. Prvi dan.</h2>
+        <p class="sub" data-i18n="in.sub">Prenesite .app, povlecite v mapo Aplikacije, dvakrat kliknite. Brez terminala, brez nameščanja. macOS 12+, Apple silicon in Intel. Prvi zagon vas vodi skozi nastavitev ordinacije.</p>
+        <div class="steps">
+          <ol class="step-list">
+            <li><b>1</b><div><strong data-i18n="s1.t">Prenesite .app</strong><p data-i18n="s1.p">Kliknite gumb zgoraj. ZIP je 101 MB — samo macOS.</p></div></li>
+            <li><b>2</b><div><strong data-i18n="s2.t">Razširite in povlecite</strong><p data-i18n="s2.p">Dvakrat kliknite ZIP, povlecite Hermes Dental.app v Aplikacije. Če macOS javi “nerazvijalec”, z desno tipko → Odpri.</p></div></li>
+            <li><b>3</b><div><strong data-i18n="s3.t">Prvi zagon</strong><p data-i18n="s3.p">Vpišite ime ordinacije, svoje ime, geslo. Demo pacient je že notri — lahko pobrišete.</p></div></li>
+          </ol>
+          <div>
+            <a class="btn btn-primary btn-lg" href="https://github.com/Sobraniex/apollo-solutions/releases/download/v0.3.3/Hermes-Dental-v0.3.3.zip" download data-i18n="in.dlbtn">Prenesi Hermes Dental.app (101 MB)</a>
+            <p class="hint" data-i18n="in.hint">Apple silicon + Intel · macOS 12 Monterey ali novejši · podatki ostanejo na vašem Macu</p>
+            <p class="hint"><a href="INSTALL.html" data-i18n="in.help">Podrobna navodila za namestitev →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATUS ============ -->
+    <section class="band" id="stanje">
+      <div class="wrap">
+        <p class="kicker" data-i18n="st.kicker">Pošteno</p>
+        <h2 data-i18n="st.title">70 % končana. Dela.</h2>
+        <p class="sub" data-i18n="st.sub">Ni še Windows paketa, ni FURS, ni eNaročanja. macOS aplikacija obstaja in deluje.</p>
+        <div class="status">
+          <div class="meter">
+            <strong>70%</strong>
+            <span data-i18n="st.meter">uporabno za en stol</span>
+            <div class="bar" aria-hidden="true"><b></b></div>
+          </div>
+          <div class="lists">
+            <div>
+              <h3 data-i18n="st.yes">Že dela</h3>
+              <ul>
+                <li class="ok" data-i18n="y1">Prijava osebja, lokalni SQLite</li>
+                <li class="ok" data-i18n="y2">Urnik, čakalna vrsta, recare</li>
+                <li class="ok" data-i18n="y3">Kartoteka, obiski, FDI odontogram</li>
+                <li class="ok" data-i18n="y4">Načrt zdravljenja, cenik 2025/26</li>
+                <li class="ok" data-i18n="y5">Računi, plačila, PDF, finančni pregled</li>
+                <li class="ok" data-i18n="y6">macOS aplikacija (Apple silicon), varnostna kopija</li>
+              </ul>
+            </div>
+            <div>
+              <h3 data-i18n="st.no">Še ni</h3>
+              <ul>
+                <li class="no" data-i18n="n1">Windows .exe namestitev</li>
+                <li class="no" data-i18n="n2">FURS / davčna blagajna</li>
+                <li class="no" data-i18n="n3">eNaročanje, zVEM, ZZZS šifranti</li>
+                <li class="no" data-i18n="n4">Več stolov, več ordinacij</li>
+                <li class="no" data-i18n="n5">Pacientova mobilna aplikacija</li>
+                <li class="no" data-i18n="n6">SMS/e-pošta izven brskalnika</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="band band-muted" id="faq">
+      <div class="wrap">
+        <p class="kicker">FAQ</p>
+        <h2 data-i18n="faq.title">Kratka vprašanja</h2>
+        <div class="faq">
+          <details open>
+            <summary data-i18n="q1">Je res zastonj?</summary>
+            <p data-i18n="a1">Da. Ni plana, ni trial, ni "pro". Kodo vzamete in jo uporabljate. Program ostane odprt.</p>
+          </details>
+          <details>
+            <summary data-i18n="q2">Kam gredo podatki pacientov?</summary>
+            <p data-i18n="a2">Na vaš računalnik, v lokalno SQLite bazo. Ni oblaka, ni telemetry. Vi ste administrator. Varnostna kopija je en klik.</p>
+          </details>
+          <details>
+            <summary data-i18n="q3">Je to za koncesijo / ZZZS?</summary>
+            <p data-i18n="a3">Ne. To je za zasebno (samoplačniško) ordinacijo z enim stolom. Hipokrat to že pokriva za zdravstvene dome — mi tja ne gremo.</p>
+          </details>
+          <details>
+            <summary data-i18n="q4">Koliko časa vzame, da se naučimo?</summary>
+            <p data-i18n="a4">Dan ali dva. Vmesnik je v slovenščini, ni prehajanja med orodji, ni učnih videoposnetkov. Vtipkate prvi termin, vidite kako je.</p>
+          </details>
+          <details>
+            <summary data-i18n="q5">Kaj če kaj ne dela?</summary>
+            <p data-i18n="a5">Odpri na GitHubu. Podatki ostanejo na vašem disku. Če stvar ne deluje za vas, kodo spreminjate.</p>
+          </details>
+          <details>
+            <summary data-i18n="q6">Lahko zaračunavam z njim?</summary>
+            <p data-i18n="a6">Račun, PDF, predračun, izvoz CSV — da. FURS fiscalization še ni, do takrat račune zaključujte, kot ste jih do zdaj.</p>
+          </details>
+          <details>
+            <summary data-i18n="q7">Kam grejo priponke (RTG, slike)?</summary>
+            <p data-i18n="a7">Na vaš disk, v mapo bolnika. Ni prenosa v oblak, ni skeniranja, ni tretjih oseb.</p>
+          </details>
+          <details>
+            <summary data-i18n="q8">Je macOS aplikacija?</summary>
+            <p data-i18n="a8">Da. Hermes Dental.app je prava .app datoteka — dvakrat klik, odpre se v svojem oknu. Apple silicon in Intel. Podatki gredo v ~/Library/Application&nbsp;Support/HermesDental/.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <div>
+      Hermes Dental
+      <span data-i18n="ft.line"> · odprta koda · ni medicinski pripomoček · brez jamstva</span>
+      <span> · </span>
+      <a href="/">Apollo Solutions</a>
+    </div>
+    <div>
+      <a href="https://github.com/Sobraniex/dental-app">github.com/Sobraniex/dental-app</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
