@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apollo Solutions — useful software for work, not rent</title>
+  <meta name="description" content="We replace expensive apps and endless subscriptions with tools that run on your machine. No rent, for now." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav" id="siteNav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#12101c"/>
+          <circle cx="24" cy="24" r="6.2" fill="#c4b5fd"/>
+          <ellipse cx="24" cy="24" rx="16" ry="6.2" fill="none" stroke="#6ea0e8" stroke-width="1.7" transform="rotate(-22 24 24)"/>
+        </svg>
+        <span>Apollo <em>Solutions</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/hermes/" data-i18n="nav.hermes">Hermes Dental</a>
+        <a href="#delo" data-i18n="nav.work">Tools</a>
+        <a href="#pristop" data-i18n="nav.approach">How we work</a>
+        <a href="#poslanstvo" data-i18n="nav.mission">Mission</a>
+        <a href="#novice" data-i18n="nav.news">News</a>
+        <a href="#blog" data-i18n="nav.blog">Blog</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" type="button" id="langBtn" aria-label="Language">SL</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-band">
+      <div class="sky" aria-hidden="true">
+        <div class="stars" id="stars"></div>
+        <div class="streaks" id="streaks"></div>
+      </div>
+      <div class="wrap hero">
+        <h1>
+          <span data-i18n="hero.line1">Tools a civilization</span>
+          <span data-i18n="hero.line2">can actually</span>
+          <span class="cycle-line">
+            <span class="cycle-slot">
+              <span id="cycleWord" class="cycle-word">own</span><span class="cycle-word cycle-dot">.</span>
+            </span><span class="caret" aria-hidden="true"></span>
+          </span>
+        </h1>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#pristop" data-i18n="hero.cta1">Get to know us</a>
+          <a class="btn btn-ghost btn-lg" href="https://github.com/Sobraniex/dental-app" data-i18n="hero.cta2">View documentation</a>
+        </div>
+      </div>
+      <div class="wrap tiles" id="delo">
+        <a class="tile" id="hermesCard" href="/hermes/">
+          <div class="tile-media tile-site">
+            <iframe id="hermesFrame" src="/hermes/" title="Hermes Dental" tabindex="-1" loading="lazy"></iframe>
+          </div>
+          <div class="tile-bar">
+            <b>Hermes Dental</b>
+            <span data-i18n="hd.go">Explore →</span>
+          </div>
+        </a>
+        <div class="tile empty">
+          <div class="tile-media">
+            <svg class="sprig" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M18 52c10-8 16-16 18-28" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <ellipse cx="32" cy="22" rx="5" ry="2.4" transform="rotate(-28 32 22)"/>
+              <ellipse cx="38" cy="28" rx="5.2" ry="2.4" transform="rotate(18 38 28)"/>
+              <ellipse cx="28" cy="30" rx="4.8" ry="2.2" transform="rotate(-12 28 30)"/>
+              <ellipse cx="36" cy="36" rx="5" ry="2.3" transform="rotate(22 36 36)"/>
+              <ellipse cx="26" cy="38" rx="4.6" ry="2.1" transform="rotate(-20 26 38)"/>
+            </svg>
+          </div>
+          <div class="tile-bar">
+            <b>02</b>
+            <span data-i18n="held">Reserved</span>
+          </div>
+        </div>
+        <div class="tile empty">
+          <div class="tile-media">
+            <svg class="sprig" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M18 52c10-8 16-16 18-28" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <ellipse cx="32" cy="22" rx="5" ry="2.4" transform="rotate(-28 32 22)"/>
+              <ellipse cx="38" cy="28" rx="5.2" ry="2.4" transform="rotate(18 38 28)"/>
+              <ellipse cx="28" cy="30" rx="4.8" ry="2.2" transform="rotate(-12 28 30)"/>
+              <ellipse cx="36" cy="36" rx="5" ry="2.3" transform="rotate(22 36 36)"/>
+              <ellipse cx="26" cy="38" rx="4.6" ry="2.1" transform="rotate(-20 26 38)"/>
+            </svg>
+          </div>
+          <div class="tile-bar">
+            <b>03</b>
+            <span data-i18n="held">Reserved</span>
+          </div>
+        </div>
+        <div class="tile empty">
+          <div class="tile-media">
+            <svg class="sprig" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M18 52c10-8 16-16 18-28" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <ellipse cx="32" cy="22" rx="5" ry="2.4" transform="rotate(-28 32 22)"/>
+              <ellipse cx="38" cy="28" rx="5.2" ry="2.4" transform="rotate(18 38 28)"/>
+              <ellipse cx="28" cy="30" rx="4.8" ry="2.2" transform="rotate(-12 28 30)"/>
+              <ellipse cx="36" cy="36" rx="5" ry="2.3" transform="rotate(22 36 36)"/>
+              <ellipse cx="26" cy="38" rx="4.6" ry="2.1" transform="rotate(-20 26 38)"/>
+            </svg>
+          </div>
+          <div class="tile-bar">
+            <b>04</b>
+            <span data-i18n="held">Reserved</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-muted" id="pristop">
+      <div class="wrap">
+        <p class="kicker" data-i18n="ap.kicker">How we work</p>
+        <h2 data-i18n-html="ap.title">We set up the tool.<br/>You get back to work.</h2>
+        <p class="sub" data-i18n="ap.sub">If the software bill is growing faster than the business, we already built a replacement. We install it with you. We do not take custom jobs.</p>
+
+        <div class="core">
+          <article>
+            <div class="num">01</div>
+            <h3 data-i18n="ap1.t">The tool should serve the work</h3>
+            <p data-i18n="ap1.p">If a program costs more time and money than it saves, it is the wrong program. We replace those.</p>
+          </article>
+          <article>
+            <div class="num">02</div>
+            <h3 data-i18n="ap2.t">It runs on your computer</h3>
+            <p data-i18n="ap2.p">Your files stay with you. Nothing turns off because a landlord raised the rent. You own what you depend on.</p>
+          </article>
+          <article>
+            <div class="num">03</div>
+            <h3 data-i18n="ap3.t">We set it up with you</h3>
+            <p data-i18n="ap3.p">First day together. Then the team goes back to the job they were hired for — not to the software around it.</p>
+          </article>
+        </div>
+
+        <div class="split">
+          <div class="do">
+            <h3 data-i18n="yes.t">What we do</h3>
+            <ul>
+              <li data-i18n="yes.1">Replace software that costs more than it returns</li>
+              <li data-i18n="yes.2">Install it with you. First day. Then work.</li>
+              <li data-i18n="yes.3">Your computer. Your files. Your numbers.</li>
+              <li data-i18n="yes.4">Only problems we see repeating in the market</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h3 data-i18n="no.t">What we don’t</h3>
+            <ul>
+              <li data-i18n="no.1">Custom apps “for our company”</li>
+              <li data-i18n="no.2">A new monthly licence to stay in the tool</li>
+              <li data-i18n="no.3">Your data sitting on someone else’s server</li>
+              <li data-i18n="no.4">A long sales process to get started</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-dark" id="poslanstvo">
+      <div class="wrap mission-grid">
+        <div>
+          <p class="kicker" data-i18n="ms.kicker">Mission</p>
+          <h2 data-i18n-html="ms.title">Scale the work.<br/>Own the tools.</h2>
+          <p class="sub" data-i18n="ms.sub">You used to buy software once and run it. Now most of it is rented. We build tools so a firm can grow the work — not the monthly invoice. Less paper. Clear numbers. People doing the job they were hired for.</p>
+        </div>
+        <div class="mission-points">
+          <div class="mp">
+            <b data-i18n="mp1.t">Less paper</b>
+            <span data-i18n="mp1.p">If it lives in a drawer, it is not running the firm.</span>
+          </div>
+          <div class="mp">
+            <b data-i18n="mp2.t">Numbers that hold</b>
+            <span data-i18n="mp2.p">Issued, paid, overdue. Not Excel at 10pm.</span>
+          </div>
+          <div class="mp">
+            <b data-i18n="mp3.t">People on the real job</b>
+            <span data-i18n="mp3.p">The software should disappear into the day — not become the day.</span>
+          </div>
+          <div class="mp">
+            <b data-i18n="mp4.t">The invoice should not grow with you</b>
+            <span data-i18n="mp4.p">Growth should mean more work done — not another subscription.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="novice">
+      <div class="wrap">
+        <div class="news-head">
+          <div>
+            <p class="kicker" data-i18n="news.kicker">Latest</p>
+            <h2 data-i18n="news.title">News.</h2>
+          </div>
+        </div>
+        <div class="news-grid">
+          <a class="ncard" href="news/self-host.html">
+            <img src="images/news/self-host.jpg" alt="" />
+            <time datetime="2026-09-06" data-i18n="n1.date">Sep 6, 2026</time>
+            <h3 data-i18n="n1.t">Self-host</h3>
+          </a>
+          <a class="ncard" href="news/grok-bot-vs-hermes-agents.html">
+            <img src="images/news/grok-vs-hermes.jpg" alt="" />
+            <time datetime="2026-08-20" data-i18n="n2.date">Aug 20, 2026</time>
+            <h3 data-i18n="n2.t">Grok Bot vs Hermes Agents</h3>
+          </a>
+          <a class="ncard" href="news/openai-agents-hugging-face.html">
+            <img src="images/news/hugging-face.jpg" alt="" />
+            <time datetime="2026-08-26" data-i18n="n3.date">Aug 26, 2026</time>
+            <h3 data-i18n="n3.t">How OpenAI agents attacked Hugging Face</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-dark" id="blog">
+      <div class="wrap">
+        <div class="notes-head">
+          <p class="kicker" data-i18n="blog.kicker">Essays</p>
+          <h2 data-i18n="blog.title">Blog.</h2>
+          <p class="sub" data-i18n="blog.sub">We write when there is something to say.</p>
+        </div>
+
+        <div class="notes-row">
+          <button type="button" class="notes-btn" id="notesPrev" aria-label="Previous posts">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="notes-viewport" id="notesViewport">
+          <div class="notes-track" id="notesTrack">
+            <a class="bcard" href="blog/zakaj-program-ni-avto.html">
+              <span class="bcard-meta" data-i18n="b1.meta">Essay · 4 min</span>
+              <h3 data-i18n="b1.t">Why software shouldn’t cost like a car</h3>
+              <p data-i18n="b1.p">Firms pay rent on tools that should be infrastructure. That is not innovation. That is a tax.</p>
+            </a>
+            <a class="bcard" href="blog/ne-jemljemo-projektov.html">
+              <span class="bcard-meta" data-i18n="b2.meta">Essay · 3 min</span>
+              <h3 data-i18n="b2.t">We don’t take projects</h3>
+              <p data-i18n="b2.p">An agency takes a brief. We take a pattern in the market. That’s why we have one product, not ten quotes.</p>
+            </a>
+            <a class="bcard" href="blog/note-03.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Lorem ipsum dolor sit amet</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae nisi vitae nisl.</p>
+            </a>
+            <a class="bcard" href="blog/note-04.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Consectetur adipiscing elit</h3>
+              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+            </a>
+            <a class="bcard" href="blog/note-05.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Sed ut perspiciatis unde omnis</h3>
+              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+            </a>
+            <a class="bcard" href="blog/note-06.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Nemo enim ipsam voluptatem</h3>
+              <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.</p>
+            </a>
+            <a class="bcard" href="blog/note-07.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Ut enim ad minima veniam</h3>
+              <p>Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid.</p>
+            </a>
+            <a class="bcard" href="blog/note-08.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Quis autem vel eum iure</h3>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+            </a>
+            <a class="bcard" href="blog/note-09.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>At vero eos et accusamus</h3>
+              <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</p>
+            </a>
+            <a class="bcard" href="blog/note-10.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Nam libero tempore cum soluta</h3>
+              <p>Cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod.</p>
+            </a>
+            <a class="bcard" href="blog/note-11.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Temporibus autem quibusdam</h3>
+              <p>Officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
+            </a>
+            <a class="bcard" href="blog/note-12.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Itaque earum rerum hic tenetur</h3>
+              <p>Sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur.</p>
+            </a>
+            <a class="bcard" href="blog/note-13.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Neque porro quisquam est</h3>
+              <p>Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
+            </a>
+            <a class="bcard" href="blog/note-14.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Dolorem ipsum quia dolor sit</h3>
+              <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
+            </a>
+            <a class="bcard" href="blog/note-15.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Ut labore et dolore magnam</h3>
+              <p>Aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
+            </a>
+            <a class="bcard" href="blog/note-16.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Quis nostrum exercitationem</h3>
+              <p>Ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
+            </a>
+            <a class="bcard" href="blog/note-17.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Vel illum qui dolorem eum</h3>
+              <p>Fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio.</p>
+            </a>
+            <a class="bcard" href="blog/note-18.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Et harum quidem rerum facilis</h3>
+              <p>Est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.</p>
+            </a>
+            <a class="bcard" href="blog/note-19.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Iusto odio dignissimos ducimus</h3>
+              <p>Qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+            </a>
+            <a class="bcard" href="blog/note-20.html">
+              <span class="bcard-meta">Note · 3 min</span>
+              <h3>Blanditiis praesentium voluptatum</h3>
+              <p>Atque corrupti quos dolores et quas molestias excepturi sint occaecati.</p>
+            </a>
+          </div>
+          </div>
+          <button type="button" class="notes-btn" id="notesNext" aria-label="Next posts">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-muted" id="faq">
+      <div class="wrap">
+        <p class="kicker">FAQ</p>
+        <h2 data-i18n="faq.title">Short answers</h2>
+        <div class="faq">
+          <details open>
+            <summary data-i18n="q1">Are you an agency?</summary>
+            <p data-i18n="a1">No. We don’t take briefs. We don’t quote every call. We pick a problem, build the tool, give it to the people who need it.</p>
+          </details>
+          <details>
+            <summary data-i18n="q2">What does it cost?</summary>
+            <p data-i18n="a2">No monthly fee, for now. We install it with you. If that changes, we say so straight — not through a paywall.</p>
+          </details>
+          <details>
+            <summary data-i18n="q3">Why free?</summary>
+            <p data-i18n="a3">Because bits are cheap and the subscription is not. The market charges rent. We don’t want to.</p>
+          </details>
+          <details>
+            <summary data-i18n="q4">Can I commission an app?</summary>
+            <p data-i18n="a4">No. A brief is not a problem. A problem repeats in the market. If the tool already exists — yes.</p>
+          </details>
+          <details>
+            <summary data-i18n="q5">What is Hermes Dental?</summary>
+            <p data-i18n="a5">First product. Local. Click the card. Not a medical device.</p>
+          </details>
+          <details>
+            <summary data-i18n="q6">Where are you?</summary>
+            <p data-i18n="a6">Slovenia. Firms stuck on expensive software. Each tool has its own site. This is the firm.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="kontakt">
+      <div class="wrap contact-box">
+        <div>
+          <p class="kicker" data-i18n="ct.kicker">Contact</p>
+          <h2 data-i18n="ct.title">If the software is a tax, write.</h2>
+          <p class="sub" data-i18n="ct.sub">Installing a tool that exists — yes. “Build us an app” — no. We answer in person. No call centre.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid btn-lg" href="#delo" data-i18n="ct.cta1">Tools</a>
+            <a class="btn btn-outline btn-lg" href="https://github.com/Sobraniex/dental-app">GitHub</a>
+          </div>
+        </div>
+        <div class="contact-note">
+          <b data-i18n="ct.note.t">Where we are</b>
+          <span data-i18n="ct.note.p">One product live. Small team. No call centre. If you write about a tool that exists, we write back.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <div>Apollo Solutions <span data-i18n="ft.line">· studio · not an agency · Slovenia</span></div>
+    <div>
+      <a href="/hermes/" id="hermesFoot">Hermes Dental</a>
+      ·
+      <a href="https://github.com/Sobraniex/dental-app">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
