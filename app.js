@@ -1,4 +1,4 @@
-const HERMES_URL = "/hermes";
+const HERMES_URL = "/apollo-solutions/hermes";
 
 const I18N = {
   sl: {
