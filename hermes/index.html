@@ -11,19 +11,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
 </head>
-<body>
+<body class="hermes-landing">
+  <a class="skip-link" href="#top" data-i18n="landing.skip">Preskoči na vsebino</a>
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top">
         <svg viewBox="0 0 48 48" aria-hidden="true">
-          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <rect width="48" height="48" rx="10" fill="#30263d"/>
           <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
           <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
         </svg>
         <span>Hermes <em>Dental</em></span>
       </a>
-      <nav class="nav-links" id="main-nav">
+      <nav class="nav-links" id="main-nav" aria-label="Navigacija">
         <a href="#vrednost" data-i18n="nav.product">Produkt</a>
         <a href="#pomocnik" data-i18n="nav.assistant">Pomočnik</a>
         <a href="#slike" data-i18n="nav.screens">Zasloni</a>
@@ -44,8 +46,8 @@
     <section class="wrap hero">
       <div class="hero-copy">
         <p class="kicker" data-i18n="hero.kicker">Za ordinacije · lokalna tehnologija</p>
-        <h1 data-i18n="hero.title">Manj časa za papirje.<br/>Več časa za zobe.</h1>
-        <p class="lede" data-i18n="hero.lede">Urnik, kartoteka, odontogram, načrt zdravljenja in računi v enem delovnem okolju. Pomočnik Hermes razume slovenščino. Plačljivi mesečni paketi, prilagojeni potrebam ordinacije.</p>
+        <h1><span data-i18n="landing.title">Manj papirjev.</span><em data-i18n="landing.title2">Več časa za ljudi.</em></h1>
+        <p class="lede" data-i18n="hero.lede">Urnik, kartoteka in računi v enem delovnem okolju. S pomočnikom, ki razume slovenščino, in več prostora za delo, ki šteje.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="https://github.com/Sobraniex/apollo-solutions/releases/download/v0.3.3/Hermes-Dental-v0.3.3.zip" download data-i18n="hero.cta1">Prenesi za macOS</a>
           <a class="btn btn-ghost btn-lg" href="#demo" data-i18n="hero.cta2">Poizkusite v brskalniku →</a>
@@ -57,53 +59,48 @@
         </div>
       </div>
       <figure class="device-frame">
-        <img src="images/shots/domov.png" alt="Hermes Dental — Domov: današnji termini, recare, odprti računi, čakalna vrsta" />
-        <figcaption class="device-cap" data-i18n="hero.cap">Vaše jutro, preden je odprta vrata.<span class="dot-sep">·</span>Stol 1 · slovenski vmesnik</figcaption>
+        <div class="device-top"><span><i></i> HERMES DENTAL</span><span data-i18n="landing.workspace">Vaša ordinacija. Povezana.</span></div>
+        <img fetchpriority="high" width="2560" height="1440" src="images/shots/domov.png" alt="Hermes Dental — Domov: današnji termini, recare, odprti računi, čakalna vrsta" />
+        <figcaption class="device-cap" data-i18n="hero.cap">Pregled dneva, še preden odprete vrata.</figcaption>
       </figure>
     </section>
 
-    <!-- Inline trial CTA (Task 19) -->
-    <section class="band" id="trial-cta">
-      <div class="wrap" style="text-align:center;max-width:620px">
-        <p class="kicker" data-i18n="plans.kicker">Mesečni paketi</p>
-        <h2 data-i18n="plans.title">Program za vaše delovno okolje.</h2>
-        <p class="lede" data-i18n="plans.description">Ceno in obseg pripravimo glede na potrebe vaše ordinacije.</p>
-        <a class="btn btn-primary btn-lg" href="pricing.html" data-i18n="plans.link">Več o paketih →</a>
-      </div>
-    </section>
-
-    <!-- subtle divider row -->
-    <div class="wrap stack-strip">
-      <span>eZdravje</span><span>ZZZS</span><span>eDavki</span><span>NIJZ</span><span>Zbornica</span>
+    <div class="wrap product-path" aria-label="Hermes Dental">
+      <span class="path-label" data-i18n="landing.path">En program. Celoten dan.</span>
+      <a href="#urnik"><span>01</span><span data-i18n="va.tag">Urnik</span><i aria-hidden="true">↗</i></a>
+      <a href="#kartoteka"><span>02</span><span data-i18n="vb.tag">Bolniki</span><i aria-hidden="true">↗</i></a>
+      <a href="#racuni"><span>03</span><span data-i18n="vc.tag">Blagajna</span><i aria-hidden="true">↗</i></a>
+      <a href="#pomocnik"><span>04</span><span data-i18n="nav.assistant">Pomočnik</span><i aria-hidden="true">↗</i></a>
     </div>
 
     <!-- ============ VREDNOST — three deep rows ============ -->
     <section class="band" id="vrednost">
       <div class="wrap">
-        <p class="kicker" data-i18n="val.kicker">Kaj dobite</p>
-        <h2 data-i18n="val.title">Vse, kar danes delate ročno.</h2>
-        <p class="sub" data-i18n="val.sub">Hermes naloži vaš dan v računalnik. Vsak element je zasnovan za 30 sekund v živo — med telefonskim klicom, med obiskom, med naslednjim naročilom.</p>
+        <p class="kicker" data-i18n="val.kicker">Zasnovano za vaš delovni dan</p>
+        <div class="section-heading">
+          <h2><span data-i18n="landing.value1">Vaš dan.</span><em data-i18n="landing.value2">Lepo povezan.</em></h2>
+          <p class="sub" data-i18n="val.sub">Od prvega klica do zadnjega računa. Urnik, kartoteka in finance skupaj, da se lahko posvetite pacientu pred vami.</p>
+        </div>
 
         <!-- A: Urnik -->
-        <div class="value-row">
+        <div class="value-row" id="urnik">
           <figure class="vr-media">
+            <div class="media-label"><span>HERMES / <span data-i18n="va.tag">Urnik</span></span><span>01</span></div>
             <img src="images/shots/urnik.png" alt="Urnik — Stol 1, cel dan" loading="lazy" />
           </figure>
           <div class="vr-body">
-            <div class="vr-tag" data-i18n="va.tag">Urnik</div>
-            <h3 data-i18n="va.t">Dan v enem pogledu. Rezervacija med klicem.</h3>
-            <p class="vr-sub" data-i18n="va.p">Vtipkate ime, dobite termin. Now-line vam pove, kje ste. Odpoved se sama ponudi čakalni vrsti. Now-line vam pove točno, kje v dnevu ste.</p>
+            <div class="vr-tag"><span class="feature-number">01</span><span data-i18n="va.tag">Urnik</span></div>
+            <h3 data-i18n="va.t">Mirnejši začetek. Pregleden dan.</h3>
+            <p class="vr-sub" data-i18n="va.p">Termin rezervirate že med klicem. Dnevni, tedenski in mesečni pogled povežejo obiske, proste termine in čakalno vrsto.</p>
             <ul class="drawer-bullets" data-i18n-group="va">
-              <li>15-minutni korak 08–18 · Teden / Mesec z zasedenostjo</li>
-              <li>Čakalna vrsta — en klik zapolni odpovedan termin</li>
-              <li>Recare: po zaključku predlaga naslednji termin (7 / 14 / 182 dni)</li>
-              <li>Blokade — malica, dopust, nujni buffer, prazniki</li>
-              <li>Slovenski prazniki, now-line, detekcija prekrivanj</li>
-              <li>Opomniki: e-pošta · SMS · WhatsApp</li>
+              <li data-i18n="landing.va.1">Dnevni, tedenski in mesečni pregled</li>
+              <li data-i18n="landing.va.2">Čakalna vrsta za proste termine</li>
+              <li data-i18n="landing.va.3">Ponovni obiski in blokade urnika</li>
             </ul>
             <details class="drawer">
-              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="va.more">Kaj točno dobi zobozdravnik</span></summary>
+              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="va.more">Vse funkcije urnika</span></summary>
               <div class="drawer-body">
+                <ul class="drawer-bullets"><li>15-minutni korak 08–18 · Teden / Mesec z zasedenostjo</li><li>Čakalna vrsta — en klik zapolni odpovedan termin</li><li>Recare: po zaključku predlaga naslednji termin (7 / 14 / 182 dni)</li><li>Blokade — malica, dopust, nujni buffer, prazniki</li><li>Slovenski prazniki, now-line, detekcija prekrivanj</li><li>Opomniki: e-pošta · SMS · WhatsApp</li></ul>
                 <p><strong data-i18n="va.d1.t">Vsak termin:</strong> ime, trajalnost, status, potrjen/ne, barva po tipu obiska — Pregled, Higiena, Karies, Ekstrakcija, RTG.</p>
                 <p><strong data-i18n="va.d2.t">Preklici:</strong> ko nekdo odpove, sistem ponudi isti slot prvemu v čakalni vrsti. Ni več "nismo videli prostega mesta".</p>
                 <p><strong data-i18n="va.d3.t">Recare:</strong> po zaključenem obisku sistem priporoči ponovni termin glede na tip obiska. Vam pove kdaj poklicati bolniha.</p>
@@ -114,24 +111,24 @@
         </div>
 
         <!-- B: Bolniki -->
-        <div class="value-row rev">
+        <div class="value-row rev" id="kartoteka">
           <figure class="vr-media">
+            <div class="media-label"><span>HERMES / <span data-i18n="vb.tag">Bolniki</span></span><span>02</span></div>
             <img src="images/shots/bolniki.png" alt="Bolniki — kartoteka + odontogram + načrt" loading="lazy" />
           </figure>
           <div class="vr-body">
-            <div class="vr-tag" data-i18n="vb.tag">Bolniki</div>
-            <h3 data-i18n="vb.t">Kartoteka, ki jo res uporabljate.</h3>
+            <div class="vr-tag"><span class="feature-number">02</span><span data-i18n="vb.tag">Bolniki</span></div>
+            <h3 data-i18n="vb.t">Celotna zgodba. Ena kartoteka.</h3>
             <p class="vr-sub" data-i18n="vb.p">Odontogram, načrt zdravljenja, obiski, CAVE opozorila, priponke. Vse v istem oknu. Soglasje imate zabeleženo, alergije so rdeča zastavica.</p>
             <ul class="drawer-bullets" data-i18n-group="vb">
-              <li>Slovensko abecedno urejanje · iskanje po priimku / telefonu / KZZ</li>
-              <li>FDI odontogram — kliknite zob, izberite stanje, povežite s storitvijo</li>
-              <li>CAVE banner v glavi kartona (alergije, opombe)</li>
-              <li>Soglasje za zdravljenje — v časovnem žigu</li>
-              <li>Priponke: RTG, fotografije, napotnice — na vašem disku</li>
+              <li data-i18n="landing.vb.1">Odontogram in načrt zdravljenja</li>
+              <li data-i18n="landing.vb.2">Alergije in pomembna opozorila na očeh</li>
+              <li data-i18n="landing.vb.3">Obiski, soglasja in priponke na enem mestu</li>
             </ul>
             <details class="drawer">
-              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="vb.more">Kaj točno dobi zobozdravnik</span></summary>
+              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="vb.more">Vse funkcije kartoteke</span></summary>
               <div class="drawer-body">
+                <ul class="drawer-bullets"><li>Slovensko abecedno urejanje · iskanje po priimku / telefonu / KZZ</li><li>FDI odontogram — kliknite zob, izberite stanje, povežite s storitvijo</li><li>CAVE banner v glavi kartona (alergije, opombe)</li><li>Soglasje za zdravljenje — v časovnem žigu</li><li>Priponke: RTG, fotografije, napotnice — na vašem disku</li></ul>
                 <p><strong data-i18n="vb.d1.t">Urejanje kartona:</strong> ime · priimek · telefon · email · KZZ · rojstvo · naslov · CAVE · soglasje · opombe — v eni formi, brez prehajanja med zavihki.</p>
                 <p><strong data-i18n="vb.d2.t">Odontogram:</strong> 7 stanj (zdrav/karies/zalivka/prevleka/manjka/implantat/endo), FDI oznake, modra pika za načrtovan.</p>
                 <p><strong data-i18n="vb.d3.t">Načrt zdravljenja:</strong> storitev × zob × cena. Statusi: odprto → opravljeno → preklicano. En klik → predračun.</p>
@@ -142,25 +139,24 @@
         </div>
 
         <!-- C: Finance -->
-        <div class="value-row">
+        <div class="value-row" id="racuni">
           <figure class="vr-media">
+            <div class="media-label"><span>HERMES / <span data-i18n="vc.tag">Blagajna</span></span><span>03</span></div>
             <img src="images/shots/finance-izdani.png" alt="Izdani računi — tabela s statusi in akcijami" loading="lazy" />
           </figure>
           <div class="vr-body">
-            <div class="vr-tag" data-i18n="vc.tag">Blagajna</div>
-            <h3 data-i18n="vc.t">Račun iz načrta. Plačilo en klik.</h3>
+            <div class="vr-tag"><span class="feature-number">03</span><span data-i18n="vc.tag">Blagajna</span></div>
+            <h3 data-i18n="vc.t">Od zdravljenja do računa.</h3>
             <p class="vr-sub" data-i18n="vc.p">Predračuni, izdani računi, prejeti računi, pregled, predloga. En klik "Plačano" — račun se zaključi. En klik "V račun" — predračun postane račun.</p>
             <ul class="drawer-bullets" data-i18n-group="vc">
-              <li>Večjezični PDF (SL · EN · DE) · reverse-charge stikalo (76.a člen)</li>
-              <li>8 KPI-jev: izdano · plačano · zapadlo · popusti · storno · predračuni</li>
-              <li>Pregled: prihodki po mesecih, načini plačila, naj storitve, naj bolniki</li>
-              <li>Prejeti računi: drag&drop, dobavitelji, avtomatsko izpolnjevanje</li>
-              <li>Predloga PDF: logo, barvni poudarek, pisave, legal, FURS</li>
-              <li>CSV izvoz za računovodjo po letu</li>
+              <li data-i18n="landing.vc.1">Iz načrta zdravljenja v predračun</li>
+              <li data-i18n="landing.vc.2">Plačila in odprti računi pod nadzorom</li>
+              <li data-i18n="landing.vc.3">Dokumenti PDF in izvoz za računovodjo</li>
             </ul>
             <details class="drawer">
-              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="vc.more">Kaj točno dobi zobozdravnik</span></summary>
+              <summary><span class="expand-icon" aria-hidden="true">+</span><span data-i18n="vc.more">Vse funkcije financ</span></summary>
               <div class="drawer-body">
+                <ul class="drawer-bullets"><li>Večjezični PDF (SL · EN · DE) · reverse-charge stikalo (76.a člen)</li><li>8 KPI-jev: izdano · plačano · zapadlo · popusti · storno · predračuni</li><li>Pregled: prihodki po mesecih, načini plačila, naj storitve, naj bolniki</li><li>Prejeti računi: drag&drop, dobavitelji, avtomatsko izpolnjevanje</li><li>Predloga PDF: logo, barvni poudarek, pisave, legal, FURS</li><li>CSV izvoz za računovodjo po letu</li></ul>
                 <p><strong data-i18n="vc.d1.t">Načrt → predračun:</strong> zakažete postavko po postavko iz načrta zdravljenja, vsaka dobi FDI oznako ("storitev · zob 36"). Predračun je pripravljen.</p>
                 <p><strong data-i18n="vc.d2.t">Plačilo:</strong> "Plačano" postane gumb. Zapise se v bazi in v pregledu. Delna plačila so podprta.</p>
                 <p><strong data-i18n="vc.d3.t">FURS ko pride:</strong> račun je pripravljen kot PDF in CSV. Ko FURS fiscalization pride, se bo priklopilo.</p>
@@ -175,9 +171,9 @@
     <!-- ============ GALLERY — tabbed showcase ============ -->
     <section class="band band-muted" id="slike">
       <div class="wrap">
-        <p class="kicker" data-i18n="img.kicker">Pošteno</p>
-        <h2 data-i18n="img.title">Takole izgleda, delno zvečer.</h2>
-        <p class="sub" data-i18n="img.sub">Ni mock. Zajeto med delom, v ponedeljek.</p>
+        <p class="kicker" data-i18n="img.kicker">Pogled v program</p>
+        <h2 data-i18n="img.title">Znano okolje. Jasna slika.</h2>
+        <p class="sub" data-i18n="img.sub">Raziščite zaslone programa. Kliknite sliko za podrobnejši pogled.</p>
 
         <div class="gallery-tabs" id="galleryTabs" role="tablist">
           <button class="gtab on" data-tab="domov" role="tab" aria-selected="true" data-i18n="g.domov">Domov</button>
@@ -455,6 +451,11 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="wrap plan-invitation" id="trial-cta">
+      <div><p class="kicker" data-i18n="plans.kicker">Mesečni paketi</p><h2 data-i18n="plans.title">Program za vaše delovno okolje.</h2><p data-i18n="plans.description">Ceno in obseg pripravimo glede na potrebe vaše ordinacije.</p></div>
+      <a class="btn btn-primary btn-lg" href="pricing.html" data-i18n="plans.link">Več o paketih →</a>
     </section>
 
     <!-- ============ FAQ ============ -->
