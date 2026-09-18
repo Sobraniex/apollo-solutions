@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hermes Dental — program za zobno ordinacijo</title>
-  <meta name="description" content="Manj časa za papirje. Več časa za zobe. Urnik, kartoteka, odontogram, načrt zdravljenja in računi na vašem Macu. Mesečni paketi, cena po povpraševanju." />
+  <meta name="theme-color" content="#101014" />
+  <meta name="description" content="Manj časa za papirje. Več časa za zobe. Urnik, kartoteka in računi na vašem Macu, s pomočnikom Hermes v slovenščini. Mesečni paketi, cena po povpraševanju." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,17 +23,18 @@
         </svg>
         <span>Hermes <em>Dental</em></span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" id="main-nav">
         <a href="#vrednost" data-i18n="nav.product">Produkt</a>
+        <a href="#pomocnik" data-i18n="nav.assistant">Pomočnik</a>
         <a href="#slike" data-i18n="nav.screens">Zasloni</a>
         <a href="pricing.html" data-i18n="nav.pricing">Cenik</a>
-        <a href="#stanje" data-i18n="nav.status">Stanje</a>
         <a href="#namestitev" data-i18n="nav.install">Namesti</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
         <button class="lang" type="button" id="langBtn" aria-label="Language">EN</button>
         <a class="btn btn-navy" href="../" data-i18n="nav.home">← Apollo Solutions</a>
+        <button class="menu-button" type="button" id="menuBtn" aria-expanded="false" aria-controls="main-nav" data-i18n="nav.menu">Meni</button>
       </div>
     </div>
   </header>
@@ -43,7 +45,7 @@
       <div class="hero-copy">
         <p class="kicker" data-i18n="hero.kicker">Za ordinacije · lokalna tehnologija</p>
         <h1 data-i18n="hero.title">Manj časa za papirje.<br/>Več časa za zobe.</h1>
-        <p class="lede" data-i18n="hero.lede">Urnik, kartoteka, odontogram, načrt zdravljenja in računi v enem delovnem okolju. Plačljivi mesečni paketi, prilagojeni potrebam ordinacije.</p>
+        <p class="lede" data-i18n="hero.lede">Urnik, kartoteka, odontogram, načrt zdravljenja in računi v enem delovnem okolju. Pomočnik Hermes razume slovenščino. Plačljivi mesečni paketi, prilagojeni potrebam ordinacije.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="https://github.com/Sobraniex/apollo-solutions/releases/download/v0.3.3/Hermes-Dental-v0.3.3.zip" download data-i18n="hero.cta1">Prenesi za macOS</a>
           <a class="btn btn-ghost btn-lg" href="#demo" data-i18n="hero.cta2">Poizkusite v brskalniku →</a>
@@ -204,6 +206,134 @@
       </div>
       <p class="lightbox-caption" id="lightboxCap"></p>
     </div>
+
+    <section class="assistant-section wrap" id="pomocnik" aria-labelledby="assistant-title">
+      <div class="assistant-heading">
+        <div>
+          <p class="kicker" data-i18n="as.kicker">Znotraj programa</p>
+          <h2 id="assistant-title"><span data-i18n="as.title">Pomočnik Hermes.</span><br/><em data-i18n="as.title2">Pišete. Pregledate. Izvedete.</em></h2>
+        </div>
+        <p class="assistant-intro" data-i18n="as.intro">Pišete v slovenščini. Agent poišče pravo orodje, vsak zapis pa se konča pri točnem predogledu z gumbom Izvedi. Besedilo samo ne spremeni ničesar. Model samo poimenuje orodje — strežnik ga izvede po pravilih.</p>
+      </div>
+
+      <div class="assistant-board">
+        <div class="safety-panel">
+          <p class="panel-kicker" data-i18n="as.safety">Varnostni model</p>
+          <h3 data-i18n="as.modes">Dva načina pisanja</h3>
+          <p data-i18n="as.modesP">Privzeto vsak zapis zahteva vaš klik. Rutinske zapise lahko odobrite v nastavitvah; tvegani še vedno čakajo na vas.</p>
+          <div class="mode-pair">
+            <div class="mode-card">
+              <strong data-i18n="as.off">Avtonomija pisanja IZKLOPLJENA · privzeto</strong>
+              <span data-i18n="as.offP">Vsak zapis potrebuje Izvedi. Nič se ne spremeni, dokler ne kliknete.</span>
+            </div>
+            <div class="mode-card on">
+              <strong data-i18n="as.on">Avtonomija pisanja VKLOPLJENA</strong>
+              <span data-i18n="as.onP">Nastavitve → AI Pomočnik. Rutinski zapisi se izvedejo sami, z razveljavi. Tvegani še vedno zahtevajo odobritev.</span>
+            </div>
+          </div>
+          <div class="pipeline" aria-hidden="true">
+            <i data-i18n="as.p1">1 · vprašanje</i>
+            <i data-i18n="as.p2">2 · ime orodja</i>
+            <i data-i18n="as.p3">3 · predogled</i>
+            <i>4 · Izvedi</i>
+          </div>
+        </div>
+        <div class="preview-panel">
+          <p class="panel-kicker" data-i18n="as.example">Primer</p>
+          <h3 data-i18n="as.exTitle">Nič se ne zapiše iz besedila.</h3>
+          <p data-i18n="as.exP">Tako zgleda predlog, preden se v urniku karkoli spremeni.</p>
+          <div class="chat-mock">
+            <div class="chat-line you"><b data-i18n="as.you">Vi</b><span>naroči Ano Novak jutri ob 10h</span></div>
+            <div class="chat-line"><b>Hermes</b>
+              <div class="proposal">
+                <small>createAppointment</small>
+                <p data-i18n="as.prop">Ana Novak · jutri 10:00 · 30 min · stol 1</p>
+                <button type="button" class="izvedi" tabindex="-1">Izvedi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ask-block">
+        <h3 data-i18n="as.reads">Branja · takoj, tudi brez ponudnika AI</h3>
+        <p data-i18n="as.readsP">Ta vprašanja delujejo v slovenščini. Datumi se vežejo čez pogovor: »kaj pa 04.10«.</p>
+        <div class="ask-groups">
+          <div class="ask-group"><strong data-i18n="as.g.day">Dan in urnik</strong><div class="chips"><code>kaj imam danes</code><code>termini jutri</code><code>kdo pride v ponedeljek</code><code>kdo je naročen 22.09</code><code>prosti termini 2.10</code><code>imate kaj fraj</code><code>kdo čaka na pregled</code></div></div>
+          <div class="ask-group"><strong data-i18n="as.g.pat">Bolniki</strong><div class="chips"><code>koliko bolnikov imam</code><code>pokaži Ano Novak</code><code>povzetek pacienta X</code><code>zadnji obisk za X</code><code>kaj veš o X</code></div></div>
+          <div class="ask-group"><strong data-i18n="as.g.money">Računi in poslovanje</strong><div class="chips"><code>neplačani računi</code><code>kdo ni plačal</code><code>zapadli računi</code><code>kateri računi ima Meta Vidmar</code><code>kako poslujemo letos</code><code>izterjava</code><code>letni promet</code></div></div>
+          <div class="ask-group"><strong data-i18n="as.g.ops">Zaloga, lab, ekipa</strong><div class="chips"><code>kaj manjka v zalogi</code><code>lab primeri zamujeno</code><code>kdo je na dopustu</code><code>spore testi</code><code>sterilizacija</code><code>povzetek ordinacije</code><code>kaj naj naredim</code></div></div>
+        </div>
+      </div>
+
+      <div class="write-block">
+        <h3 data-i18n="as.writes">Zapisi · vedno predogled, nato Izvedi</h3>
+        <p data-i18n="as.writesP">Vsaka zmožnost ima stopnjo. Klinično in upravljavsko delo je omejeno po vlogi.</p>
+        <div class="write-grid">
+          <div class="write-col"><h4 data-i18n="as.w.sched">Urnik</h4><ul>
+            <li><b>createAppointment</b> — naroči Ano Novak jutri ob 10h</li>
+            <li><b>reschedule / cancel / confirm</b> — po imenu ali »tisti termin«</li>
+            <li><b>blockout</b> — blokiraj jutri ob 13h za odmor</li>
+          </ul></div>
+          <div class="write-col"><h4 data-i18n="as.w.pat">Bolniki</h4><ul>
+            <li><b>createPatient / updatePatient</b> — telefon, e-pošta, naslov</li>
+            <li><b>patientRecare</b> — naslednji kontrolni termin</li>
+            <li><b>patientCommunication</b> — zabeleži klic/SMS (ne pošlje)</li>
+            <li><b>treatmentPlanRow / toothChart / patientConsent / patientDevice</b></li>
+          </ul></div>
+          <div class="write-col"><h4 data-i18n="as.w.bill">Računi</h4><ul>
+            <li><b>issueInvoice</b> — račun ali predračun, več postavk iz cenika</li>
+            <li><b>recordPayment</b> — delno ali celotno plačilo</li>
+            <li><b>printPdf</b> — natisni račun 2026-0001</li>
+            <li><b>recordVisit</b> — opravljeno, diagnoza</li>
+          </ul></div>
+          <div class="write-col"><h4 data-i18n="as.w.ops">Zaloga, lab, sterilizacija</h4><ul>
+            <li><b>stockAdjust</b> — prejem/poraba samodejno; odpad potrebuje odobritev</li>
+            <li><b>labStatus / labCaseCreate / labCaseUpdate</b></li>
+            <li><b>sterilizationCycle</b> — samo klinične vloge</li>
+            <li><b>servicePriceEdit</b> — samo vodenje</li>
+          </ul></div>
+          <div class="write-col"><h4 data-i18n="as.w.team">Ekipa in navigacija</h4><ul>
+            <li><b>timeOff</b> — odsotnost, samo vodenje</li>
+            <li><b>incidentReport</b> — varnostni incident, samo vodenje</li>
+            <li><b>openPatient / navigate</b> — odpri kartoteko ali zaslon</li>
+            <li><b>undoLast / cancelProposal</b> — razveljavi zadnjih 10 dejanj</li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="role-block">
+        <h3 data-i18n="as.roles">Omejitve po vlogi</h3>
+        <p data-i18n="as.rolesP">Ista vprašanja, različna dovoljenja. To ni ločen program — to so pravila v Hermes Dental.</p>
+        <div class="role-grid">
+          <article class="role-card"><span>01</span><h4 data-i18n="as.r1">Recepcija</h4><p data-i18n="as.r1p">Brez sterilizacije, statusa laba, obiska, naprave, načrta, zoba, soglasja, dopusta, cenika in incidentov.</p></article>
+          <article class="role-card"><span>02</span><h4 data-i18n="as.r2">Asistent</h4><p data-i18n="as.r2p">Lahko klinično delo: sterilizacija, lab, obisk, zob. Ne dopust, cenik ali incident.</p></article>
+          <article class="role-card"><span>03</span><h4 data-i18n="as.r3">Lastnik / zobozdravnik</h4><p data-i18n="as.r3p">Vse zmožnosti, še vedno za predogledom Izvedi, razen če je avtonomija pisanja vklopljena za rutino.</p></article>
+        </div>
+      </div>
+
+      <div class="flow-block">
+        <h3 data-i18n="as.flow">Poteki, ki jih zares konča</h3>
+        <p data-i18n="as.flowP">Več korakov, ena odobritev na korak. Klik na predlog iz »kaj naj naredim« ga zažene.</p>
+        <ul class="flow-list">
+          <li><code>novega pacienta Maja Kovač naroči jutri ob 10h in izdaj račun za plombo</code></li>
+          <li><code>zabeleži obisk, opravljeno plomba 36</code> → <code>izdaj račun za včerajšnje</code></li>
+          <li><code>izdaj predračun za implantat</code> → PDF → podpis v Finance</li>
+          <li><code>kdo ni plačal</code> → <code>zabeleži plačilo 30 € za Meta Vidmar, gotovina</code></li>
+        </ul>
+      </div>
+
+      <div class="gap-block">
+        <h3 data-i18n="as.gap">Česa ne zmore — pošteno</h3>
+        <p data-i18n="as.gapP">Raje povemo mejo, kot da obljubimo pošiljanje, ki ga ni.</p>
+        <ul>
+          <li data-i18n="as.g1">Ne pošilja e-pošte ali SMS pacientu. »Pošlji račun stranki« se ustavi pri pripravi dokumenta.</li>
+          <li data-i18n="as.g2">Lahko ustvarja, ne pa ureja ali briše večine zapisov: vrstice načrta, blokade, naprave, preklic soglasja, artikle, dopuste.</li>
+          <li data-i18n="as.g3">Ni nalaganja, podpisov, izvozov, povzetkov ali varnostnih kopij iz klepeta.</li>
+          <li data-i18n="as.g4">Razveljavi zadnjih 10 dejanj.</li>
+        </ul>
+      </div>
+    </section>
 
     <!-- ============ DEMO ============ -->
     <section class="band" id="demo">

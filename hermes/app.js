@@ -6,6 +6,8 @@ const I18N = {
     "plans.link": "Več o paketih →",
     "plans.price": "Cena po povpraševanju",
     "nav.product": "Produkt",
+    "nav.assistant": "Pomočnik",
+    "nav.menu": "Meni",
     "nav.screens": "Zasloni",
     "nav.pricing": "Cenik",
     "nav.status": "Stanje",
@@ -14,7 +16,7 @@ const I18N = {
     "hero.kicker": "Za ordinacije · lokalna tehnologija",
     "hero.title": "Manj časa za papirje. Več časa za zobe.",
     "hero.lede":
-      "Urnik, kartoteka, odontogram, načrt zdravljenja in računi v enem delovnem okolju. Plačljivi mesečni paketi, prilagojeni potrebam ordinacije.",
+      "Urnik, kartoteka, odontogram, načrt zdravljenja in računi v enem delovnem okolju. Pomočnik Hermes razume slovenščino. Plačljivi mesečni paketi, prilagojeni potrebam ordinacije.",
     "hero.cta1": "Prenesi za macOS",
     "hero.cta2": "Poizkusite v brskalniku →",
     "hero.free": "Mesečna naročnina",
@@ -131,6 +133,55 @@ const I18N = {
     a8: "Da. Hermes Dental.app je prava .app datoteka — dvakrat klik, odpre se v svojem oknu. Apple silicon in Intel. Podatki gredo v ~/Library/Application Support/HermesDental/.",
 
     "ft.line": " · Apollo Solutions · mesečni paketi",
+
+    "as.kicker": "Znotraj programa",
+    "as.title": "Pomočnik Hermes.",
+    "as.title2": "Pišete. Pregledate. Izvedete.",
+    "as.intro": "Pišete v slovenščini. Agent poišče pravo orodje, vsak zapis pa se konča pri točnem predogledu z gumbom Izvedi. Besedilo samo ne spremeni ničesar. Model samo poimenuje orodje — strežnik ga izvede po pravilih.",
+    "as.safety": "Varnostni model",
+    "as.modes": "Dva načina pisanja",
+    "as.modesP": "Privzeto vsak zapis zahteva vaš klik. Rutinske zapise lahko odobrite v nastavitvah; tvegani še vedno čakajo na vas.",
+    "as.off": "Avtonomija pisanja IZKLOPLJENA · privzeto",
+    "as.offP": "Vsak zapis potrebuje Izvedi. Nič se ne spremeni, dokler ne kliknete.",
+    "as.on": "Avtonomija pisanja VKLOPLJENA",
+    "as.onP": "Nastavitve → AI Pomočnik. Rutinski zapisi se izvedejo sami, z razveljavi. Tvegani še vedno zahtevajo odobritev.",
+    "as.p1": "1 · vprašanje",
+    "as.p2": "2 · ime orodja",
+    "as.p3": "3 · predogled",
+    "as.example": "Primer",
+    "as.exTitle": "Nič se ne zapiše iz besedila.",
+    "as.exP": "Tako zgleda predlog, preden se v urniku karkoli spremeni.",
+    "as.you": "Vi",
+    "as.prop": "Ana Novak · jutri 10:00 · 30 min · stol 1",
+    "as.reads": "Branja · takoj, tudi brez ponudnika AI",
+    "as.readsP": "Ta vprašanja delujejo v slovenščini. Datumi se vežejo čez pogovor: »kaj pa 04.10«.",
+    "as.g.day": "Dan in urnik",
+    "as.g.pat": "Bolniki",
+    "as.g.money": "Računi in poslovanje",
+    "as.g.ops": "Zaloga, lab, ekipa",
+    "as.writes": "Zapisi · vedno predogled, nato Izvedi",
+    "as.writesP": "Vsaka zmožnost ima stopnjo. Klinično in upravljavsko delo je omejeno po vlogi.",
+    "as.w.sched": "Urnik",
+    "as.w.pat": "Bolniki",
+    "as.w.bill": "Računi",
+    "as.w.ops": "Zaloga, lab, sterilizacija",
+    "as.w.team": "Ekipa in navigacija",
+    "as.roles": "Omejitve po vlogi",
+    "as.rolesP": "Ista vprašanja, različna dovoljenja. To ni ločen program — to so pravila v Hermes Dental.",
+    "as.r1": "Recepcija",
+    "as.r1p": "Brez sterilizacije, statusa laba, obiska, naprave, načrta, zoba, soglasja, dopusta, cenika in incidentov.",
+    "as.r2": "Asistent",
+    "as.r2p": "Lahko klinično delo: sterilizacija, lab, obisk, zob. Ne dopust, cenik ali incident.",
+    "as.r3": "Lastnik / zobozdravnik",
+    "as.r3p": "Vse zmožnosti, še vedno za predogledom Izvedi, razen če je avtonomija pisanja vklopljena za rutino.",
+    "as.flow": "Poteki, ki jih zares konča",
+    "as.flowP": "Več korakov, ena odobritev na korak. Klik na predlog iz »kaj naj naredim« ga zažene.",
+    "as.gap": "Česa ne zmore — pošteno",
+    "as.gapP": "Raje povemo mejo, kot da obljubimo pošiljanje, ki ga ni.",
+    "as.g1": "Ne pošilja e-pošte ali SMS pacientu. »Pošlji račun stranki« se ustavi pri pripravi dokumenta.",
+    "as.g2": "Lahko ustvarja, ne pa ureja ali briše večine zapisov: vrstice načrta, blokade, naprave, preklic soglasja, artikle, dopuste.",
+    "as.g3": "Ni nalaganja, podpisov, izvozov, povzetkov ali varnostnih kopij iz klepeta.",
+    "as.g4": "Razveljavi zadnjih 10 dejanj.",
   },
   en: {
     "plans.kicker": "Monthly plans",
@@ -139,6 +190,8 @@ const I18N = {
     "plans.link": "Explore plans →",
     "plans.price": "Pricing on request",
     "nav.product": "Product",
+    "nav.assistant": "Assistant",
+    "nav.menu": "Menu",
     "nav.screens": "Screens",
     "nav.pricing": "Pricing",
     "nav.status": "Status",
@@ -147,7 +200,7 @@ const I18N = {
     "hero.kicker": "For dental practices · local technology",
     "hero.title": "Less time on paperwork. More time on teeth.",
     "hero.lede":
-      "Scheduling, patient records, odontogram, treatment plans, and billing in one workspace. Paid monthly plans matched to your practice.",
+      "Scheduling, patient records, odontogram, treatment plans, and billing in one workspace. The Hermes assistant understands Slovenian. Paid monthly plans matched to your practice.",
     "hero.cta1": "Download for macOS",
     "hero.cta2": "Try it in the browser →",
     "hero.free": "Monthly plans",
@@ -264,6 +317,55 @@ const I18N = {
     a8: "Yes. Hermes Dental.app is a real .app file — double-click and it opens in its own window. Apple silicon and Intel. Data goes to ~/Library/Application Support/HermesDental/.",
 
     "ft.line": " · Apollo Solutions · monthly plans",
+
+    "as.kicker": "Inside the application",
+    "as.title": "The Hermes assistant.",
+    "as.title2": "Type. Review. Run.",
+    "as.intro": "You type in Slovenian. The agent finds the right tool, and every write ends at an exact preview with an Izvedi button. Nothing changes from text alone. The model only names a tool — the server runs it by policy.",
+    "as.safety": "Safety model",
+    "as.modes": "Two write modes",
+    "as.modesP": "By default every write needs your click. Routine writes can auto-run from settings; risky ones still wait for you.",
+    "as.off": "Write autonomy OFF · default",
+    "as.offP": "Every write needs Izvedi. Nothing mutates until you click.",
+    "as.on": "Write autonomy ON",
+    "as.onP": "Settings → AI assistant. Routine writes auto-execute, with undo. Risky ones still need approval.",
+    "as.p1": "1 · question",
+    "as.p2": "2 · tool name",
+    "as.p3": "3 · preview",
+    "as.example": "Example",
+    "as.exTitle": "Nothing is written from text.",
+    "as.exP": "This is the proposal, before the schedule changes.",
+    "as.you": "You",
+    "as.prop": "Ana Novak · tomorrow 10:00 · 30 min · chair 1",
+    "as.reads": "Reads · instant, even with no AI provider",
+    "as.readsP": "These questions work in Slovenian. Dates carry across the conversation: “kaj pa 04.10”.",
+    "as.g.day": "Day and schedule",
+    "as.g.pat": "Patients",
+    "as.g.money": "Invoices and the year",
+    "as.g.ops": "Stock, lab, team",
+    "as.writes": "Writes · always a preview, then Izvedi",
+    "as.writesP": "Each capability has a tier. Clinical and management work is limited by role.",
+    "as.w.sched": "Schedule",
+    "as.w.pat": "Patients",
+    "as.w.bill": "Billing",
+    "as.w.ops": "Stock, lab, sterilization",
+    "as.w.team": "Team and navigation",
+    "as.roles": "Role limits",
+    "as.rolesP": "Same questions, different permissions. Not a separate product — rules inside Hermes Dental.",
+    "as.r1": "Reception",
+    "as.r1p": "No sterilization, lab status, visit, device, plan, tooth, consent, time off, price book, or incidents.",
+    "as.r2": "Assistant",
+    "as.r2p": "May do clinical work: sterilization, lab, visit, tooth. Not time off, price book, or incidents.",
+    "as.r3": "Owner / dentist",
+    "as.r3p": "Everything, still behind Izvedi unless write autonomy is on for routine work.",
+    "as.flow": "Workflows it can actually finish",
+    "as.flowP": "Multi-step chains, one approval per step. Clicking a nudge from “kaj naj naredim” runs it.",
+    "as.gap": "What it cannot do — honestly",
+    "as.gapP": "Better a clear limit than a promise to send mail it cannot send.",
+    "as.g1": "It does not send email or SMS to a patient. “Pošlji račun stranki” stops at preparing the document.",
+    "as.g2": "It can create, but not edit or delete most records: plan rows, blockouts, devices, consent revoke, stock items, time off.",
+    "as.g3": "No uploads, signatures, exports, digests, or backups from chat.",
+    "as.g4": "Undo covers the last 10 actions.",
   },
 };
 
@@ -290,6 +392,21 @@ function apply(next) {
 }
 
 btn.addEventListener("click", () => apply(lang === "sl" ? "en" : "sl"));
+
+const menuButton = document.getElementById("menuBtn");
+const navigation = document.getElementById("main-nav");
+if (menuButton && navigation) {
+  menuButton.addEventListener("click", () => {
+    const open = navigation.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", String(open));
+  });
+  navigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      navigation.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 // ---------- Showcase gallery ----------
 const GALLERY_DATA = {
