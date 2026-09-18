@@ -1,7 +1,9 @@
-const HERMES_URL = "/apollo-solutions/hermes";
+const HERMES_URL = new URL("hermes", document.currentScript.src).href;
 
 const I18N = {
   sl: {
+    "archive.note": "Arhiv: poslovna usmeritev v tem zapisu ni več aktualna. Apollo zdaj ponuja plačljive mesečne pakete. Aktualne informacije so na domači strani.",
+    "archive.link": "Apollo danes →",
     "nav.hermes": "Hermes Dental",
     "nav.work": "Orodja",
     "nav.approach": "Kako delamo",
@@ -157,6 +159,8 @@ const I18N = {
       "Če želite, da vam naredimo “appko”, odgovor je ne. Če ste ujeti v program, ki stane preveč, in imamo že odgovor — pišite.",
   },
   en: {
+    "archive.note": "Archive: the commercial positioning in this article is no longer current. Apollo now offers paid monthly plans. Visit the homepage for current information.",
+    "archive.link": "Apollo today →",
     "nav.hermes": "Hermes Dental",
     "nav.work": "Tools",
     "nav.approach": "How we work",
@@ -313,6 +317,18 @@ const I18N = {
   },
 };
 
+const article = document.querySelector(".article");
+if (article) {
+  const notice = document.createElement("aside");
+  notice.className = "archive-notice";
+  const copy = document.createElement("p");
+  copy.dataset.i18n = "archive.note";
+  const link = document.createElement("a");
+  link.href = new URL("./", document.currentScript.src).href;
+  link.dataset.i18n = "archive.link";
+  notice.append(copy, link);
+  article.prepend(notice);
+}
 const btn = document.getElementById("langBtn");
 let lang = localStorage.getItem("as-lang") || "en";
 
@@ -512,5 +528,4 @@ startCycle();
   };
   setTimeout(loop, 1600);
 })();
-
 

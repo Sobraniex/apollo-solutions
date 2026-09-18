@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hermes Dental — program za zobno ordinacijo</title>
-  <meta name="description" content="Manj časa za papirje. Več časa za zobe. Zastonj in na vašem računalniku. Urnik, kartoteka, odontogram, načrt zdravljenja, finance, varnostna kopija." />
+  <meta name="description" content="Manj časa za papirje. Več časa za zobe. Urnik, kartoteka, odontogram, načrt zdravljenja in računi na vašem Macu. Mesečni paketi, cena po povpraševanju." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,14 +25,14 @@
       <nav class="nav-links">
         <a href="#vrednost" data-i18n="nav.product">Produkt</a>
         <a href="#slike" data-i18n="nav.screens">Zasloni</a>
-        <a href="#demo">Demo</a>
+        <a href="pricing.html" data-i18n="nav.pricing">Cenik</a>
         <a href="#stanje" data-i18n="nav.status">Stanje</a>
         <a href="#namestitev" data-i18n="nav.install">Namesti</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
         <button class="lang" type="button" id="langBtn" aria-label="Language">EN</button>
-        <a class="btn btn-navy" href="/apollo-solutions/" data-i18n="nav.home">← Apollo Solutions</a>
+        <a class="btn btn-navy" href="../" data-i18n="nav.home">← Apollo Solutions</a>
       </div>
     </div>
   </header>
@@ -41,23 +41,33 @@
     <!-- ============ HERO ============ -->
     <section class="wrap hero">
       <div class="hero-copy">
-        <p class="kicker" data-i18n="hero.kicker">Odprta koda · lokalno · zastonj</p>
+        <p class="kicker" data-i18n="hero.kicker">Za ordinacije · lokalna tehnologija</p>
         <h1 data-i18n="hero.title">Manj časa za papirje.<br/>Več časa za zobe.</h1>
-        <p class="lede" data-i18n="hero.lede">Diplomatski urnik, kartoteka, odontogram, načrt zdravljenja in blagajna — na vašem računalniku, brez naročnine, brez oblaka.</p>
+        <p class="lede" data-i18n="hero.lede">Urnik, kartoteka, odontogram, načrt zdravljenja in računi v enem delovnem okolju. Plačljivi mesečni paketi, prilagojeni potrebam ordinacije.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="https://github.com/Sobraniex/apollo-solutions/releases/download/v0.3.3/Hermes-Dental-v0.3.3.zip" download data-i18n="hero.cta1">Prenesi za macOS</a>
           <a class="btn btn-ghost btn-lg" href="#demo" data-i18n="hero.cta2">Poizkusite v brskalniku →</a>
         </div>
         <div class="meta-row">
-          <span class="pill pill-green" data-i18n="hero.free">Brez naročnine</span>
+          <span class="pill pill-green" data-i18n="hero.free">Mesečna naročnina</span>
           <span class="pill pill-amber" data-i18n="hero.wip">macOS · Apple silicon · 101 MB</span>
-          <span class="pill" data-i18n="hero.self">MIT · podatki pri vas</span>
+          <span class="pill" data-i18n="hero.self">Lokalna namestitev</span>
         </div>
       </div>
       <figure class="device-frame">
         <img src="images/shots/domov.png" alt="Hermes Dental — Domov: današnji termini, recare, odprti računi, čakalna vrsta" />
         <figcaption class="device-cap" data-i18n="hero.cap">Vaše jutro, preden je odprta vrata.<span class="dot-sep">·</span>Stol 1 · slovenski vmesnik</figcaption>
       </figure>
+    </section>
+
+    <!-- Inline trial CTA (Task 19) -->
+    <section class="band" id="trial-cta">
+      <div class="wrap" style="text-align:center;max-width:620px">
+        <p class="kicker" data-i18n="plans.kicker">Mesečni paketi</p>
+        <h2 data-i18n="plans.title">Program za vaše delovno okolje.</h2>
+        <p class="lede" data-i18n="plans.description">Ceno in obseg pripravimo glede na potrebe vaše ordinacije.</p>
+        <a class="btn btn-primary btn-lg" href="pricing.html" data-i18n="plans.link">Več o paketih →</a>
+      </div>
     </section>
 
     <!-- subtle divider row -->
@@ -249,11 +259,11 @@
       <span class="sep">·</span>
       <span><b>6</b> zavihkov</span>
       <span class="sep">·</span>
-      <span><b>0 €</b>/mesec</span>
+      <span data-i18n="plans.kicker">Mesečni paketi</span>
       <span class="sep">·</span>
-      <span><b>100%</b> lokalno</span>
+      <span data-i18n="hero.self">Lokalna namestitev</span>
       <span class="sep">·</span>
-      <span><b>MIT</b> licenca</span>
+      <a href="pricing.html" data-i18n="plans.price">Cena po povpraševanju</a>
     </div>
 
     <!-- ============ NAMESTITEV ============ -->
@@ -324,12 +334,12 @@
         <h2 data-i18n="faq.title">Kratka vprašanja</h2>
         <div class="faq">
           <details open>
-            <summary data-i18n="q1">Je res zastonj?</summary>
-            <p data-i18n="a1">Da. Ni plana, ni trial, ni "pro". Kodo vzamete in jo uporabljate. Program ostane odprt.</p>
+            <summary data-i18n="q1">Kako se obračunava uporaba?</summary>
+            <p data-i18n="a1">Hermes Dental je plačljiv program z mesečno naročnino. Ceno, obseg in pogoje pripravimo po povpraševanju.</p>
           </details>
           <details>
             <summary data-i18n="q2">Kam gredo podatki pacientov?</summary>
-            <p data-i18n="a2">Na vaš računalnik, v lokalno SQLite bazo. Ni oblaka, ni telemetry. Vi ste administrator. Varnostna kopija je en klik.</p>
+            <p data-i18n="a2">Pri lokalni namestitvi je baza na vašem računalniku. Pretok podatkov v povezane storitve, varnostne kopije ali ponudnika umetne inteligence je odvisen od nastavitev.</p>
           </details>
           <details>
             <summary data-i18n="q3">Je to za koncesijo / ZZZS?</summary>
@@ -341,7 +351,7 @@
           </details>
           <details>
             <summary data-i18n="q5">Kaj če kaj ne dela?</summary>
-            <p data-i18n="a5">Odpri na GitHubu. Podatki ostanejo na vašem disku. Če stvar ne deluje za vas, kodo spreminjate.</p>
+            <p data-i18n="a5">Možnosti podpore in njen obseg določimo v ponudbi za vašo ordinacijo.</p>
           </details>
           <details>
             <summary data-i18n="q6">Lahko zaračunavam z njim?</summary>
@@ -360,19 +370,29 @@
     </section>
   </main>
 
-  <footer class="wrap footer">
-    <div>
-      Hermes Dental
-      <span data-i18n="ft.line"> · odprta koda · ni medicinski pripomoček · brez jamstva</span>
-      <span> · </span>
-      <a href="/apollo-solutions/">Apollo Solutions</a>
-    </div>
-    <div>
-      <a href="https://github.com/Sobraniex/dental-app">github.com/Sobraniex/dental-app</a>
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© 2026 Hermes Dental</span>
+      <a href="pricing.html">Cenik</a>
+      <a href="security.html">Varnost</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Zasebnost</a>
+      <a href="terms.html">Pogoji</a>
+      <a href="status/">Status</a>
+      <span class="pill pill-amber">Narejeno v Sloveniji</span>
     </div>
   </footer>
 
+  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-label="Obvestilo o piškotkih">
+    <p>Ta stran uporablja piškotke za analitiko (PostHog) in spremljanje napak (Sentry). Brez vašega soglasja jih ne naložimo.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost" id="cookieReject">Zavrni</button>
+      <button class="btn btn-primary" id="cookieAccept">Sprejmi</button>
+    </div>
+  </div>
+
   <script src="app.js"></script>
+  <script src="cookie-banner.js"></script>
   <script src="demo.js"></script>
 </body>
 </html>

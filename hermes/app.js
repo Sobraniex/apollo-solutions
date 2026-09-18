@@ -1,19 +1,25 @@
 const I18N = {
   sl: {
+    "plans.kicker": "Mesečni paketi",
+    "plans.title": "Program za vaše delovno okolje.",
+    "plans.description": "Ceno in obseg pripravimo glede na potrebe vaše ordinacije.",
+    "plans.link": "Več o paketih →",
+    "plans.price": "Cena po povpraševanju",
     "nav.product": "Produkt",
     "nav.screens": "Zasloni",
+    "nav.pricing": "Cenik",
     "nav.status": "Stanje",
     "nav.install": "Namesti",
     "nav.home": "← Apollo Solutions",
-    "hero.kicker": "Odprta koda · lokalno · zastonj",
+    "hero.kicker": "Za ordinacije · lokalna tehnologija",
     "hero.title": "Manj časa za papirje. Več časa za zobe.",
     "hero.lede":
-      "Diplomatski urnik, kartoteka, odontogram, načrt zdravljenja in blagajna — na vašem računalniku, brez naročnine, brez oblaka.",
+      "Urnik, kartoteka, odontogram, načrt zdravljenja in računi v enem delovnem okolju. Plačljivi mesečni paketi, prilagojeni potrebam ordinacije.",
     "hero.cta1": "Prenesi za macOS",
     "hero.cta2": "Poizkusite v brskalniku →",
-    "hero.free": "Brez naročnine",
+    "hero.free": "Mesečna naročnina",
     "hero.wip": "macOS · Apple silicon · 101 MB",
-    "hero.self": "MIT · podatki pri vas",
+    "hero.self": "Lokalna namestitev",
     "hero.cap": "Vaše jutro, preden je odprta vrata. · Stol 1 · slovenski vmesnik",
     "dm.loggedin": "Prijavljeni kot:",
 
@@ -107,16 +113,16 @@ const I18N = {
     "in.help": "Podrobna navodila za namestitev →",
 
     "faq.title": "Kratka vprašanja",
-    q1: "Je res zastonj?",
-    a1: "Da. Ni plana, ni trial, ni “pro”. Kodo vzamete in jo uporabljate. Program ostane odprt.",
+    q1: "Kako se obračunava uporaba?",
+    a1: "Hermes Dental je plačljiv program z mesečno naročnino. Ceno, obseg in pogoje pripravimo po povpraševanju.",
     q2: "Kam gredo podatki pacientov?",
-    a2: "Na vaš računalnik, v lokalno SQLite bazo. Ni oblaka, ni telemetry. Vi ste administrator. Varnostna kopija je en klik.",
+    a2: "Pri lokalni namestitvi je baza na vašem računalniku. Pretok podatkov v povezane storitve, varnostne kopije ali ponudnika umetne inteligence je odvisen od nastavitev.",
     q3: "Je to za koncesijo / ZZZS?",
     a3: "Ne. To je za zasebno (samoplačniško) ordinacijo z enim stolom. Hipokrat to že pokriva za zdravstvene dome — mi tja ne gremo.",
     q4: "Koliko časa vzame, da se naučimo?",
     a4: "Dan ali dva. Vmesnik je v slovenščini, ni prehajanja med orodji, ni učnih videoposnetkov. Vtipkate prvi termin, vidite kako je.",
     q5: "Kaj če kaj ne dela?",
-    a5: "Odpri na GitHubu. Podatki ostanejo na vašem disku. Če stvar ne deluje za vas, kodo spreminjate.",
+    a5: "Možnosti podpore in njen obseg določimo v ponudbi za vašo ordinacijo.",
     q6: "Lahko zaračunavam z njim?",
     a6: "Račun, PDF, predračun, izvoz CSV — da. FURS fiscalization še ni, do takrat račune zaključujte, kot ste jih do zdaj.",
     q7: "Kam grejo priponke (RTG, slike)?",
@@ -124,23 +130,29 @@ const I18N = {
     q8: "Je macOS aplikacija?",
     a8: "Da. Hermes Dental.app je prava .app datoteka — dvakrat klik, odpre se v svojem oknu. Apple silicon in Intel. Podatki gredo v ~/Library/Application Support/HermesDental/.",
 
-    "ft.line": " · odprta koda · ni medicinski pripomoček · brez jamstva",
+    "ft.line": " · Apollo Solutions · mesečni paketi",
   },
   en: {
+    "plans.kicker": "Monthly plans",
+    "plans.title": "Software for your workplace.",
+    "plans.description": "Pricing and scope are matched to the needs of your practice.",
+    "plans.link": "Explore plans →",
+    "plans.price": "Pricing on request",
     "nav.product": "Product",
     "nav.screens": "Screens",
+    "nav.pricing": "Pricing",
     "nav.status": "Status",
     "nav.install": "Install",
     "nav.home": "← Apollo Solutions",
-    "hero.kicker": "Open source · local · free",
+    "hero.kicker": "For dental practices · local technology",
     "hero.title": "Less time on paperwork. More time on teeth.",
     "hero.lede":
-      "Diplomatic-style schedule, chart, odontogram, treatment plan and billing — on your computer, no subscription, no cloud.",
+      "Scheduling, patient records, odontogram, treatment plans, and billing in one workspace. Paid monthly plans matched to your practice.",
     "hero.cta1": "Download for macOS",
     "hero.cta2": "Try it in the browser →",
-    "hero.free": "No subscription",
+    "hero.free": "Monthly plans",
     "hero.wip": "macOS · Apple silicon · 101 MB",
-    "hero.self": "MIT · data stays with you",
+    "hero.self": "Local installation",
     "hero.cap": "Your morning, before the door opens. · Chair 1 · Slovenian UI",
     "dm.loggedin": "Signed in as:",
 
@@ -234,16 +246,16 @@ const I18N = {
     "in.help": "Detailed install instructions →",
 
     "faq.title": "Short answers",
-    q1: "Is it actually free?",
-    a1: "Yes. No plan, no trial, no “pro”. Take the code. The program stays open.",
+    q1: "How is it priced?",
+    a1: "Hermes Dental uses paid monthly plans. Pricing, scope, and terms are available on request.",
     q2: "Where does patient data go?",
-    a2: "On your machine, in a local SQLite file. No cloud, no telemetry. You are the admin. One click to back up.",
+    a2: "With a local installation, the database is on your computer. Data sent to connected services, backups, or an AI provider depends on your configuration.",
     q3: "Is this for public insurance / ZZZS?",
     a3: "No. This is for a private one-chair practice. Public-clinic software already covers that space — we're not targeting it.",
     q4: "How long until the team learns it?",
     a4: "A day or two. The UI is in Slovenian, there's no bouncing between tools, no training videos. Type the first appointment, you'll see how it works.",
     q5: "What if something doesn't work?",
-    a5: "File it on GitHub. Data stays on your disk. If something doesn't work for you, you change the code.",
+    a5: "Support options and scope are set out in the offer for your practice.",
     q6: "Can I invoice with it?",
     a6: "Invoice, PDF, estimate, CSV export: yes. FURS fiscalization isn't in yet — keep closing receipts as you do today until then.",
     q7: "Where do attachments go (X-rays, photos)?",
@@ -251,16 +263,19 @@ const I18N = {
     q8: "Is there a macOS app?",
     a8: "Yes. Hermes Dental.app is a real .app file — double-click and it opens in its own window. Apple silicon and Intel. Data goes to ~/Library/Application Support/HermesDental/.",
 
-    "ft.line": " · open source · not a medical device · no warranty",
+    "ft.line": " · Apollo Solutions · monthly plans",
   },
 };
 
 const btn = document.getElementById("langBtn");
-let lang = localStorage.getItem("hds-lang") || "sl";
+let storedLanguage;
+try { storedLanguage = localStorage.getItem("hds-lang"); } catch { /* Optional preference. */ }
+const requestedLanguage = new URLSearchParams(location.search).get("lang");
+let lang = [requestedLanguage, storedLanguage].find(value => value === "en" || value === "sl") || "sl";
 
 function apply(next) {
   lang = next;
-  localStorage.setItem("hds-lang", next);
+  try { localStorage.setItem("hds-lang", next); } catch { /* Optional preference. */ }
   document.documentElement.lang = next;
   const dict = I18N[next];
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -275,7 +290,6 @@ function apply(next) {
 }
 
 btn.addEventListener("click", () => apply(lang === "sl" ? "en" : "sl"));
-apply(lang);
 
 // ---------- Showcase gallery ----------
 const GALLERY_DATA = {
@@ -304,7 +318,7 @@ function setGalleryTab(key) {
     b.setAttribute("aria-selected", on ? "true" : "false");
   });
   galleryImg.src = d.src;
-  const dict = (I18N[localStorage.getItem("hds-lang") || "sl"]) || {};
+  const dict = I18N[lang] || {};
   const txt = dict[d.key] || "";
   if (galleryCaption) galleryCaption.textContent = txt;
   if (lightboxImg) lightboxImg.src = d.src;
@@ -337,3 +351,9 @@ if (lightbox) {
   lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
 }
+
+// Expose I18N on window so per-page translation overlays (pricing-i18n.js, etc.) can merge into it.
+if (typeof window !== 'undefined') window.I18N = I18N;
+
+// Apply language only after the gallery data and elements are initialized.
+apply(lang);

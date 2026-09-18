@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Dental — Pogosta vprašanja</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
+          <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+        <span>Hermes <em>Dental</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="pricing.html">Cenik</a>
+        <a href="security.html">Varnost</a>
+        <a href="faq.html" style="color: var(--eu-blue); font-weight:600">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" type="button" id="langBtn" aria-label="Language">EN</button>
+        <a class="btn btn-navy" href="index.html">Domov</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="hero-copy" style="max-width: 720px">
+        <p class="kicker">Pogosta vprašanja</p>
+        <h1>Hitri odgovori.</h1>
+        <p class="lede">
+          Če ne najdete odgovora, pišite na
+          <a href="mailto:support@hermes-dental.si">support@hermes-dental.si</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="faq-list">
+          <details>
+            <summary>Kako dolgo traja namestitev?</summary>
+            <p>Pet minut. Prenesete .app, povlečete v Aplikacije, dvakrat kliknete. Prvi zagon vas vodi skozi nastavitev ordinacije.</p>
+          </details>
+          <details>
+            <summary>Ali deluje na Windows?</summary>
+            <p>Ne, trenutno samo macOS (Apple silicon in Intel, 12+). Windows različica je na čakalni listi.</p>
+          </details>
+          <details>
+            <summary>Ali deluje brez interneta?</summary>
+            <p>Da. Vse deluje lokalno. Internet potrebujete samo za varnostno kopijo v oblak in (v prihodnosti) eZdrav pošiljanje.</p>
+          </details>
+          <details>
+            <summary>Koliko stane?</summary>
+            <p>Hermes Dental je na voljo s plačljivo mesečno naročnino. Ceno, obseg in pogoje pripravimo po povpraševanju.</p>
+          </details>
+          <details>
+            <summary>Kako lahko spoznam program?</summary>
+            <p>Oglejte si izdelek in zaslone. Spletna prijava za preizkus še ni na voljo; <a href="trial.html">informacije o preizkusu</a> objavimo, ko bodo pripravljene.</p>
+          </details>
+          <details>
+            <summary>Kaj če mi kaj ne ustreza?</summary>
+            <p>Brez vezave. Kadarkoli prekličete, izvozite podatke in odidete.</p>
+          </details>
+          <details>
+            <summary>Kako je z GDPR?</summary>
+            <p>GDPR in ZVOP-2 skladnost. Podatki ostanejo v EU. Več na strani <a href="security.html">Varnost</a>.</p>
+          </details>
+          <details>
+            <summary>Ali pošiljate podatke v oblak?</summary>
+            <p>Samo če vi to izrecno omogočite za varnostno kopijo. Privzeto je vse lokalno.</p>
+          </details>
+          <details>
+            <summary>Ali lahko uvozim podatke iz drugega programa?</summary>
+            <p>Da — CSV uvoz za bolnike, storitve in cenik. Podrobno v dokumentaciji.</p>
+          </details>
+          <details>
+            <summary>Kaj je z eZdrav / ZZZS / NIJZ?</summary>
+            <p>Izvoz podatkov v ZZZS 2.01 XML, NIJZ XML, eDavki CSV je vključen v paketu Praksa in Klinika. Samodejna oddaja prek digitalnih potrdil je v načrtu (faza 5).</p>
+          </details>
+          <details>
+            <summary>Ali kodo lahko pregledam?</summary>
+            <p>Hermes Dental je zasebni projekt. Varnostno kopijo izvorne kode imamo na več lokacijah. Za varnostno revizijo kontaktirajte <a href="mailto:security@hermes-dental.si">security@hermes-dental.si</a>.</p>
+          </details>
+          <details>
+            <summary>Kako vas kontaktiram?</summary>
+            <p>E-pošta: <a href="mailto:support@hermes-dental.si">support@hermes-dental.si</a>. Za varnostne incidente: <a href="mailto:security@hermes-dental.si">security@hermes-dental.si</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© 2026 Hermes Dental</span>
+      <a href="privacy.html">Zasebnost</a>
+      <a href="terms.html">Pogoji</a>
+      <a href="security.html">Varnost</a>
+      <a href="mailto:support@hermes-dental.si">support@hermes-dental.si</a>
+      <span class="pill pill-amber">Narejeno v Sloveniji</span>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-label="Obvestilo o piškotkih">
+    <p>Ta stran uporablja piškotke za analitiko (PostHog) in spremljanje napak (Sentry). Brez vašega soglasja jih ne naložimo.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost" id="cookieReject">Zavrni</button>
+      <button class="btn btn-primary" id="cookieAccept">Sprejmi</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="cookie-banner.js"></script>
+</body>
+</html>

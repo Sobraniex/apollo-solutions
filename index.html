@@ -3,410 +3,210 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apollo Solutions — useful software for work, not rent</title>
-  <meta name="description" content="We replace expensive apps and endless subscriptions with tools that run on your machine. No rent, for now." />
+  <title>Apollo Solutions — Architects of better work</title>
+  <meta name="description" content="Affordable workflow software and practical AI. Apollo Solutions builds toward better work with private agents, assistants inside apps, and thoughtful data protection." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Apollo Solutions — Architects of better work" />
+  <meta property="og:description" content="More human potential. Less busywork. Affordable software, practical AI, and better workflows." />
+  <meta property="og:image" content="https://sobraniex.github.io/apollo-solutions/images/apollo-social.png" />
+  <meta property="og:url" content="https://sobraniex.github.io/apollo-solutions/" />
+  <meta name="theme-color" content="#101014" />
+  <link rel="canonical" href="https://sobraniex.github.io/apollo-solutions/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="studio.css" />
+  <script src="home.js" defer></script>
+  <link rel="stylesheet" href="workbench.css" />
+  <script src="workbench.js" defer></script>
+  <script src="economy.js" defer></script>
 </head>
 <body>
-  <header class="nav" id="siteNav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top">
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-          <rect width="48" height="48" rx="10" fill="#12101c"/>
-          <circle cx="24" cy="24" r="6.2" fill="#c4b5fd"/>
-          <ellipse cx="24" cy="24" rx="16" ry="6.2" fill="none" stroke="#6ea0e8" stroke-width="1.7" transform="rotate(-22 24 24)"/>
-        </svg>
-        <span>Apollo <em>Solutions</em></span>
-      </a>
-      <nav class="nav-links">
-        <a href="/apollo-solutions/hermes/" data-i18n="nav.hermes">Hermes Dental</a>
-        <a href="#delo" data-i18n="nav.work">Tools</a>
-        <a href="#pristop" data-i18n="nav.approach">How we work</a>
-        <a href="#poslanstvo" data-i18n="nav.mission">Mission</a>
-        <a href="#novice" data-i18n="nav.news">News</a>
-        <a href="#blog" data-i18n="nav.blog">Blog</a>
-        <a href="#faq">FAQ</a>
-        <a href="#kontakt" data-i18n="nav.contact">Contact</a>
-      </nav>
-      <div class="nav-actions">
-        <button class="lang" type="button" id="langBtn" aria-label="Language">SL</button>
-      </div>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero-band">
-      <div class="sky" aria-hidden="true">
-        <div class="stars" id="stars"></div>
-        <div class="streaks" id="streaks"></div>
-      </div>
-      <div class="wrap hero">
-        <h1>
-          <span data-i18n="hero.line1">Tools a civilization</span>
-          <span data-i18n="hero.line2">can actually</span>
-          <span class="cycle-line">
-            <span class="cycle-slot">
-              <span id="cycleWord" class="cycle-word">own</span><span class="cycle-word cycle-dot">.</span>
-            </span><span class="caret" aria-hidden="true"></span>
-          </span>
-        </h1>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#pristop" data-i18n="hero.cta1">Get to know us</a>
-          <a class="btn btn-ghost btn-lg" href="https://github.com/Sobraniex/dental-app" data-i18n="hero.cta2">View documentation</a>
+  <a href="#main" class="skip-link" data-en="Skip to content" data-sl="Preskoči na vsebino">Skip to content</a>
+  <header class="site-header"><div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Apollo Solutions"><svg class="apollo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg><span>Apollo <span class="brand-light">Solutions</span></span></a>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="#resitve"><span data-en="Our focus" data-sl="Naša usmeritev">Our focus</span></a>
+      <a href="#potek"><span data-en="AI at work" data-sl="AI pri delu">AI at work</span></a>
+      <a href="#delo"><span data-en="Our software" data-sl="Naši programi">Our software</span></a>
+      <a class="nav-contact" href="#studio"><span data-en="Why Apollo ↗" data-sl="Zakaj Apollo ↗">Why Apollo ↗</span></a>
+    </nav>
+    <div class="header-actions"><button id="langBtn" class="language" type="button" aria-label="Switch to Slovenian">SL</button><button id="menuBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" data-en="Menu" data-sl="Meni">Menu</button></div>
+  </div></header>
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-layout">
+        <div class="hero-message">
+          <p class="eyebrow"><span class="status-dot"></span><span data-en="Architects of better work" data-sl="Arhitekti boljšega dela">Architects of better work</span></p>
+          <h1 id="hero-title"><span data-en="Human ambition." data-sl="Človeška zagnanost.">Human ambition.</span><br/><em data-en="Less busywork." data-sl="Manj rutine.">Less busywork.</em></h1>
+          <p class="hero-copy" data-en="Your day is already full. We build affordable software and AI assistants that help with appointments, records, and the small tasks that pile up—so you can focus on the people in front of you." data-sl="Vaš dan je že poln. Gradimo cenovno dostopne programe in pomočnike AI za termine, evidence in drobne naloge, ki se kopičijo—da se lahko posvetite ljudem pred seboj.">Your day is already full. We build affordable software and AI assistants that help with appointments, records, and the small tasks that pile up—so you can focus on the people in front of you.</p>
+          <div class="actions"><a class="button primary" href="#resitve"><span data-en="Discover our approach" data-sl="Spoznajte naš pristop">Discover our approach</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#potek"><span data-en="See the possibilities ↓" data-sl="Raziščite možnosti ↓">See the possibilities ↓</span></a></div>
+        </div>
+        <div class="hero-system" aria-hidden="true">
+          <div class="system-top"><span>APOLLO / SYSTEMS FOR PEOPLE</span><span class="system-dot"></span></div>
+          <div class="system-map">
+            <span class="map-orbit orbit-one"></span><span class="map-orbit orbit-two"></span>
+            <div class="map-core"><svg class="apollo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg></div>
+            <span class="map-node node-human"><span data-en="Your judgement" data-sl="Vaša presoja">Your judgement</span></span>
+            <span class="map-node node-context"><span data-en="Connected information" data-sl="Povezani podatki">Connected information</span></span>
+            <span class="map-node node-agent"><span data-en="An assistant that helps" data-sl="Pomočnik pri delu">An assistant that helps</span></span>
+            <span class="map-point point-one"></span><span class="map-point point-two"></span>
+          </div>
+          <div class="system-bottom"><span data-en="Technology that gives something back." data-sl="Tehnologija, ki nekaj vrne.">Technology that gives something back.</span><span>↗</span></div>
         </div>
       </div>
-      <div class="wrap tiles" id="delo">
-        <a class="tile" id="hermesCard" href="/apollo-solutions/hermes/">
-          <div class="tile-media tile-site">
-            <iframe id="hermesFrame" src="/apollo-solutions/hermes/" title="Hermes Dental" tabindex="-1" loading="lazy"></iframe>
-          </div>
-          <div class="tile-bar">
-            <b>Hermes Dental</b>
-            <span data-i18n="hd.go">Explore →</span>
-          </div>
-        </a>
-        <div class="tile empty">
-          <div class="tile-media">
-            <svg class="sprig" viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M18 52c10-8 16-16 18-28" fill="none" stroke="currentColor" stroke-width="1.2"/>
-              <ellipse cx="32" cy="22" rx="5" ry="2.4" transform="rotate(-28 32 22)"/>
-              <ellipse cx="38" cy="28" rx="5.2" ry="2.4" transform="rotate(18 38 28)"/>
-              <ellipse cx="28" cy="30" rx="4.8" ry="2.2" transform="rotate(-12 28 30)"/>
-              <ellipse cx="36" cy="36" rx="5" ry="2.3" transform="rotate(22 36 36)"/>
-              <ellipse cx="26" cy="38" rx="4.6" ry="2.1" transform="rotate(-20 26 38)"/>
-            </svg>
-          </div>
-          <div class="tile-bar">
-            <b>02</b>
-            <span data-i18n="held">Reserved</span>
-          </div>
-        </div>
-        <div class="tile empty">
-          <div class="tile-media">
-            <svg class="sprig" viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M18 52c10-8 16-16 18-28" fill="none" stroke="currentColor" stroke-width="1.2"/>
-              <ellipse cx="32" cy="22" rx="5" ry="2.4" transform="rotate(-28 32 22)"/>
-              <ellipse cx="38" cy="28" rx="5.2" ry="2.4" transform="rotate(18 38 28)"/>
-              <ellipse cx="28" cy="30" rx="4.8" ry="2.2" transform="rotate(-12 28 30)"/>
-              <ellipse cx="36" cy="36" rx="5" ry="2.3" transform="rotate(22 36 36)"/>
-              <ellipse cx="26" cy="38" rx="4.6" ry="2.1" transform="rotate(-20 26 38)"/>
-            </svg>
-          </div>
-          <div class="tile-bar">
-            <b>03</b>
-            <span data-i18n="held">Reserved</span>
-          </div>
-        </div>
-        <div class="tile empty">
-          <div class="tile-media">
-            <svg class="sprig" viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M18 52c10-8 16-16 18-28" fill="none" stroke="currentColor" stroke-width="1.2"/>
-              <ellipse cx="32" cy="22" rx="5" ry="2.4" transform="rotate(-28 32 22)"/>
-              <ellipse cx="38" cy="28" rx="5.2" ry="2.4" transform="rotate(18 38 28)"/>
-              <ellipse cx="28" cy="30" rx="4.8" ry="2.2" transform="rotate(-12 28 30)"/>
-              <ellipse cx="36" cy="36" rx="5" ry="2.3" transform="rotate(22 36 36)"/>
-              <ellipse cx="26" cy="38" rx="4.6" ry="2.1" transform="rotate(-20 26 38)"/>
-            </svg>
-          </div>
-          <div class="tile-bar">
-            <b>04</b>
-            <span data-i18n="held">Reserved</span>
-          </div>
-        </div>
-      </div>
+      <div class="hero-bottom"><span><span data-en="Built in Slovenia. Thinking beyond borders." data-sl="Nastaja v Sloveniji. Razmišljamo širše.">Built in Slovenia. Thinking beyond borders.</span></span><div class="hero-topics"><span data-en="Affordable by intention" data-sl="Z mislijo na dostopnost">Affordable by intention</span><i></i><span data-en="AI with a purpose" data-sl="AI z namenom">AI with a purpose</span></div></div>
     </section>
 
-    <section class="band band-muted" id="pristop">
-      <div class="wrap">
-        <p class="kicker" data-i18n="ap.kicker">How we work</p>
-        <h2 data-i18n-html="ap.title">We set up the tool.<br/>You get back to work.</h2>
-        <p class="sub" data-i18n="ap.sub">If the software bill is growing faster than the business, we already built a replacement. We install it with you. We do not take custom jobs.</p>
-
-        <div class="core">
-          <article>
-            <div class="num">01</div>
-            <h3 data-i18n="ap1.t">The tool should serve the work</h3>
-            <p data-i18n="ap1.p">If a program costs more time and money than it saves, it is the wrong program. We replace those.</p>
-          </article>
-          <article>
-            <div class="num">02</div>
-            <h3 data-i18n="ap2.t">It runs on your computer</h3>
-            <p data-i18n="ap2.p">Your files stay with you. Nothing turns off because a landlord raised the rent. You own what you depend on.</p>
-          </article>
-          <article>
-            <div class="num">03</div>
-            <h3 data-i18n="ap3.t">We set it up with you</h3>
-            <p data-i18n="ap3.p">First day together. Then the team goes back to the job they were hired for — not to the software around it.</p>
-          </article>
-        </div>
-
-        <div class="split">
-          <div class="do">
-            <h3 data-i18n="yes.t">What we do</h3>
-            <ul>
-              <li data-i18n="yes.1">Replace software that costs more than it returns</li>
-              <li data-i18n="yes.2">Install it with you. First day. Then work.</li>
-              <li data-i18n="yes.3">Your computer. Your files. Your numbers.</li>
-              <li data-i18n="yes.4">Only problems we see repeating in the market</li>
-            </ul>
-          </div>
-          <div class="dont">
-            <h3 data-i18n="no.t">What we don’t</h3>
-            <ul>
-              <li data-i18n="no.1">Custom apps “for our company”</li>
-              <li data-i18n="no.2">A new monthly licence to stay in the tool</li>
-              <li data-i18n="no.3">Your data sitting on someone else’s server</li>
-              <li data-i18n="no.4">A long sales process to get started</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <section class="mission-intro wrap" aria-labelledby="mission-title">
+      <p class="eyebrow" data-en="The reason we exist" data-sl="Zakaj obstajamo">The reason we exist</p>
+      <h2 id="mission-title"><span data-en="People have better things to do" data-sl="Ljudje zmoremo več">People have better things to do</span><br/><em data-en="than move data between screens." data-sl="kot samo urejati preglednice.">than move data between screens.</em></h2>
+      <div class="mission-description"><p data-en="An eight-to-ten-hour working day fills up quickly. Then come the records to update, the appointments to check, and the things nobody has had time to finish. Extra work becomes extra weight." data-sl="Osem- do deseturni delovnik se hitro zapolni. Nato pridejo še evidence, ki jih je treba dopolniti, termini za preverjanje in stvari, za katere ni bilo časa. Dodatno delo postane dodatno breme.">An eight-to-ten-hour working day fills up quickly. Then come the records to update, the appointments to check, and the things nobody has had time to finish. Extra work becomes extra weight.</p><p data-en="Apollo is here to lighten that load. We want routine work to take less effort, important details to be easier to find, and the end of the day to feel like the end of the day." data-sl="Apollo želi to breme olajšati. Želimo, da rutina zahteva manj truda, da pomembne podatke hitreje najdete in da konec delovnika res pomeni konec dela.">Apollo is here to lighten that load. We want routine work to take less effort, important details to be easier to find, and the end of the day to feel like the end of the day.</p></div>
     </section>
 
-    <section class="band band-dark" id="poslanstvo">
-      <div class="wrap mission-grid">
-        <div>
-          <p class="kicker" data-i18n="ms.kicker">Mission</p>
-          <h2 data-i18n-html="ms.title">Scale the work.<br/>Own the tools.</h2>
-          <p class="sub" data-i18n="ms.sub">You used to buy software once and run it. Now most of it is rented. We build tools so a firm can grow the work — not the monthly invoice. Less paper. Clear numbers. People doing the job they were hired for.</p>
-        </div>
-        <div class="mission-points">
-          <div class="mp">
-            <b data-i18n="mp1.t">Less paper</b>
-            <span data-i18n="mp1.p">If it lives in a drawer, it is not running the firm.</span>
-          </div>
-          <div class="mp">
-            <b data-i18n="mp2.t">Numbers that hold</b>
-            <span data-i18n="mp2.p">Issued, paid, overdue. Not Excel at 10pm.</span>
-          </div>
-          <div class="mp">
-            <b data-i18n="mp3.t">People on the real job</b>
-            <span data-i18n="mp3.p">The software should disappear into the day — not become the day.</span>
-          </div>
-          <div class="mp">
-            <b data-i18n="mp4.t">The invoice should not grow with you</b>
-            <span data-i18n="mp4.p">Growth should mean more work done — not another subscription.</span>
-          </div>
-        </div>
+    <section class="solutions-section" id="resitve" aria-labelledby="solutions-title"><div class="wrap">
+      <div class="section-label"><span data-en="01 / What we’re building toward" data-sl="01 / Kaj želimo omogočiti">01 / What we’re building toward</span><span data-en="One ambition. Three connected directions." data-sl="Ena ambicija. Tri povezane smeri.">One ambition. Three connected directions.</span></div>
+      <div class="section-heading"><h2 id="solutions-title"><span data-en="Better tools.
+Greater possibilities." data-sl="Boljša orodja.
+Več možnosti.">Better tools.
+Greater possibilities.</span></h2><p class="section-intro" data-en="We’re starting with dental and beauty clinics, where appointments leave little room for admin. The ambition reaches further: simpler working days for teams of all kinds." data-sl="Začenjamo z zobozdravstvenimi ordinacijami in kozmetičnimi saloni, kjer med obravnavami ostane malo časa za administracijo. Naš cilj sega dlje: preprostejši delovnik za najrazličnejše ekipe.">We’re starting with dental and beauty clinics, where appointments leave little room for admin. The ambition reaches further: simpler working days for teams of all kinds.</p></div>
+      <div class="solution-grid">
+        <article class="solution-card"><div class="solution-symbol symbol-workflow" aria-hidden="true"><i></i><i></i><i></i></div><span class="solution-index">01 / SOFTWARE</span><h3><span data-en="Workflows that
+fit the work." data-sl="Procesi, prilagojeni
+vašemu delu.">Workflows that
+fit the work.</span></h3><p data-en="Bring tasks, records, and decisions into a coherent workspace. Less copying between spreadsheets. A clearer view of what needs to happen next." data-sl="Naloge, evidence in odločitve združimo v povezano delovno okolje. Manj kopiranja med preglednicami. Jasnejši pregled nad naslednjimi koraki.">Bring tasks, records, and decisions into a coherent workspace. Less copying between spreadsheets. A clearer view of what needs to happen next.</p><span class="card-foot"><span data-en="From scattered information to shared context" data-sl="Od razpršenih informacij do skupnega pregleda">From scattered information to shared context</span></span></article>
+        <article class="solution-card"><div class="solution-symbol symbol-agent" aria-hidden="true"><i></i><i></i><i></i></div><span class="solution-index">02 / LOCAL AI</span><h3><span data-en="An agent on
+your own computer." data-sl="Agent na
+vašem računalniku.">An agent on
+your own computer.</span></h3><p data-en="We set up open-source AI assistants on private computers, with access to the work information you choose. Phone access lets you ask a work question by message, even when you are away." data-sl="Na zasebnih računalnikih postavimo odprtokodne pomočnike AI z dostopom do podatkov, ki jih izberete. Z dostopom s telefona lahko vprašanje o delu pošljete v sporočilu, tudi ko vas ni na delovnem mestu.">We set up open-source AI assistants on private computers, with access to the work information you choose. Phone access lets you ask a work question by message, even when you are away.</p><span class="card-foot"><span data-en="Your computer. Access agreed with you." data-sl="Vaš računalnik. Dostop po dogovoru z vami.">Your computer. Access agreed with you.</span></span></article>
+        <article class="solution-card"><div class="solution-symbol symbol-app" aria-hidden="true"><i></i><i></i><i></i></div><span class="solution-index">03 / IN-APP AI</span><h3><span data-en="Intelligence inside
+the tools you use." data-sl="Inteligenca v
+orodjih, ki jih uporabljate.">Intelligence inside
+the tools you use.</span></h3><p data-en="An assistant with the context of the task: help find information, prepare a next step, flag something missing, and bring the right details back into view." data-sl="Pomočnik s kontekstom naloge: pomaga poiskati informacije, pripraviti naslednji korak, opozoriti na manjkajoče podatke in prikazati pomembne podrobnosti.">An assistant with the context of the task: help find information, prepare a next step, flag something missing, and bring the right details back into view.</p><span class="card-foot"><span data-en="Useful context, closer to the decision" data-sl="Uporaben kontekst ob pravem trenutku">Useful context, closer to the decision</span></span></article>
       </div>
+      <p class="availability-note" data-en="Hermes Dental is our first product. Beauty clinic software is part of what comes next. Agent setups are tailored to the team, its existing tools, and the tasks it needs help with." data-sl="Hermes Dental je naš prvi izdelek. Programi za kozmetične salone so del naslednjih korakov. Postavitev agentov prilagodimo ekipi, njenim obstoječim orodjem in nalogam, pri katerih potrebuje pomoč.">Hermes Dental is our first product. Beauty clinic software is part of what comes next. Agent setups are tailored to the team, its existing tools, and the tasks it needs help with.</p>
+    </div></section>
+
+    <section class="workflow-section wrap section" id="potek" aria-labelledby="workflow-title">
+      <div class="section-label"><span data-en="02 / A little less on your plate" data-sl="02 / Malo manj na vaših ramenih">02 / A little less on your plate</span><span data-en="Familiar questions. Useful answers." data-sl="Znana vprašanja. Uporabni odgovori.">Familiar questions. Useful answers.</span></div>
+      <div class="section-heading"><h2 id="workflow-title"><span data-en="Less admin. More room to breathe." data-sl="Manj administracije. Več prostora za vas.">Less admin. More room to breathe.</span></h2><p class="section-intro" data-en="Find a free appointment. See what still needs doing. Check tomorrow from your phone. Choose an example below to see how an assistant could help." data-sl="Poiščite prost termin. Poglejte, kaj je še treba urediti. Preverite jutrišnji dan s telefona. Izberite primer in poglejte, kako bi pomočnik lahko pomagal.">Find a free appointment. See what still needs doing. Check tomorrow from your phone. Choose an example below to see how an assistant could help.</p></div>
+      <div id="apollo-workbench" hidden></div>
+      <p id="workbench-fallback" class="availability-note" data-en="An assistant could help you find a free appointment, check unfinished tasks, or look up tomorrow’s schedule from your phone. Enable JavaScript to see the illustrative conversations and estimate time spent on routine work." data-sl="Pomočnik bi vam lahko pomagal poiskati prost termin, preveriti nedokončane naloge ali pogledati jutrišnji urnik s telefona. Za ponazoritve pogovorov in oceno časa za rutinsko delo omogočite JavaScript.">An assistant could help you find a free appointment, check unfinished tasks, or look up tomorrow’s schedule from your phone. Enable JavaScript to see the illustrative conversations and estimate time spent on routine work.</p>
     </section>
 
-    <section class="band" id="novice">
-      <div class="wrap">
-        <div class="news-head">
-          <div>
-            <p class="kicker" data-i18n="news.kicker">Latest</p>
-            <h2 data-i18n="news.title">News.</h2>
-          </div>
-        </div>
-        <div class="news-grid">
-          <a class="ncard" href="news/self-host.html">
-            <img src="images/news/self-host.jpg" alt="" />
-            <time datetime="2026-09-06" data-i18n="n1.date">Sep 6, 2026</time>
-            <h3 data-i18n="n1.t">Self-host</h3>
-          </a>
-          <a class="ncard" href="news/grok-bot-vs-hermes-agents.html">
-            <img src="images/news/grok-vs-hermes.jpg" alt="" />
-            <time datetime="2026-08-20" data-i18n="n2.date">Aug 20, 2026</time>
-            <h3 data-i18n="n2.t">Grok Bot vs Hermes Agents</h3>
-          </a>
-          <a class="ncard" href="news/openai-agents-hugging-face.html">
-            <img src="images/news/hugging-face.jpg" alt="" />
-            <time datetime="2026-08-26" data-i18n="n3.date">Aug 26, 2026</time>
-            <h3 data-i18n="n3.t">How OpenAI agents attacked Hugging Face</h3>
-          </a>
-        </div>
+    <section class="care-section" id="pristop" aria-labelledby="care-title"><div class="wrap">
+      <div class="care-heading"><p class="eyebrow" data-en="Progress, with good judgement" data-sl="Napredek s premišljeno presojo">Progress, with good judgement</p><h2 id="care-title"><span data-en="Faster is only useful
+when you can trust the process." data-sl="Hitrost šteje,
+ko lahko zaupate procesu.">Faster is only useful
+when you can trust the process.</span></h2></div>
+      <div class="care-grid">
+        <article><span class="care-icon" aria-hidden="true">↗</span><h3><span data-en="Useful AI, within reach" data-sl="Uporabna AI po dostopni ceni">Useful AI, within reach</span></h3><p data-en="We use open-source agents and choose capable AI models with lower running costs. You pay for a practical setup and ongoing service, with a monthly plan sized around your needs. Pricing is available on request." data-sl="Uporabljamo odprtokodne agente in izbiramo zmogljive modele AI z nižjimi stroški uporabe. Plačate za uporabno postavitev in nadaljnjo storitev, z mesečnim paketom po vaših potrebah. Cena je na voljo po povpraševanju.">We use open-source agents and choose capable AI models with lower running costs. You pay for a practical setup and ongoing service, with a monthly plan sized around your needs. Pricing is available on request.</p></article>
+        <article><span class="care-icon" aria-hidden="true">⌘</span><h3><span data-en="Accuracy you can check" data-sl="Točnost, ki jo lahko preverite">Accuracy you can check</span></h3><p data-en="AI can get things wrong. Show the source, flag missing information, and leave room for review. A quick answer is useful when the person can understand and verify it." data-sl="AI se lahko zmoti. Zato so pomembni vir podatkov, opozorila na manjkajoče informacije in možnost pregleda. Hiter odgovor je uporaben, ko ga človek lahko razume in preveri.">AI can get things wrong. Show the source, flag missing information, and leave room for review. A quick answer is useful when the person can understand and verify it.</p></article>
+        <article><span class="care-icon" aria-hidden="true">◎</span><h3><span data-en="Clear data boundaries" data-sl="Jasne meje podatkov">Clear data boundaries</span></h3><p data-en="Local software is a starting point. Access, backups, and any external model connection need explicit choices. Running an app locally does not automatically make every connected service private." data-sl="Lokalni program je izhodišče. Dostop, varnostne kopije in povezave z zunanjimi modeli zahtevajo jasne izbire. Lokalna aplikacija sama po sebi ne zagotavlja zasebnosti vseh povezanih storitev.">Local software is a starting point. Access, backups, and any external model connection need explicit choices. Running an app locally does not automatically make every connected service private.</p></article>
       </div>
-    </section>
+    </div></section>
 
-    <section class="band band-dark" id="blog">
-      <div class="wrap">
-        <div class="notes-head">
-          <p class="kicker" data-i18n="blog.kicker">Essays</p>
-          <h2 data-i18n="blog.title">Blog.</h2>
-          <p class="sub" data-i18n="blog.sub">We write when there is something to say.</p>
-        </div>
 
-        <div class="notes-row">
-          <button type="button" class="notes-btn" id="notesPrev" aria-label="Previous posts">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="notes-viewport" id="notesViewport">
-          <div class="notes-track" id="notesTrack">
-            <a class="bcard" href="blog/zakaj-program-ni-avto.html">
-              <span class="bcard-meta" data-i18n="b1.meta">Essay · 4 min</span>
-              <h3 data-i18n="b1.t">Why software shouldn’t cost like a car</h3>
-              <p data-i18n="b1.p">Firms pay rent on tools that should be infrastructure. That is not innovation. That is a tax.</p>
-            </a>
-            <a class="bcard" href="blog/ne-jemljemo-projektov.html">
-              <span class="bcard-meta" data-i18n="b2.meta">Essay · 3 min</span>
-              <h3 data-i18n="b2.t">We don’t take projects</h3>
-              <p data-i18n="b2.p">An agency takes a brief. We take a pattern in the market. That’s why we have one product, not ten quotes.</p>
-            </a>
-            <a class="bcard" href="blog/note-03.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Lorem ipsum dolor sit amet</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae nisi vitae nisl.</p>
-            </a>
-            <a class="bcard" href="blog/note-04.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Consectetur adipiscing elit</h3>
-              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-            </a>
-            <a class="bcard" href="blog/note-05.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Sed ut perspiciatis unde omnis</h3>
-              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-            </a>
-            <a class="bcard" href="blog/note-06.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Nemo enim ipsam voluptatem</h3>
-              <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.</p>
-            </a>
-            <a class="bcard" href="blog/note-07.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Ut enim ad minima veniam</h3>
-              <p>Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid.</p>
-            </a>
-            <a class="bcard" href="blog/note-08.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Quis autem vel eum iure</h3>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
-            </a>
-            <a class="bcard" href="blog/note-09.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>At vero eos et accusamus</h3>
-              <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</p>
-            </a>
-            <a class="bcard" href="blog/note-10.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Nam libero tempore cum soluta</h3>
-              <p>Cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod.</p>
-            </a>
-            <a class="bcard" href="blog/note-11.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Temporibus autem quibusdam</h3>
-              <p>Officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
-            </a>
-            <a class="bcard" href="blog/note-12.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Itaque earum rerum hic tenetur</h3>
-              <p>Sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur.</p>
-            </a>
-            <a class="bcard" href="blog/note-13.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Neque porro quisquam est</h3>
-              <p>Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
-            </a>
-            <a class="bcard" href="blog/note-14.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Dolorem ipsum quia dolor sit</h3>
-              <p>Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-            </a>
-            <a class="bcard" href="blog/note-15.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Ut labore et dolore magnam</h3>
-              <p>Aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
-            </a>
-            <a class="bcard" href="blog/note-16.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Quis nostrum exercitationem</h3>
-              <p>Ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-            </a>
-            <a class="bcard" href="blog/note-17.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Vel illum qui dolorem eum</h3>
-              <p>Fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio.</p>
-            </a>
-            <a class="bcard" href="blog/note-18.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Et harum quidem rerum facilis</h3>
-              <p>Est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.</p>
-            </a>
-            <a class="bcard" href="blog/note-19.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Iusto odio dignissimos ducimus</h3>
-              <p>Qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-            </a>
-            <a class="bcard" href="blog/note-20.html">
-              <span class="bcard-meta">Note · 3 min</span>
-              <h3>Blanditiis praesentium voluptatum</h3>
-              <p>Atque corrupti quos dolores et quas molestias excepturi sint occaecati.</p>
-            </a>
-          </div>
-          </div>
-          <button type="button" class="notes-btn" id="notesNext" aria-label="Next posts">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
+
+    <section class="affordability-section wrap section" id="dostopnost" aria-labelledby="affordability-title">
+      <div class="economy-heading">
+        <div><p class="eyebrow" data-en="THE APOLLO APPROACH" data-sl="APOLLOV PRISTOP">THE APOLLO APPROACH</p><h2 id="affordability-title"><span  data-en="More within reach." data-sl="Več na dosegu roke.">More within reach.</span><br/><em  data-en="By design." data-sl="S premišljeno zasnovo.">By design.</em></h2></div>
+        <p class="economy-intro" data-en="We put the work into the setup: the right AI, connected tools, and less wasted processing. So everyday assistance makes sense for smaller teams, too." data-sl="Poskrbimo za premišljeno postavitev: prava AI, povezana orodja in manj nepotrebne obdelave. Da je vsakodnevna pomoč smiselna tudi za manjše ekipe.">We put the work into the setup: the right AI, connected tools, and less wasted processing. So everyday assistance makes sense for smaller teams, too.</p>
       </div>
-    </section>
-
-    <section class="band band-muted" id="faq">
-      <div class="wrap">
-        <p class="kicker">FAQ</p>
-        <h2 data-i18n="faq.title">Short answers</h2>
-        <div class="faq">
-          <details open>
-            <summary data-i18n="q1">Are you an agency?</summary>
-            <p data-i18n="a1">No. We don’t take briefs. We don’t quote every call. We pick a problem, build the tool, give it to the people who need it.</p>
-          </details>
-          <details>
-            <summary data-i18n="q2">What does it cost?</summary>
-            <p data-i18n="a2">No monthly fee, for now. We install it with you. If that changes, we say so straight — not through a paywall.</p>
-          </details>
-          <details>
-            <summary data-i18n="q3">Why free?</summary>
-            <p data-i18n="a3">Because bits are cheap and the subscription is not. The market charges rent. We don’t want to.</p>
-          </details>
-          <details>
-            <summary data-i18n="q4">Can I commission an app?</summary>
-            <p data-i18n="a4">No. A brief is not a problem. A problem repeats in the market. If the tool already exists — yes.</p>
-          </details>
-          <details>
-            <summary data-i18n="q5">What is Hermes Dental?</summary>
-            <p data-i18n="a5">First product. Local. Click the card. Not a medical device.</p>
-          </details>
-          <details>
-            <summary data-i18n="q6">Where are you?</summary>
-            <p data-i18n="a6">Slovenia. Firms stuck on expensive software. Each tool has its own site. This is the firm.</p>
+      <div class="economy-board">
+        <div class="cost-panel">
+          <div class="economy-panel-heading"><span class="economy-dot" aria-hidden="true"></span><h3  data-en="A different cost to run." data-sl="Drugačen strošek uporabe.">A different cost to run.</h3><span class="economy-label" data-en="MODEL USAGE" data-sl="UPORABA MODELA">MODEL USAGE</span></div>
+          <div class="cost-controls" role="group" aria-label="Usage comparison" hidden>
+            <button type="button" data-cost-view="combined" aria-pressed="true" data-en="Both" data-sl="Oboje">Both</button>
+            <button type="button" data-cost-view="input" aria-pressed="false" data-en="Input" data-sl="Vhod">Input</button>
+            <button type="button" data-cost-view="output" aria-pressed="false" data-en="Output" data-sl="Izhod">Output</button>
+          </div>
+          <figure class="cost-figure" aria-labelledby="cost-caption">
+            <figcaption id="cost-caption" data-en="Example: 1 million input + 1 million output tokens" data-sl="Primer: 1 milijon vhodnih + 1 milijon izhodnih žetonov">Example: 1 million input + 1 million output tokens</figcaption>
+            <div class="cost-legend">
+              <div class="legend-item legend-premium"><i></i><div><span>Claude Opus 5</span><strong id="premium-cost">$30.00</strong></div></div>
+              <div class="legend-item legend-efficient"><i></i><div><span>DeepSeek V4.1 Flash</span><strong id="efficient-cost">$1.50</strong></div></div>
+            </div>
+            <p class="chart-kicker" data-en="The same example, as it repeats" data-sl="Isti primer, ko se ponavlja">The same example, as it repeats</p>
+            <div class="cost-chart" id="cost-chart" role="img" aria-label="Cost comparison chart"></div>
+            <p class="cost-axis-title" id="cost-axis-title">Relative to this example →</p>
+            <div class="cost-takeaway" role="status" aria-live="polite" aria-atomic="true"><strong id="cost-reduction">95<span>%</span></strong><div><p  data-en="lower model usage cost" data-sl="nižji strošek uporabe modela">lower model usage cost</p><span  data-en="in this equal-token example" data-sl="v tem primeru z enakim številom žetonov">in this equal-token example</span></div><span class="cost-down" aria-hidden="true">↘</span></div>
+          </figure>
+          <p class="cost-date" data-en="USD · DeepSeek peak rates vs Claude standard rates · 18 Sep 2026" data-sl="USD · DeepSeek ob konicah, Claude po rednem ceniku · 18. 9. 2026">USD · DeepSeek peak rates vs Claude standard rates · 18 Sep 2026</p>
+          <details class="cost-method"><summary><span  data-en="What does this comparison include?" data-sl="Kaj vključuje ta primerjava?">What does this comparison include?</span></summary>
+            <p  data-en="Tokens are the pieces of text a model reads and writes. This chart compares published API prices for the same token counts, with uncached input. It is not a comparison of equal task performance or Apollo plan prices. Actual costs depend on token usage, retries, tools, setup, and support." data-sl="Žetoni so deli besedila, ki jih model bere in piše. Graf primerja objavljene cene API za enako število žetonov, z nepredpomnjenim vhodom. Ne primerja enake uspešnosti nalog ali cen Apollovih paketov. Dejanski stroški so odvisni od porabe žetonov, ponovitev, orodij, postavitve in podpore.">Tokens are the pieces of text a model reads and writes. This chart compares published API prices for the same token counts, with uncached input. It is not a comparison of equal task performance or Apollo plan prices. Actual costs depend on token usage, retries, tools, setup, and support.</p>
+            <div class="cost-sources"><a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek ↗</a><a href="https://platform.claude.com/docs/en/about-claude/pricing/">Anthropic ↗</a></div>
           </details>
         </div>
+        <div class="setup-panel">
+          <div class="economy-panel-heading"><span class="economy-dot warm" aria-hidden="true"></span><h3  data-en="The setup makes it useful." data-sl="Postavitev omogoči uporabnost.">The setup makes it useful.</h3></div>
+          <div class="setup-map">
+            <div class="setup-request"><span aria-hidden="true">↗</span><span  data-en="“Find a free appointment.”" data-sl="»Poišči prost termin.«">“Find a free appointment.”</span></div>
+            <div class="setup-stem" aria-hidden="true"></div>
+            <div class="setup-hub"><span class="hub-orbit" aria-hidden="true"></span><span class="hub-core" aria-hidden="true"><svg class="apollo-mark" viewBox="0 0 64 64"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg></span><strong>Apollo</strong><span  data-en="We connect the pieces." data-sl="Povežemo vse dele.">We connect the pieces.</span></div>
+            <div class="setup-branches" aria-hidden="true"></div>
+            <div class="setup-nodes">
+              <div><span class="node-icon" aria-hidden="true">✳</span><strong  data-en="The right AI" data-sl="Prava AI">The right AI</strong><span  data-en="Understands you" data-sl="Razume vas">Understands you</span></div>
+              <div><span class="node-icon" aria-hidden="true">▤</span><strong  data-en="Your tools" data-sl="Vaša orodja">Your tools</strong><span  data-en="Check the records" data-sl="Preverijo evidence">Check the records</span></div>
+              <div><span class="node-icon" aria-hidden="true">✓</span><strong  data-en="Your rules" data-sl="Vaša pravila">Your rules</strong><span  data-en="Control actions" data-sl="Nadzirajo dejanja">Control actions</span></div>
+            </div>
+            <div class="setup-return" aria-hidden="true"></div>
+            <div class="setup-result"><span class="result-check" aria-hidden="true">✓</span><div><strong  data-en="Useful answers. Less admin." data-sl="Uporabni odgovori. Manj administracije.">Useful answers. Less admin.</strong><span  data-en="Built around your working day." data-sl="Prilagojeno vašemu delovniku.">Built around your working day.</span></div></div>
+          </div>
+          <p class="setup-caption" data-en="The software checks availability. The AI explains the options. Comparable results depend on using the tools correctly and testing the actual task." data-sl="Program preveri razpoložljivost. AI pojasni možnosti. Primerljivi rezultati so odvisni od pravilne uporabe orodij in preverjanja konkretne naloge.">The software checks availability. The AI explains the options. Comparable results depend on using the tools correctly and testing the actual task.</p>
+        </div>
+        <div class="economy-footer"><div><strong  data-en="Set up by Apollo." data-sl="Postavitev uredimo mi.">Set up by Apollo.</strong><span  data-en="Open-source agents · chosen models · agreed access" data-sl="Odprtokodni agenti · izbrani modeli · dogovorjen dostop">Open-source agents · chosen models · agreed access</span></div><a href="hermes/pricing.html" data-product-link><span  data-en="Monthly plans · pricing on request ↗" data-sl="Mesečni paketi · cena po povpraševanju ↗">Monthly plans · pricing on request ↗</span></a></div>
       </div>
+      <p class="economy-note" data-en="A private agent installation can use an external AI provider. We agree the connections and data access with you." data-sl="Agent na zasebnem računalniku lahko uporablja zunanjega ponudnika AI. O povezavah in dostopu do podatkov se dogovorimo z vami.">A private agent installation can use an external AI provider. We agree the connections and data access with you.</p>
     </section>
 
-    <section class="band" id="kontakt">
-      <div class="wrap contact-box">
-        <div>
-          <p class="kicker" data-i18n="ct.kicker">Contact</p>
-          <h2 data-i18n="ct.title">If the software is a tax, write.</h2>
-          <p class="sub" data-i18n="ct.sub">Installing a tool that exists — yes. “Build us an app” — no. We answer in person. No call centre.</p>
-          <div class="hero-actions">
-            <a class="btn btn-solid btn-lg" href="#delo" data-i18n="ct.cta1">Tools</a>
-            <a class="btn btn-outline btn-lg" href="https://github.com/Sobraniex/dental-app">GitHub</a>
-          </div>
-        </div>
-        <div class="contact-note">
-          <b data-i18n="ct.note.t">Where we are</b>
-          <span data-i18n="ct.note.p">One product live. Small team. No call centre. If you write about a tool that exists, we write back.</span>
-        </div>
+    <section class="product-section compact-product" id="delo" aria-labelledby="product-title"><div class="wrap">
+      <div class="section-label"><span data-en="03 / The first application" data-sl="03 / Prva aplikacija">03 / The first application</span><span data-en="From the idea to the working day" data-sl="Od ideje do delovnega dne">From the idea to the working day</span></div>
+      <div class="product-layout">
+        <div class="product-copy"><p class="eyebrow"><span data-en="For dental practices · macOS" data-sl="Za zobozdravstvene ordinacije · macOS">For dental practices · macOS</span></p><h2 id="product-title">Hermes Dental<span class="accent">.</span></h2><p class="section-intro" data-en="Our first expression of the Apollo idea: a connected workspace for appointments, patient records, treatment plans, and billing." data-sl="Prvi izraz Apollove ideje: povezano delovno okolje za termine, kartoteke, načrte zdravljenja in račune.">Our first expression of the Apollo idea: a connected workspace for appointments, patient records, treatment plans, and billing.</p><div class="product-tags"><span data-en="Scheduling" data-sl="Urnik">Scheduling</span><span data-en="Patient records" data-sl="Kartoteke">Patient records</span><span data-en="Billing" data-sl="Računi">Billing</span></div><div class="actions"><a class="button primary" href="hermes/" data-product-link><span data-en="Explore Hermes Dental" data-sl="Raziščite Hermes Dental">Explore Hermes Dental</span><span aria-hidden="true">↗</span></a></div><a class="plan-note" href="hermes/pricing.html" data-product-link><span data-en="Monthly plans · pricing on request ↗" data-sl="Mesečni paketi · cena po povpraševanju ↗">Monthly plans · pricing on request ↗</span></a></div>
+        <div class="product-preview"><div class="product-toolbar"><span class="product-platform"><span data-en="Inside the application" data-sl="Pogled v aplikacijo">Inside the application</span></span><div class="view-switch" role="group" aria-label="Product screenshots"><button type="button" data-screen="schedule" aria-pressed="true" data-en="Schedule" data-sl="Urnik">Schedule</button><button type="button" data-screen="overview" aria-pressed="false" data-en="Overview" data-sl="Pregled">Overview</button></div></div><figure class="product-figure"><img id="productImage" src="images/shots/urnik.png" width="2560" height="1440" alt="Hermes Dental appointment schedule" loading="lazy"/><figcaption id="productCaption">Inside Hermes Dental: the appointment schedule.</figcaption></figure><a class="text-link" href="hermes/dokumentacija/"><span data-en="Read the documentation ↗" data-sl="Preberite dokumentacijo ↗">Read the documentation ↗</span></a></div>
       </div>
-    </section>
+    </div></section>
+
+    <section class="studio-section" id="studio" aria-labelledby="studio-title"><div class="wrap studio-grid">
+      <div><p class="eyebrow" data-en="04 / Why Apollo" data-sl="04 / Zakaj Apollo">04 / Why Apollo</p><h2 id="studio-title"><span data-en="A company for
+the work worth doing." data-sl="Podjetje za delo,
+ki nekaj pomeni.">A company for
+the work worth doing.</span></h2><div class="studio-signature"><svg class="apollo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg><span>Apollo Solutions<br/><span data-en="Independent. Built in Slovenia." data-sl="Neodvisni. Iz Slovenije.">Independent. Built in Slovenia.</span></span></div></div>
+      <div class="studio-copy"><p data-en="We’re building Apollo because progress should be something people feel in their everyday lives. More room to think. Fewer things falling through the cracks. Better tools within reach of the people who need them." data-sl="Apollo gradimo, ker mora biti napredek opazen v vsakdanjem življenju. Več prostora za razmišljanje. Manj spregledanih stvari. Boljša orodja, dostopna ljudem, ki jih potrebujejo.">We’re building Apollo because progress should be something people feel in their everyday lives. More room to think. Fewer things falling through the cracks. Better tools within reach of the people who need them.</p><p data-en="Spreadsheets have their place. But when a team becomes the glue between disconnected files, reminders, and applications, the system is asking too much of the people inside it." data-sl="Preglednice imajo svoje mesto. Ko pa ekipa postane vez med nepovezanimi datotekami, opomniki in aplikacijami, sistem od ljudi zahteva preveč.">Spreadsheets have their place. But when a team becomes the glue between disconnected files, reminders, and applications, the system is asking too much of the people inside it.</p><p data-en="Our ambition is to make capable software and useful AI a practical part of ordinary work. We start with specific problems, build carefully, and judge the result by what it gives people back." data-sl="Naša ambicija je, da zmogljivi programi in uporabna AI postanejo praktičen del vsakdanjega dela. Začnemo s konkretnimi problemi, gradimo premišljeno in rezultat presojamo po tem, kaj vrne ljudem.">Our ambition is to make capable software and useful AI a practical part of ordinary work. We start with specific problems, build carefully, and judge the result by what it gives people back.</p><p class="mission-signoff"><span data-en="More capacity to contribute. More energy for life." data-sl="Več možnosti za prispevek. Več energije za življenje.">More capacity to contribute. More energy for life.</span></p></div>
+    </div></section>
+
+    <section class="wrap section faq-section" id="faq" aria-labelledby="faq-title"><div><p class="eyebrow" data-en="A little more clarity" data-sl="Še nekaj pojasnil">A little more clarity</p><h2 id="faq-title"><span data-en="Ambitious about the future.
+Clear about today." data-sl="Velike ambicije.
+Jasna slika današnjega dne.">Ambitious about the future.
+Clear about today.</span></h2></div><div class="faq-list">
+      <details><summary><span data-en="Who are you building for first?" data-sl="Za koga najprej razvijate rešitve?">Who are you building for first?</span></summary><p data-en="Our first focus is dental and beauty clinics. Hermes Dental is the first product you can explore here. We also offer tailored agent setups; the examples above show the idea, while the actual features depend on your software and connections." data-sl="Najprej se osredotočamo na zobozdravstvene ordinacije in kozmetične salone. Hermes Dental je prvi izdelek, ki ga lahko raziščete tukaj. Ponujamo tudi prilagojene postavitve agentov; zgornji primeri prikazujejo idejo, dejanske funkcije pa so odvisne od vaših programov in povezav.">Our first focus is dental and beauty clinics. Hermes Dental is the first product you can explore here. We also offer tailored agent setups; the examples above show the idea, while the actual features depend on your software and connections.</p><a href="hermes/" data-product-link><span data-en="Explore Hermes Dental ↗" data-sl="Raziščite Hermes Dental ↗">Explore Hermes Dental ↗</span></a></details>
+      <details><summary><span data-en="What does affordable mean to Apollo?" data-sl="Kaj za Apollo pomeni cenovna dostopnost?">What does affordable mean to Apollo?</span></summary><p data-en="Smaller teams should be able to use AI every day. Open-source agents give us a starting point we can adapt, and lower-cost AI models help manage ongoing usage. The total depends on setup, hardware, support, and how much you use it. Monthly pricing is on request." data-sl="Tudi manjše ekipe naj imajo možnost vsakodnevne uporabe AI. Odprtokodni agenti so osnova, ki jo lahko prilagodimo, cenejši modeli AI pa pomagajo obvladovati stroške uporabe. Skupni strošek je odvisen od postavitve, opreme, podpore in obsega uporabe. Cena mesečnih paketov je po povpraševanju.">Smaller teams should be able to use AI every day. Open-source agents give us a starting point we can adapt, and lower-cost AI models help manage ongoing usage. The total depends on setup, hardware, support, and how much you use it. Monthly pricing is on request.</p></details>
+      <details><summary><span data-en="Does an agent on my computer keep everything local?" data-sl="Ali agent na mojem računalniku vse obdela lokalno?">Does an agent on my computer keep everything local?</span></summary><p data-en="That depends on the model and connected services. A local app can still use a remote AI provider. Our approach is to make those choices explicit: what runs locally, what is shared, and who has access." data-sl="To je odvisno od modela in povezanih storitev. Lokalna aplikacija lahko uporablja oddaljenega ponudnika AI. Naš pristop je, da so te izbire jasne: kaj teče lokalno, kaj se deli in kdo ima dostop.">That depends on the model and connected services. A local app can still use a remote AI provider. Our approach is to make those choices explicit: what runs locally, what is shared, and who has access.</p></details>
+      <details><summary><span data-en="What stays in human hands?" data-sl="Kaj ostane v človeških rokah?">What stays in human hands?</span></summary><p data-en="The goals, permissions, and decisions that need judgement. We design around visible actions and review appropriate to their consequences. AI should make it easier to notice and decide, with a person able to check its work." data-sl="Cilji, dovoljenja in odločitve, ki zahtevajo presojo. Zasnova temelji na vidnih dejanjih in pregledu, primernem njihovim posledicam. AI naj olajša zaznavanje in odločanje, človek pa mora imeti možnost preveriti njeno delo.">The goals, permissions, and decisions that need judgement. We design around visible actions and review appropriate to their consequences. AI should make it easier to notice and decide, with a person able to check its work.</p></details>
+      <details><summary><span data-en="Do I need to learn another complicated tool?" data-sl="Se moram naučiti uporabljati še eno zapleteno orodje?">Do I need to learn another complicated tool?</span></summary><p data-en="The aim is fewer steps in the tools you already use, with everyday questions you can type in your own words. We handle the setup and agree what the assistant can access and do. Your team still checks decisions that need human judgement." data-sl="Cilj je manj korakov v orodjih, ki jih že uporabljate, in vsakdanja vprašanja, ki jih napišete s svojimi besedami. Mi uredimo postavitev in se dogovorimo, do česa ima pomočnik dostop in kaj lahko opravi. Ekipa še vedno preverja odločitve, ki potrebujejo človeško presojo.">The aim is fewer steps in the tools you already use, with everyday questions you can type in your own words. We handle the setup and agree what the assistant can access and do. Your team still checks decisions that need human judgement.</p></details>
+
+      <details id="model-costs"><summary><span data-en="Why can models like DeepSeek cost less?" data-sl="Zakaj so lahko modeli, kot je DeepSeek, cenejši?">Why can models like DeepSeek cost less?</span></summary>
+        <p data-en="Part of the difference comes from how the model runs. DeepSeek describes V4.1 Flash as using only selected parts of its network for each piece of text, and storing conversation information more compactly. That reduces the computing and memory needed to serve requests." data-sl="Del razlike izhaja iz načina delovanja modela. DeepSeek pojasnjuje, da V4.1 Flash za posamezen del besedila uporabi le izbrane dele svoje mreže in podatke o pogovoru hrani bolj zgoščeno. Tako zmanjša potrebno računsko moč in pomnilnik.">Part of the difference comes from how the model runs. DeepSeek describes V4.1 Flash as using only selected parts of its network for each piece of text, and storing conversation information more compactly. That reduces the computing and memory needed to serve requests.</p>
+        <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"><span data-en="DeepSeek’s architecture explanation ↗" data-sl="DeepSeekova razlaga zasnove ↗">DeepSeek’s architecture explanation ↗</span></a>
+        <p data-en="Providers can also charge less when previously processed input can be reused, or when demand is lower. These methods are not exclusive to Chinese models. Each provider sets its own prices; architecture alone does not explain the entire price gap." data-sl="Ponudniki lahko zaračunajo manj, kadar ponovno uporabijo že obdelano besedilo ali ko je povpraševanje manjše. Ti pristopi niso omejeni na kitajske modele. Vsak ponudnik določa svoje cene; sama zasnova ne pojasni celotne razlike v ceni.">Providers can also charge less when previously processed input can be reused, or when demand is lower. These methods are not exclusive to Chinese models. Each provider sets its own prices; architecture alone does not explain the entire price gap.</p>
+        <a href="https://api-docs.deepseek.com/quick_start/pricing/"><span data-en="DeepSeek usage pricing ↗" data-sl="DeepSeekov cenik uporabe ↗">DeepSeek usage pricing ↗</span></a>
+        <p data-en="Open-source agent software and openly available model weights give us more setup options. Running them still costs money: equipment, electricity or hosting, integration, and support all matter." data-sl="Odprtokodni agenti in javno dostopne uteži modelov nam dajejo več možnosti postavitve. Izvajanje še vedno nekaj stane: pomembni so oprema, elektrika ali gostovanje, povezovanje in podpora.">Open-source agent software and openly available model weights give us more setup options. Running them still costs money: equipment, electricity or hosting, integration, and support all matter.</p>
+      </details>
+      <details id="model-quality"><summary><span data-en="Can a cheaper model deliver the same result?" data-sl="Lahko cenejši model doseže enak rezultat?">Can a cheaper model deliver the same result?</span></summary>
+        <p data-en="For a clearly defined task, it can. When a tool supplies the available appointments or calculates a total, the model has a narrower job: understand the request, choose the right tool, and explain the result. Good setup makes that easier." data-sl="Pri jasno določeni nalogi lahko. Ko orodje poišče proste termine ali izračuna skupni znesek, ima model ožjo nalogo: razumeti zahtevo, izbrati pravo orodje in pojasniti rezultat. Dobra postavitev mu to olajša.">For a clearly defined task, it can. When a tool supplies the available appointments or calculates a total, the model has a narrower job: understand the request, choose the right tool, and explain the result. Good setup makes that easier.</p>
+        <p data-en="That does not make every model equally capable. Difficult reasoning, ambiguous requests, and long sequences of actions can still separate them. The useful comparison is accuracy, speed, and total cost per successfully completed task, including retries and human review. Comparable results need to be demonstrated on the workflow you actually use." data-sl="To ne pomeni, da so vsi modeli enako zmogljivi. Zahtevno sklepanje, nejasne zahteve in dolga zaporedja dejanj lahko pokažejo razlike. Smiselno je primerjati točnost, hitrost in skupni strošek uspešno opravljene naloge, tudi ponovitve in človeški pregled. Primerljive rezultate je treba dokazati na procesu, ki ga dejansko uporabljate.">That does not make every model equally capable. Difficult reasoning, ambiguous requests, and long sequences of actions can still separate them. The useful comparison is accuracy, speed, and total cost per successfully completed task, including retries and human review. Comparable results need to be demonstrated on the workflow you actually use.</p>
+        <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"><span data-en="How agent results are evaluated ↗" data-sl="Kako se preverjajo rezultati agentov ↗">How agent results are evaluated ↗</span></a>
+      </details>
+    </div></section>
+
+    <section class="contact-section" id="kontakt" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow" data-en="The work ahead" data-sl="Delo pred nami">The work ahead</p><h2 id="contact-title"><span data-en="Better work is
+a future worth building." data-sl="Boljše delo je
+prihodnost, vredna truda.">Better work is
+a future worth building.</span></h2></div><div><p data-en="We’re starting with Hermes Dental and building toward a wider family of workflow tools. Practical, accessible, and made to give people more room to do good work." data-sl="Začenjamo s Hermes Dental in gradimo širšo družino orodij za delovne procese. Praktičnih, dostopnih in zasnovanih tako, da ljudem omogočijo več dobrega dela.">We’re starting with Hermes Dental and building toward a wider family of workflow tools. Practical, accessible, and made to give people more room to do good work.</p><a class="button primary" href="hermes/" data-product-link><span data-en="Meet our first product ↗" data-sl="Spoznajte naš prvi izdelek ↗">Meet our first product ↗</span></a><p class="contact-pending" data-en="Public contact details for enquiries and pricing are coming soon." data-sl="Javni kontakt za povpraševanja in ponudbe objavimo kmalu.">Public contact details for enquiries and pricing are coming soon.</p></div></div></section>
   </main>
-
-  <footer class="wrap footer">
-    <div>Apollo Solutions <span data-i18n="ft.line">· studio · not an agency · Slovenia</span></div>
-    <div>
-      <a href="/apollo-solutions/hermes/" id="hermesFoot">Hermes Dental</a>
-      ·
-      <a href="https://github.com/Sobraniex/dental-app">GitHub</a>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
+  <footer class="wrap footer"><a class="brand" href="#top"><svg class="apollo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg><span>Apollo <span class="brand-light">Solutions</span></span></a><span data-en="Software. Intelligence. Human potential." data-sl="Programi. Inteligenca. Človeški potencial.">Software. Intelligence. Human potential.</span><a href="#studio"><span data-en="Built in Slovenia ↗" data-sl="Nastaja v Sloveniji ↗">Built in Slovenia ↗</span></a></footer>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Domov — Hermes Dental dokumentacija</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .docs-wrap { display: grid; grid-template-columns: 240px 1fr; gap: 32px; max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+    .docs-side { position: sticky; top: 24px; align-self: start; font-size: 13px; }
+    .docs-side h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin: 18px 0 6px; }
+    .docs-side a { display: block; padding: 4px 0; color: var(--fg); text-decoration: none; }
+    .docs-side a:hover { color: var(--eu-blue); }
+    .docs-main h1 { margin: 0 0 8px; font-family: var(--serif); }
+    .docs-main h2 { margin: 28px 0 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .docs-main p, .docs-main li { line-height: 1.7; }
+    @media (max-width: 800px) { .docs-wrap { grid-template-columns: 1fr; } .docs-side { position: static; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
+          <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+        <span>Hermes <em>Dental</em></span>
+      </a>
+      <div class="nav-actions"><a class="btn btn-navy" href="../index.html">Domov</a></div>
+    </div>
+  </header>
+
+  <main class="docs-wrap">
+    <aside class="docs-side">
+      <h3>Uporabniški vodič</h3>
+      <a href="domov.html"><strong>Domov</strong></a>
+      <a href="urnik.html">Urnik</a>
+      <a href="bolniki.html">Bolniki</a>
+      <a href="zdravljenje.html">Načrt zdravljenja</a>
+      <a href="finance.html">Finance</a>
+      <a href="ordinacija.html">Ordinacija</a>
+      <a href="kolektiv.html">Kolektiv</a>
+      <a href="nastavitve.html">Nastavitve</a>
+    </aside>
+
+    <article class="docs-main">
+      <h1>Domov</h1>
+      <p>Prvi zaslon, ki ga vidite ob prijavi. Prikazuje:</p>
+      <ul>
+        <li><strong>Naslednji termin</strong> — kdo je naslednji na vrsti, s hitrim gumbom "Odpri v urniku".</li>
+        <li><strong>Današnji klici</strong> — število klicev, ki jih je treba oddati (recare, opomniki).</li>
+        <li><strong>Odprti računi</strong> — vsota neporavnanih računov in število.</li>
+        <li><strong>Statistika</strong> — ta mesec / ta teden / danes števci.</li>
+      </ul>
+      <h2>Bližnjice</h2>
+      <p>Na tipkovnici: <kbd>N</kbd> = nov bolnik, <kbd>T</kbd> = nov termin, <kbd>S</kbd> = iskanje.</p>
+      <h2>Pogosta vprašanja</h2>
+      <p><strong>Spremenil sem si geslo, kaj sedaj?</strong> Kliknite svoje ime zgorjadesno → "Odjava" → ponovna prijava z novim geslom.</p>
+    </article>
+  </main>
+</body>
+</html>

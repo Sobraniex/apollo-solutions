@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Dental — Dokumentacija</title>
+  <meta name="description" content="Uporabniška in administrativna dokumentacija za Hermes Dental." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .docs-wrap { display: grid; grid-template-columns: 240px 1fr; gap: 32px; max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+    .docs-side { position: sticky; top: 24px; align-self: start; font-size: 13px; }
+    .docs-side h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin: 18px 0 6px; }
+    .docs-side a { display: block; padding: 4px 0; color: var(--fg); text-decoration: none; }
+    .docs-side a:hover { color: var(--eu-blue); }
+    .docs-main h1 { margin: 0 0 8px; font-family: var(--serif); }
+    .docs-main h2 { margin: 28px 0 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .docs-main p, .docs-main li { line-height: 1.7; }
+    .docs-main code { background: #f4f6fa; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .docs-main pre { background: #f4f6fa; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 12px; }
+    @media (max-width: 800px) { .docs-wrap { grid-template-columns: 1fr; } .docs-side { position: static; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
+          <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+        <span>Hermes <em>Dental</em></span>
+      </a>
+      <div class="nav-actions">
+        <a class="btn btn-navy" href="../index.html">Domov</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="docs-wrap">
+    <aside class="docs-side">
+      <h3>Uporabniški vodič</h3>
+      <a href="domov.html">Domov</a>
+      <a href="urnik.html">Urnik</a>
+      <a href="bolniki.html">Bolniki</a>
+      <a href="zdravljenje.html">Načrt zdravljenja</a>
+      <a href="finance.html">Finance</a>
+      <a href="ordinacija.html">Ordinacija</a>
+      <a href="kolektiv.html">Kolektiv</a>
+      <a href="nastavitve.html">Nastavitve</a>
+      <h3>Administrativa</h3>
+      <a href="../security.html">Varnost in GDPR</a>
+      <a href="../faq.html">FAQ</a>
+      <h3>Status</h3>
+      <a href="https://status.hermes-dental.si">Status stran</a>
+    </aside>
+
+    <article class="docs-main">
+      <h1>Dokumentacija</h1>
+      <p>Dobrodošli v dokumentaciji Hermes Dental. Spodaj so ključni vodiči za vsakodnevno uporabo in administracijo.</p>
+
+      <h2>Hitri začetek</h2>
+      <ol>
+        <li>Namestite <a href="../INSTALL.html">Hermes Dental.app</a> (macOS 12+).</li>
+        <li>Ob prvem zagonu vpišite ime ordinacije in geslo.</li>
+        <li>Dodajte prvega bolnika v <strong>Bolniki → Nov bolnik</strong>.</li>
+        <li>Rezervirajte termin v <strong>Urnik</strong>.</li>
+        <li>Iz načrta zdravljenja ustvarite <strong>predračun</strong>.</li>
+      </ol>
+
+      <h2>Tipični delovni tokovi</h2>
+      <h3>Prvi dan z novim bolnikom</h3>
+      <p><strong>Bolniki → Nov bolnik</strong> → vpišite ime, telefon, datum rojstva, morebitne alergije → kliknite Ustvari → izberite zobozdravnika → vpišite prvi obisk.</p>
+
+      <h3>Mesečni zaključek</h3>
+      <p><strong>Finance → Pregled</strong> → preverite, da so vsi izdani računi poravnani → <strong>Varnostna kopija</strong> → izvozite za knjigovodjo.</p>
+
+      <h3>Četrtletna DDV oddaja</h3>
+      <p><strong>Nastavitve → Integracije → eDavki</strong> → izberite četrtletje → prenesite CSV → oddajte na <a href="https://edavki.durs.si">edavki.durs.si</a>.</p>
+
+      <h2>Podpora</h2>
+      <p>E-pošta: <a href="mailto:support@hermes-dental.si">support@hermes-dental.si</a>. Varnost: <a href="mailto:security@hermes-dental.si">security@hermes-dental.si</a>.</p>
+    </article>
+  </main>
+</body>
+</html>

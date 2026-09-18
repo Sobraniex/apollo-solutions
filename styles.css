@@ -745,3 +745,8 @@ a.pcard:hover {
   .cycle-word, .caret, .boot-bar i, .star.twinkle, .streak { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Historical articles retain their original text with current positioning clearly stated. */
+.archive-notice { border: 1px solid var(--border); background: var(--surface); padding: 20px; margin-bottom: 28px; border-radius: 10px; }
+.archive-notice p { font: 400 15px/1.6 var(--font); margin: 0 0 10px; }
+.archive-notice a { font: 500 14px/1.5 var(--font); }

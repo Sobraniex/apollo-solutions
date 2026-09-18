@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Dental — Status</title>
+  <meta name="description" content="Status strani Hermes Dental: uptime, incidenti, načrtovana vzdrževanja." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .status-wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px; }
+    .status-banner { padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; font-weight: 600; }
+    .status-banner.ok { background: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+    .status-banner.warn { background: #fef3c7; color: #92400e; border: 1px solid #f59e0b; }
+    .status-banner.bad { background: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+    .component-list { display: flex; flex-direction: column; gap: 8px; margin: 24px 0; }
+    .component { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; }
+    .component .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-ok { background: #10b981; }
+    .dot-warn { background: #f59e0b; }
+    .dot-bad { background: #ef4444; }
+    .dot-unknown { background: #9ca3af; }
+    .component .name { font-weight: 600; flex: 1; }
+    .component .meta { font-size: 12px; color: var(--muted); font-family: ui-monospace, monospace; }
+    .last-checked { font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .history { margin-top: 32px; }
+    .history h2 { font-family: var(--serif); }
+    .incident { background: var(--white); border-left: 3px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin-bottom: 10px; }
+    .incident.resolved { border-left-color: #10b981; opacity: 0.85; }
+    .incident-time { font-size: 12px; color: var(--muted); font-family: ui-monospace, monospace; margin-bottom: 4px; }
+    .empty { color: var(--muted); font-size: 14px; padding: 16px 0; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
+          <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+        <span>Hermes <em>Dental</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">Domov</a>
+        <a href="../pricing.html">Cenik</a>
+        <a href="../security.html">Varnost</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="status-wrap">
+    <h1>Status</h1>
+    <div id="banner" class="status-banner ok">Vse storitve delujejo.</div>
+
+    <div class="component-list" id="components">
+      <!-- filled by JS -->
+    </div>
+
+    <p class="last-checked" id="lastChecked">Preverjanje…</p>
+
+    <section class="history">
+      <h2>Nedavni incidenti</h2>
+      <p class="empty">V zadnjih 90 dneh ni bilo prijavljenih incidentov.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© 2026 Hermes Dental</span>
+      <a href="../privacy.html">Zasebnost</a>
+    </div>
+  </footer>
+
+  <script>
+    const COMPONENTS = [
+      { name: "Aplikacija na vašem Macu", local: true, ok: true, meta: "ni gostujoče storitve" },
+      { name: "Podatki", local: true, ok: true, meta: "~/Library/Application Support/HermesDental" },
+      { name: "Prenos macOS paketa", local: true, ok: true, meta: "GitHub Releases" },
+    ];
+
+    function render(results) {
+      const banner = document.getElementById("banner");
+      banner.className = "status-banner ok";
+      banner.textContent = "Hermes Dental teče na vašem Macu. Ni gostujoče storitve za spremljanje.";
+      const list = document.getElementById("components");
+      list.innerHTML = results
+        .map(
+          (r) => `
+        <div class="component">
+          <span class="dot dot-ok"></span>
+          <span class="name">${r.name}</span>
+          <span class="meta">${r.meta || ""}</span>
+        </div>`,
+        )
+        .join("");
+      document.getElementById("lastChecked").textContent =
+        "Namestitev je lokalna. Podatki ostanejo na vašem računalniku.";
+    }
+
+    render(COMPONENTS);
+  </script>
+</body>
+</html>

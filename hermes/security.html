@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Dental — Varnost in skladnost</title>
+  <meta name="description" content="GDPR, ZVOP-2, šifriranje, pod-procesorji. Vaši podatki ostanejo v EU." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="10" fill="#3A4258"/>
+          <path d="M15 11v26M33 11v26" stroke="#F4F6FA" stroke-width="4.2" stroke-linecap="round"/>
+          <path d="M15 24.5c6-4.2 12-4.2 18 0" fill="none" stroke="#F4F6FA" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+        <span>Hermes <em>Dental</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="pricing.html">Cenik</a>
+        <a href="security.html" style="color: var(--eu-blue); font-weight:600">Varnost</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" type="button" id="langBtn" aria-label="Language">EN</button>
+        <a class="btn btn-navy" href="index.html">Domov</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="hero-copy" style="max-width: 720px">
+        <p class="kicker">Varnost in skladnost</p>
+        <h1>GDPR. ZVOP-2. EU samo. Šifrirano.</h1>
+        <p class="lede">
+          Zdravstveni podatki so občutljivi. Zato smo jih zaščitili v dveh plasteh: podatki
+          ostanejo v EU (nikoli v ZDA), šifrirani so v mirovanju in pri prenosu.
+        </p>
+        <div class="meta-row">
+          <span class="pill pill-green">GDPR / ZVOP-2</span>
+          <span class="pill pill-green">EU data residency</span>
+          <span class="pill">AES-256 v mirovanju</span>
+          <span class="pill">TLS 1.3 v prenosu</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="card-grid">
+          <div class="card">
+            <h3>GDPR / ZVOP-2 skladnost</h3>
+            <p>Izjava o skladnosti z Uredbo (EU) 2016/679 in slovenskim ZVOP-2. Imenovan pooblaščenec za varstvo podatkov (DPO). Privolitev po bolniku, namenu, roku hrambe.</p>
+          </div>
+          <div class="card">
+            <h3>Podatki ostanejo v EU</h3>
+            <p>Gostovanje na <strong>Fly.io Frankfurt (fra)</strong>. Varnostne kopije v <strong>Cloudflare R2 EU</strong>. Brez podatkov v ZDA.</p>
+          </div>
+          <div class="card">
+            <h3>Šifriranje</h3>
+            <p>AES-256 v mirovanju (R2 + lokalna baza). TLS 1.3 v prenosu. Gesla z <strong>argon2id</strong> (memory-hard). Žetoni JWT s HS256, 12-urni TTL.</p>
+          </div>
+          <div class="card">
+            <h3>Revizijska sled</h3>
+            <p>Vsaka akcija nad pacientovimi podatki (branje, pisanje, izvoz, brisanje) se zapiše v <code>audit_log</code> z IP, user-agentom, časovnim žigom.</p>
+          </div>
+          <div class="card">
+            <h3>Varnostne kopije</h3>
+            <p>Samodejno dnevno + ob vsakem zagonu. Šifrirano z geslom, ki ga določi uporabnik. Restorate lahko kadarkoli.</p>
+          </div>
+          <div class="card">
+            <h3>Pod-procesorji</h3>
+            <p>Stripe (plačila, EU), Fly.io (gostovanje, EU), Cloudflare R2 (backup, EU), PostHog (analitika, EU), Sentry (napake, EU). Vsak s pogodbo o obdelavi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" style="margin-top: 40px">
+      <div class="card-grid">
+        <div class="card">
+          <h3>Poročanje ranljivosti</h3>
+          <p>Našli ste varnostno pomanjkljivost? Pišite na <a href="mailto:security@hermes-dental.si">security@hermes-dental.si</a>. Odgovor v 24 urah, popravek v 7 dneh za kritične.</p>
+        </div>
+        <div class="card">
+          <h3>SOC 2 / ISO 27001</h3>
+          <p>Načrtujemo pridobitev SOC 2 Type I v 2026. Do takrat je na voljo <a href="mailto:security@hermes-dental.si">varnostno vprašanje (security questionnaire)</a> za naročnike Klinika paketa.</p>
+        </div>
+        <div class="card">
+          <h3>Kršitev podatkov</h3>
+            <p>V skladu z GDPR členom 33: obvestilo IP (Informacijski pooblaščenec) v 72 urah, obvestilo bolnikov takoj, ko je to tehnično izvedljivo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© 2026 Hermes Dental</span>
+      <a href="privacy.html">Zasebnost</a>
+      <a href="terms.html">Pogoji</a>
+      <a href="mailto:security@hermes-dental.si">security@hermes-dental.si</a>
+      <span class="pill pill-amber">Narejeno v Sloveniji</span>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-label="Obvestilo o piškotkih">
+    <p>Ta stran uporablja piškotke za analitiko (PostHog) in spremljanje napak (Sentry). Brez vašega soglasja jih ne naložimo.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost" id="cookieReject">Zavrni</button>
+      <button class="btn btn-primary" id="cookieAccept">Sprejmi</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="cookie-banner.js"></script>
+</body>
+</html>

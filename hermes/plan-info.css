@@ -1,0 +1,40 @@
+.header-actions {
+  margin-left:auto
+}
+
+.header-actions .text-link {
+  font-size:12px
+}
+
+.plan-title {
+  font-size:clamp(46px,6vw,80px);
+  max-width:850px
+}
+
+.pricing-label {
+  margin-top:30px;
+  color:var(--lilac);
+  font-size:22px
+}
+
+.plan-section {
+  margin-top:0
+}
+
+.plan-section h2 {
+  margin-top:20px
+}
+
+.plan-actions {
+  margin-top:30px
+}
+
+.plan-section .product-details {
+  margin-top:40px
+}
+
+@media(max-width:360px) {
+  .header-actions .text-link {
+    font-size:10px
+  }
+}
