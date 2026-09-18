@@ -213,40 +213,40 @@
           <p class="kicker" data-i18n="as.kicker">Znotraj programa</p>
           <h2 id="assistant-title"><span data-i18n="as.title">Pomočnik Hermes.</span><br/><em data-i18n="as.title2">Pišete. Pregledate. Izvedete.</em></h2>
         </div>
-        <p class="assistant-intro" data-i18n="as.intro">Pišete v slovenščini. Agent poišče pravo orodje, vsak zapis pa se konča pri točnem predogledu z gumbom Izvedi. Besedilo samo ne spremeni ničesar. Model samo poimenuje orodje — strežnik ga izvede po pravilih.</p>
+        <p class="assistant-intro" data-i18n="as.intro">Pišete v slovenščini, kot bi vprašali kolegico. Hermes predlaga, kaj bi naredil. Nič se ne spremeni v urniku, kartoteki ali računih, dokler ne kliknete Izvedi.</p>
       </div>
 
       <div class="assistant-board">
         <div class="safety-panel">
-          <p class="panel-kicker" data-i18n="as.safety">Varnostni model</p>
-          <h3 data-i18n="as.modes">Dva načina pisanja</h3>
-          <p data-i18n="as.modesP">Privzeto vsak zapis zahteva vaš klik. Rutinske zapise lahko odobrite v nastavitvah; tvegani še vedno čakajo na vas.</p>
+          <p class="panel-kicker" data-i18n="as.safety">Kako je varno</p>
+          <h3 data-i18n="as.modes">Vi odločite, kdaj se kaj spremeni</h3>
+          <p data-i18n="as.modesP">Privzeto vsaka sprememba čaka na vas. Vsakdanje stvari lahko pustite, da jih naredi sam — z gumbom Razveljavi. Občutljive stvari še vedno čakajo.</p>
           <div class="mode-pair">
             <div class="mode-card">
-              <strong data-i18n="as.off">Avtonomija pisanja IZKLOPLJENA · privzeto</strong>
-              <span data-i18n="as.offP">Vsak zapis potrebuje Izvedi. Nič se ne spremeni, dokler ne kliknete.</span>
+              <strong data-i18n="as.off">Vedno vpraša · privzeto</strong>
+              <span data-i18n="as.offP">Najprej vidite predogled. Šele klik na Izvedi kaj spremeni.</span>
             </div>
             <div class="mode-card on">
-              <strong data-i18n="as.on">Avtonomija pisanja VKLOPLJENA</strong>
-              <span data-i18n="as.onP">Nastavitve → AI Pomočnik. Rutinski zapisi se izvedejo sami, z razveljavi. Tvegani še vedno zahtevajo odobritev.</span>
+              <strong data-i18n="as.on">Vsakdanje naredi sam</strong>
+              <span data-i18n="as.onP">Vklopite v Nastavitve → AI Pomočnik. Običajni koraki tečejo sami, z Razveljavi. Tvegani še vedno potrebujejo vas.</span>
             </div>
           </div>
           <div class="pipeline" aria-hidden="true">
             <i data-i18n="as.p1">1 · vprašanje</i>
-            <i data-i18n="as.p2">2 · ime orodja</i>
-            <i data-i18n="as.p3">3 · predogled</i>
-            <i>4 · Izvedi</i>
+            <i data-i18n="as.p2">2 · predogled</i>
+            <i data-i18n="as.p3">3 · Izvedi</i>
+            <i data-i18n="as.p4">4 · po želji razveljavi</i>
           </div>
         </div>
         <div class="preview-panel">
           <p class="panel-kicker" data-i18n="as.example">Primer</p>
-          <h3 data-i18n="as.exTitle">Nič se ne zapiše iz besedila.</h3>
-          <p data-i18n="as.exP">Tako zgleda predlog, preden se v urniku karkoli spremeni.</p>
+          <h3 data-i18n="as.exTitle">Najprej predogled. Potem vaš klik.</h3>
+          <p data-i18n="as.exP">Tako zgleda, preden se v urniku karkoli spremeni.</p>
           <div class="chat-mock">
             <div class="chat-line you"><b data-i18n="as.you">Vi</b><span>naroči Ano Novak jutri ob 10h</span></div>
             <div class="chat-line"><b>Hermes</b>
               <div class="proposal">
-                <small>createAppointment</small>
+                <small data-i18n="as.propKind">Nov termin</small>
                 <p data-i18n="as.prop">Ana Novak · jutri 10:00 · 30 min · stol 1</p>
                 <button type="button" class="izvedi" tabindex="-1">Izvedi</button>
               </div>
@@ -256,8 +256,8 @@
       </div>
 
       <div class="ask-block">
-        <h3 data-i18n="as.reads">Branja · takoj, tudi brez ponudnika AI</h3>
-        <p data-i18n="as.readsP">Ta vprašanja delujejo v slovenščini. Datumi se vežejo čez pogovor: »kaj pa 04.10«.</p>
+        <h3 data-i18n="as.reads">Kaj lahko vprašate</h3>
+        <p data-i18n="as.readsP">Odgovori pridejo iz vaših podatkov. Deluje tudi brez zunanjega AI. Datume lahko nadaljujete: »kaj pa 04.10«.</p>
         <div class="ask-groups">
           <div class="ask-group"><strong data-i18n="as.g.day">Dan in urnik</strong><div class="chips"><code>kaj imam danes</code><code>termini jutri</code><code>kdo pride v ponedeljek</code><code>kdo je naročen 22.09</code><code>prosti termini 2.10</code><code>imate kaj fraj</code><code>kdo čaka na pregled</code></div></div>
           <div class="ask-group"><strong data-i18n="as.g.pat">Bolniki</strong><div class="chips"><code>koliko bolnikov imam</code><code>pokaži Ano Novak</code><code>povzetek pacienta X</code><code>zadnji obisk za X</code><code>kaj veš o X</code></div></div>
@@ -267,59 +267,59 @@
       </div>
 
       <div class="write-block">
-        <h3 data-i18n="as.writes">Zapisi · vedno predogled, nato Izvedi</h3>
-        <p data-i18n="as.writesP">Vsaka zmožnost ima stopnjo. Klinično in upravljavsko delo je omejeno po vlogi.</p>
+        <h3 data-i18n="as.writes">Kaj lahko naredi</h3>
+        <p data-i18n="as.writesP">Vedno najprej predogled, nato Izvedi. Kdo sme kaj, je odvisno od vloge v ordinaciji.</p>
         <div class="write-grid">
           <div class="write-col"><h4 data-i18n="as.w.sched">Urnik</h4><ul>
-            <li><b>createAppointment</b> — naroči Ano Novak jutri ob 10h</li>
-            <li><b>reschedule / cancel / confirm</b> — po imenu ali »tisti termin«</li>
-            <li><b>blockout</b> — blokiraj jutri ob 13h za odmor</li>
+            <li data-i18n="as.w.s1">Naroči bolnika: »naroči Ano Novak jutri ob 10h«</li>
+            <li data-i18n="as.w.s2">Premakne, prekliče ali potrdi termin — po imenu ali »tisti termin«</li>
+            <li data-i18n="as.w.s3">Blokira uro za odmor ali sestanek</li>
           </ul></div>
           <div class="write-col"><h4 data-i18n="as.w.pat">Bolniki</h4><ul>
-            <li><b>createPatient / updatePatient</b> — telefon, e-pošta, naslov</li>
-            <li><b>patientRecare</b> — naslednji kontrolni termin</li>
-            <li><b>patientCommunication</b> — zabeleži klic/SMS (ne pošlje)</li>
-            <li><b>treatmentPlanRow / toothChart / patientConsent / patientDevice</b></li>
+            <li data-i18n="as.w.p1">Nov karton ali popravek telefona, e-pošte, naslova</li>
+            <li data-i18n="as.w.p2">Naslednji kontrolni termin</li>
+            <li data-i18n="as.w.p3">Zabeleži klic ali SMS — v kartoteko, sporočila ne pošlje</li>
+            <li data-i18n="as.w.p4">Doda postavko v načrt, stanje zoba, soglasje ali vsadek</li>
           </ul></div>
           <div class="write-col"><h4 data-i18n="as.w.bill">Računi</h4><ul>
-            <li><b>issueInvoice</b> — račun ali predračun, več postavk iz cenika</li>
-            <li><b>recordPayment</b> — delno ali celotno plačilo</li>
-            <li><b>printPdf</b> — natisni račun 2026-0001</li>
-            <li><b>recordVisit</b> — opravljeno, diagnoza</li>
+            <li data-i18n="as.w.b1">Račun ali predračun iz cenika, tudi več storitev naenkrat</li>
+            <li data-i18n="as.w.b2">Zabeleži plačilo — delno ali v celoti, npr. gotovina</li>
+            <li data-i18n="as.w.b3">Odpre PDF računa</li>
+            <li data-i18n="as.w.b4">Zabeleži opravljen obisk in diagnozo</li>
           </ul></div>
-          <div class="write-col"><h4 data-i18n="as.w.ops">Zaloga, lab, sterilizacija</h4><ul>
-            <li><b>stockAdjust</b> — prejem/poraba samodejno; odpad potrebuje odobritev</li>
-            <li><b>labStatus / labCaseCreate / labCaseUpdate</b></li>
-            <li><b>sterilizationCycle</b> — samo klinične vloge</li>
-            <li><b>servicePriceEdit</b> — samo vodenje</li>
+          <div class="write-col"><h4 data-i18n="as.w.ops">Zaloga, laboratorij, sterilizacija</h4><ul>
+            <li data-i18n="as.w.o1">Sprejme material ali ga porabi. Odpad počaka na vaš klik.</li>
+            <li data-i18n="as.w.o2">Nov primer za laboratorij in sprememba, kje je</li>
+            <li data-i18n="as.w.o3">Zabeleži sterilizacijo — samo klinika</li>
+            <li data-i18n="as.w.o4">Spremeni ceno v ceniku — samo vodstvo</li>
           </ul></div>
-          <div class="write-col"><h4 data-i18n="as.w.team">Ekipa in navigacija</h4><ul>
-            <li><b>timeOff</b> — odsotnost, samo vodenje</li>
-            <li><b>incidentReport</b> — varnostni incident, samo vodenje</li>
-            <li><b>openPatient / navigate</b> — odpri kartoteko ali zaslon</li>
-            <li><b>undoLast / cancelProposal</b> — razveljavi zadnjih 10 dejanj</li>
+          <div class="write-col"><h4 data-i18n="as.w.team">Ekipa</h4><ul>
+            <li data-i18n="as.w.t1">Dopust ali bolniška — samo vodstvo</li>
+            <li data-i18n="as.w.t2">Varnostni dogodek — samo vodstvo</li>
+            <li data-i18n="as.w.t3">Odpre kartoteko ali pravi zaslon</li>
+            <li data-i18n="as.w.t4">Razveljavi zadnjih deset dejanj</li>
           </ul></div>
         </div>
       </div>
 
       <div class="role-block">
-        <h3 data-i18n="as.roles">Omejitve po vlogi</h3>
-        <p data-i18n="as.rolesP">Ista vprašanja, različna dovoljenja. To ni ločen program — to so pravila v Hermes Dental.</p>
+        <h3 data-i18n="as.roles">Kdo sme kaj</h3>
+        <p data-i18n="as.rolesP">Ista vprašanja, različna dovoljenja. To so pravila v Hermes Dental, ne ločen program.</p>
         <div class="role-grid">
-          <article class="role-card"><span>01</span><h4 data-i18n="as.r1">Recepcija</h4><p data-i18n="as.r1p">Brez sterilizacije, statusa laba, obiska, naprave, načrta, zoba, soglasja, dopusta, cenika in incidentov.</p></article>
-          <article class="role-card"><span>02</span><h4 data-i18n="as.r2">Asistent</h4><p data-i18n="as.r2p">Lahko klinično delo: sterilizacija, lab, obisk, zob. Ne dopust, cenik ali incident.</p></article>
-          <article class="role-card"><span>03</span><h4 data-i18n="as.r3">Lastnik / zobozdravnik</h4><p data-i18n="as.r3p">Vse zmožnosti, še vedno za predogledom Izvedi, razen če je avtonomija pisanja vklopljena za rutino.</p></article>
+          <article class="role-card"><span>01</span><h4 data-i18n="as.r1">Recepcija</h4><p data-i18n="as.r1p">Termini, kartoni, računi. Ne sterilizacija, laboratorij, zobje, načrt zdravljenja, dopust ali cenik.</p></article>
+          <article class="role-card"><span>02</span><h4 data-i18n="as.r2">Asistent</h4><p data-i18n="as.r2p">Lahko klinika: sterilizacija, laboratorij, obisk, zob. Ne dopust, cenik ali varnostni dogodki.</p></article>
+          <article class="role-card"><span>03</span><h4 data-i18n="as.r3">Lastnik / zobozdravnik</h4><p data-i18n="as.r3p">Vse. Še vedno za predogledom, razen če vsakdanje stvari pustite, da tečejo same.</p></article>
         </div>
       </div>
 
       <div class="flow-block">
-        <h3 data-i18n="as.flow">Poteki, ki jih zares konča</h3>
-        <p data-i18n="as.flowP">Več korakov, ena odobritev na korak. Klik na predlog iz »kaj naj naredim« ga zažene.</p>
+        <h3 data-i18n="as.flow">Stvari, ki jih zares konča</h3>
+        <p data-i18n="as.flowP">Več korakov, en klik na korak. Če rečete »kaj naj naredim«, predlaga, vi pa izberete.</p>
         <ul class="flow-list">
-          <li><code>novega pacienta Maja Kovač naroči jutri ob 10h in izdaj račun za plombo</code></li>
-          <li><code>zabeleži obisk, opravljeno plomba 36</code> → <code>izdaj račun za včerajšnje</code></li>
-          <li><code>izdaj predračun za implantat</code> → PDF → podpis v Finance</li>
-          <li><code>kdo ni plačal</code> → <code>zabeleži plačilo 30 € za Meta Vidmar, gotovina</code></li>
+          <li data-i18n="as.f1">Novega pacienta naroči jutri ob 10h in pripravi račun za plombo.</li>
+          <li data-i18n="as.f2">Zabeleži obisk (plomba 36), nato račun za včerajšnje.</li>
+          <li data-i18n="as.f3">Predračun za implantat, PDF, podpis v Financah.</li>
+          <li data-i18n="as.f4">Kdo ni plačal → zabeleži 30 € gotovine za Meta Vidmar.</li>
         </ul>
       </div>
 
@@ -327,10 +327,10 @@
         <h3 data-i18n="as.gap">Česa ne zmore — pošteno</h3>
         <p data-i18n="as.gapP">Raje povemo mejo, kot da obljubimo pošiljanje, ki ga ni.</p>
         <ul>
-          <li data-i18n="as.g1">Ne pošilja e-pošte ali SMS pacientu. »Pošlji račun stranki« se ustavi pri pripravi dokumenta.</li>
-          <li data-i18n="as.g2">Lahko ustvarja, ne pa ureja ali briše večine zapisov: vrstice načrta, blokade, naprave, preklic soglasja, artikle, dopuste.</li>
-          <li data-i18n="as.g3">Ni nalaganja, podpisov, izvozov, povzetkov ali varnostnih kopij iz klepeta.</li>
-          <li data-i18n="as.g4">Razveljavi zadnjih 10 dejanj.</li>
+          <li data-i18n="as.g1">Ne pošilja e-pošte ali SMS pacientu. »Pošlji račun stranki« pripravi dokument, ne pošlje ga.</li>
+          <li data-i18n="as.g2">Lahko doda novo. Večine stvari iz klepeta ne more naknadno popraviti ali zbrisati — načrt, blokade, vsadke, soglasja, artikle, dopuste.</li>
+          <li data-i18n="as.g3">Iz klepeta ne naloži datotek, ne podpiše, ne izvozi in ne naredi varnostne kopije.</li>
+          <li data-i18n="as.g4">Razveljavi samo zadnjih deset korakov.</li>
         </ul>
       </div>
     </section>
