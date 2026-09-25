@@ -46,14 +46,6 @@
   document.addEventListener('click', event => { if (!event.target.closest('.site-header')) closeMenu(); });
   window.matchMedia('(min-width: 761px)').addEventListener('change', () => closeMenu());
   const providerCarousel = document.querySelector('[data-provider-carousel]');
-  const linkedBlogPost = document.getElementById('dgx-spark-vs-strix-halo');
-  if (linkedBlogPost) {
-    const openLinkedPost = () => {
-      if (location.hash === `#${linkedBlogPost.id}`) linkedBlogPost.open = true;
-    };
-    openLinkedPost();
-    window.addEventListener('hashchange', openLinkedPost);
-  }
   if (providerCarousel) {
     const track = providerCarousel.querySelector('[data-carousel-track]');
     const slides = [...providerCarousel.querySelectorAll('[data-carousel-slide]')];

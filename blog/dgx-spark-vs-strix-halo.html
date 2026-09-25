@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NVIDIA DGX Spark vs. AMD Strix Halo — choose wisely | Apollo Solutions</title>
+  <meta name="description" content="Two compact local AI machines with 128 GB of unified memory. Which one fits your work?" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="NVIDIA DGX Spark vs. AMD Strix Halo — choose wisely" />
+  <meta property="og:description" content="Two compact local AI machines with 128 GB of unified memory. Which one fits your work?" />
+  <meta property="og:image" content="https://sobraniex.github.io/apollo-solutions/images/blog/dgx-spark-vs-strix-halo-cover.jpg" />
+  <meta property="og:url" content="https://sobraniex.github.io/apollo-solutions/blog/dgx-spark-vs-strix-halo.html" />
+  <meta name="theme-color" content="#101014" />
+  <link rel="canonical" href="https://sobraniex.github.io/apollo-solutions/blog/dgx-spark-vs-strix-halo.html" />
+  <link rel="alternate" hreflang="en" href="https://sobraniex.github.io/apollo-solutions/blog/dgx-spark-vs-strix-halo.html" />
+  <link rel="alternate" hreflang="sl" href="https://sobraniex.github.io/apollo-solutions/sl/blog/dgx-spark-vs-strix-halo.html" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../home.css" />
+  <link rel="stylesheet" href="../studio.css" />
+  <link rel="stylesheet" href="../blog.css" />
+</head>
+<body class="blog-post-page">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="blog-post-header"><div class="wrap blog-post-header-inner">
+    <a class="brand" href="../" aria-label="Apollo Solutions"><svg class="apollo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg><span>Apollo <span class="brand-light">Solutions</span></span></a>
+    <div class="blog-post-header-actions"><a class="language" href="../../sl/blog/dgx-spark-vs-strix-halo.html" aria-label="Switch to Slovenian">SL</a></div>
+  </div></header>
+  <main id="main" class="blog-post-main"><div class="wrap">
+    <a class="blog-post-back" href="../#blog">← Back to blog</a>
+    <header class="blog-post-intro"><p class="blog-card-kicker">Hardware comparison · September 2026</p><h1>NVIDIA DGX Spark vs. AMD Strix Halo — choose wisely</h1><p>Two compact local AI machines with 128 GB of unified memory. Which one fits your work?</p></header>
+    <figure class="blog-post-cover"><img src="../images/blog/dgx-spark-vs-strix-halo-cover.jpg" alt="Illustration comparing a DGX Spark and an AMD Strix Halo desktop" width="1065" height="426" /></figure>
+    <article class="blog-article">
+
+            <p class="blog-lede">I have hands-on experience with the DGX Spark, but not with the Strix Halo. This comparison combines that experience with published specifications and independent testing, including StorageReview’s head-to-head review.</p>
+            <h2>The hardware</h2>
+            <p>Both machines offer 128 GB of unified memory and can run large, suitably quantized models locally. NVIDIA lists the DGX Spark at 273 GB/s of memory bandwidth, up to 1 PFLOP of FP4 compute with sparsity, and support for models up to 200 billion parameters. It runs NVIDIA’s Linux-based DGX OS and includes a ConnectX-7 network interface for clustering.</p>
+            <p>AMD’s Ryzen AI Halo developer platform pairs a 16-core, 32-thread Ryzen AI Max+ 395 with Radeon 8060S graphics, an XDNA 2 NPU, 128 GB of memory, and 256 GB/s of bandwidth. It supports Windows 11 or Linux, so it can also serve as a general-purpose PC.</p>
+            <h2>What the tests show</h2>
+            <p>StorageReview’s vLLM tests found the Spark ahead in most higher-concurrency inference workloads, often by roughly 2–4×. The gap varied sharply by model, quantization, prompt length, and batch size; a few decode-heavy runs were much closer. The Halo held its own in CPU-focused tests and gives you native Windows support. For a single user running a particular model, check a benchmark that matches your actual workload before treating any headline multiplier as a promise.</p>
+            <h2>Why the network port matters</h2>
+            <p>The Spark’s built-in ConnectX-7 makes a two-machine setup practical when a model needs more memory. NVIDIA documents two QSFP ports on each Spark, each capped at 200 Gb/s and configured for Ethernet. The limits of a standalone ConnectX-7 card do not describe the Spark’s ports. A cluster also needs the right cable, software, and model setup; connecting two boxes does not automatically double single-request speed.</p>
+            <figure><img src="../images/blog/dgx-spark-cluster.jpg" alt="Two compact DGX Spark devices connected by a cable" width="1540" height="1021" loading="lazy" /><figcaption>Two-machine setups make the Spark’s high-speed connection useful.</figcaption></figure>
+            <h2>Which would I choose?</h2>
+            <p><strong>Choose DGX Spark</strong> if your main work is local AI development, CUDA and PyTorch tooling, higher-throughput model serving, or a future two-node cluster. That is the machine I would pick for a dedicated AI workstation.</p>
+            <p><strong>Choose Strix Halo</strong> if you want a flexible Windows or Linux PC that can also run large local models, handle everyday work, and play games. Its x86 platform may be a better fit when one machine has to do several jobs.</p>
+            <figure><img src="../images/blog/amd-ryzen-ai-halo.jpg" alt="AMD Ryzen AI Halo compact desktop computer" width="1920" height="823" loading="lazy" /><figcaption>The Halo is a more flexible desktop for mixed workloads.</figcaption></figure>
+            <h2>Bottom line</h2>
+            <p>For dedicated local AI work, I favor the DGX Spark’s software ecosystem and cluster path. For a more versatile everyday computer that still runs substantial models, the Strix Halo is compelling. Choose for the work you will actually do.</p>
+            <p class="blog-sources">Sources: <a href="https://docs.nvidia.com/dgx/dgx-spark/hardware.html" target="_blank" rel="noopener noreferrer">NVIDIA hardware guide</a>, <a href="https://docs.nvidia.com/dgx/dgx-spark/spark-clustering.html" target="_blank" rel="noopener noreferrer">NVIDIA clustering guide</a>, <a href="https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo/ryzen-ai-max-plus-395.html" target="_blank" rel="noopener noreferrer">AMD specifications</a>, and <a href="https://www.storagereview.com/review/amd-ryzen-ai-halo-review-a-dual-os-200b-parameter-desktop-takes-on-the-dgx-spark" target="_blank" rel="noopener noreferrer">StorageReview tests</a>.</p>
+    </article>
+  </div></main>
+  <footer class="wrap footer"><a href="../#blog">← Back to blog</a><span>Apollo Solutions · 2026</span></footer>
+</body>
+</html>
