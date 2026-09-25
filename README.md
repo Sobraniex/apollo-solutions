@@ -18,6 +18,7 @@ python3 -m http.server 8101 --bind 127.0.0.1
 ```
 
 - Studio: http://127.0.0.1:8101/
+- Solo DGX Spark installation: http://127.0.0.1:8101/solo-dgx-spark.html
 - Hermes: http://127.0.0.1:8101/hermes/
 - Plans: http://127.0.0.1:8101/hermes/pricing.html
 
@@ -26,12 +27,18 @@ No package installation is required. After editing homepage translations, run `p
 ## Site structure
 
 - index.html, sl/index.html, home.css, studio.css, models.css, home.js: separate English and Slovenian homepage URLs. `scripts/build-sl.py` generates the Slovenian page from the bilingual source. The company-specific visual layers are isolated so plan pages keep their existing layout.
+- solo-dgx-spark.html, sl/solo-dgx-spark.html, solo-dgx-spark.css: dedicated bilingual €500 Solo installation offer. `scripts/build-sl.py` also regenerates the Slovenian service page.
 - hermes/: existing product site and documentation.
 - hermes/pricing.html, trial.html, plan-info.css, plan-info.js: public plan information and trial availability.
 - blog/ and news/: historical articles, no longer promoted on the homepage. They have archive notices and are excluded from indexing.
 - app.js and styles.css: retained for the historical articles.
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
+
+## Solo DGX Spark service page — 25 September 2026
+
+- The homepage Solo card links to a dedicated English or Slovenian page covering one compatible model on one customer-owned Spark, remote access, configuration, a test request, one session, handoff document, and seven days of follow-up.
+- Order and cart buttons are visible and disabled until a booking route exists. The €1,000 and €2,000 tiers, model catalog, price comparison, empty Apollo GitHub slots, and exact docs placeholder remain on the homepage.
 
 ## API cost comparison — 25 September 2026
 

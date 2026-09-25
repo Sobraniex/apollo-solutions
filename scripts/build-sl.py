@@ -1,4 +1,4 @@
-"""Build the crawlable Slovenian homepage from the bilingual source page."""
+"""Build crawlable Slovenian homepage and Solo service pages from bilingual sources."""
 
 from html import escape
 from html.parser import HTMLParser
@@ -29,6 +29,8 @@ class SlovenianPage(HTMLParser):
             return f'{name}="../{url}"'
 
         raw = re.sub(r'\b(href|src)="([^"]+)"', prefix_local, raw)
+        if "data-solo-link" in values:
+            raw = raw.replace('href="../solo-dgx-spark.html"', 'href="solo-dgx-spark.html"')
         if values.get("id") == "langBtn":
             raw = raw.replace('href="../sl/"', 'href="../"')
             raw = raw.replace('aria-label="Switch to Slovenian"', 'aria-label="Switch to English"')
@@ -90,3 +92,21 @@ html = html.replace('aria-label="Main navigation"', 'aria-label="Glavna navigaci
 target = ROOT / "sl" / "index.html"
 target.parent.mkdir(exist_ok=True)
 target.write_text(html, encoding="utf-8")
+
+# The service detail page uses the same translated markup and its own URL pair.
+solo_source = (ROOT / "solo-dgx-spark.html").read_text(encoding="utf-8")
+solo_page = SlovenianPage()
+solo_page.feed(solo_source)
+solo_html = "".join(solo_page.output)
+solo_html = solo_html.replace('<html lang="en">', '<html lang="sl">')
+solo_html = solo_html.replace('href=".././', 'href="./')
+solo_html = solo_html.replace('href="../sl/solo-dgx-spark.html" aria-label="Switch to Slovenian">SL', 'href="../solo-dgx-spark.html" aria-label="Switch to English">EN')
+solo_html = solo_html.replace('Solo DGX Spark installation | Apollo Solutions', 'Namestitev ene naprave DGX Spark | Apollo Solutions')
+solo_html = solo_html.replace("Apollo's €500 remote installation for one NVIDIA DGX Spark: one compatible model setup, one session, a handoff document, and seven days of follow-up.", 'Apollova oddaljena namestitev za eno napravo NVIDIA DGX Spark za 500 €: en združljiv model, eno srečanje, dokument ob predaji in sedem dni nadaljnje podpore.')
+solo_html = solo_html.replace('One Spark. One model setup. One remote session. €500, with handoff notes and seven days of follow-up.', 'Ena naprava Spark, en model in eno oddaljeno srečanje za 500 €, z dokumentom ob predaji in sedmimi dnevi nadaljnje podpore.')
+solo_html = solo_html.replace('https://sobraniex.github.io/apollo-solutions/solo-dgx-spark.html" />\n  <link rel="alternate"', 'https://sobraniex.github.io/apollo-solutions/sl/solo-dgx-spark.html" />\n  <link rel="alternate"', 1)
+solo_html = solo_html.replace('property="og:url" content="https://sobraniex.github.io/apollo-solutions/solo-dgx-spark.html"', 'property="og:url" content="https://sobraniex.github.io/apollo-solutions/sl/solo-dgx-spark.html"')
+solo_html = solo_html.replace('aria-label="Main navigation"', 'aria-label="Glavna navigacija"')
+solo_html = solo_html.replace('aria-label="Solo installation price and availability"', 'aria-label="Cena in razpoložljivost namestitve ene naprave"')
+solo_html = solo_html.replace('aria-label="Illustration of one DGX Spark running a local AI model"', 'aria-label="Prikaz ene naprave DGX Spark, na kateri deluje lokalni model AI"')
+(ROOT / "sl" / "solo-dgx-spark.html").write_text(solo_html, encoding="utf-8")
