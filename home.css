@@ -158,6 +158,12 @@ p {
   min-height:38px
 }
 
+.language {
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none
+}
+
 .language:hover,.menu-button:hover {
   border-color:var(--lilac)
 }

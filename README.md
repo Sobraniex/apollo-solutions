@@ -21,17 +21,25 @@ python3 -m http.server 8101 --bind 127.0.0.1
 - Hermes: http://127.0.0.1:8101/hermes/
 - Plans: http://127.0.0.1:8101/hermes/pricing.html
 
-No build step or package installation is required. Relative links also work at the GitHub Pages project path, /apollo-solutions/.
+No package installation is required. After editing homepage translations, run `python3 scripts/build-sl.py` to regenerate the static Slovenian homepage. Relative links also work at the GitHub Pages project path, /apollo-solutions/.
 
 ## Site structure
 
-- index.html, home.css, studio.css, home.js: studio homepage, English and Slovenian. The company-specific visual layer is isolated in studio.css so plan pages keep their existing layout.
+- index.html, sl/index.html, home.css, studio.css, home.js: separate English and Slovenian homepage URLs. `scripts/build-sl.py` generates the Slovenian page from the bilingual source. The company-specific visual layer is isolated in studio.css so plan pages keep their existing layout.
 - hermes/: existing product site and documentation.
 - hermes/pricing.html, trial.html, plan-info.css, plan-info.js: public plan information and trial availability.
 - blog/ and news/: historical articles, no longer promoted on the homepage. They have archive notices and are excluded from indexing.
 - app.js and styles.css: retained for the historical articles.
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
+
+## Site accuracy update — 25 September 2026
+
+- Added a crawlable `/sl/` homepage with its own canonical URL, reciprocal language links, translated metadata, and sitemap entry.
+- The Hermes pricing page now states the current fit: independent private practices with one chair, macOS, and a person responsible for rollout. Scope and price are agreed in writing.
+- Corrected the Hermes security page using the current application: the local SQLite file is not encrypted by the app, backups use AES-256-GCM, and local and hosted staff authentication use different password hashing methods.
+- Replaced unsupported trial, cancellation, GDPR, legal-entity, and response-time promises on public supporting pages. Removed a cookie banner that claimed PostHog and Sentry were active, although neither script was loaded.
+- A public enquiry address and legal operator name/address still need owner confirmation. The site does not submit enquiries or state an unverified identity.
 
 ## Positioning update — 17 September 2026
 
@@ -46,7 +54,7 @@ The Hermes application lives separately in ../hermes-dental-clone/app.
 
 ## Remaining publication decisions
 
-Add a real public contact route before accepting pricing enquiries or trial registrations. Confirm the commercial terms before enabling signup or payment. Existing Hermes security, legal, download, and service-status pages predate this positioning update and still need a product-specific accuracy review; the homepage does not repeat their certification or service-level claims.
+Add a verified public contact route before accepting pricing enquiries or trial registrations. Confirm the legal operator details and commercial terms before enabling signup or payment. Download and service-status pages still need product-specific accuracy review; the homepage does not repeat their certification or service-level claims.
 
 A custom domain has not been selected. Canonical and share URLs currently use the existing GitHub Pages address.
 
