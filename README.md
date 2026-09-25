@@ -1,6 +1,6 @@
 # Apollo Solutions
 
-Independent AI and software studio in Slovenia. The homepage now leads with a developing local AI installation and integration service, AI workflows, and focused software. Hermes Dental is the first product and has its own product section and site.
+Independent AI and software studio in Slovenia. The homepage leads with six DGX Spark model configurations and three installation tiers. Hermes Dental has a small product section and its own site.
 
 ## Live site
 
@@ -25,7 +25,7 @@ No package installation is required. After editing homepage translations, run `p
 
 ## Site structure
 
-- index.html, sl/index.html, home.css, studio.css, home.js: separate English and Slovenian homepage URLs. `scripts/build-sl.py` generates the Slovenian page from the bilingual source. The company-specific visual layer is isolated in studio.css so plan pages keep their existing layout.
+- index.html, sl/index.html, home.css, studio.css, models.css, home.js: separate English and Slovenian homepage URLs. `scripts/build-sl.py` generates the Slovenian page from the bilingual source. The company-specific visual layers are isolated so plan pages keep their existing layout.
 - hermes/: existing product site and documentation.
 - hermes/pricing.html, trial.html, plan-info.css, plan-info.js: public plan information and trial availability.
 - blog/ and news/: historical articles, no longer promoted on the homepage. They have archive notices and are excluded from indexing.
@@ -33,13 +33,29 @@ No package installation is required. After editing homepage translations, run `p
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
 
+## DGX Spark catalog — 25 September 2026
+
+- Six model cards mirror the configurations listed by Mia AI Lab, with its published decode speeds explicitly labelled as reference figures. Apollo has not measured them.
+- The public GitHub slots are intentionally empty until the owner provides Apollo repository URLs. The source repositories for each slot are listed below so the mapping is unambiguous. All six upstream repositories report AGPL-3.0; preserve their license and attribution when reposting derivative code.
+- The installation tiers are 1 Spark (€500), 2 Sparks (€1,000), and 4 Sparks (€2,000). Each outlines one remote installation session, handover notes, and seven days of follow-up. Hardware is separate. Booking and payment links are pending.
+- The website displays the requested placeholder text: `apollo docs to be made by you`.
+
+| Model card | Upstream source | Apollo URL |
+| --- | --- | --- |
+| Qwen3.8 Flash Next, 1 Spark | https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark | Pending |
+| GLM 5.3 Flash, 2–4 Sparks | https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks | Pending |
+| Qwen3.8 Flash Next, 2 Sparks | https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks | Pending |
+| DeepSeek V4.1 Flash EXL3, 2 Sparks | https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-EXL3-2x-DGX-Sparks | Pending |
+| MiMo V2.6 Flash, 2 Sparks | https://github.com/MiaAI-Lab/MiMo-V2.6-Flash-2x-DGX-Sparks | Pending |
+| DeepSeek V4.1 Flash, 3–4 Sparks | https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks | Pending |
+
 ## Homepage direction — 25 September 2026
 
 - Local AI is the primary offer in the headline, navigation, service cards, and process section. The page explains hardware review, model selection, installation, integration, testing, and handover.
 - The service is labelled as in development. There is no invented booking link, public email address, hardware package, benchmark, or pricing promise.
 - Hermes Dental appears as a compact product card linking to its existing product site. Its detailed scope and plan information remain there.
 - Removed the dental-specific interactive workbench and model cost comparison from the homepage. The English and Slovenian pages and metadata share the new positioning.
-- This update is local only until the site owner approves publication.
+- This earlier version was published as commit `8bcc1c7` before the DGX Spark catalog revision.
 
 ## Site accuracy update — 25 September 2026
 

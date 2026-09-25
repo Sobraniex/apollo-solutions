@@ -9,14 +9,14 @@
     return;
   }
   const descriptions = {
-    en: 'Apollo Solutions is building practical local AI setups, useful agents, and focused software. Explore our approach to private AI and our first product, Hermes Dental.',
-    sl: 'Apollo Solutions razvija praktične postavitve lokalne AI, uporabne agente in specializirane programe. Spoznajte naš pristop in prvi izdelek Hermes Dental.'
+    en: 'Explore six open-model configurations for NVIDIA DGX Sparks and Apollo’s 1, 2, and 4 Spark installation packages. Hermes Dental remains a separate Apollo product.',
+    sl: 'Raziščite šest konfiguracij odprtih modelov za NVIDIA DGX Spark ter Apollove pakete namestitve za eno, dve ali štiri naprave. Hermes Dental ostaja ločen izdelek.'
   };
   function setLanguage(next) {
     language = next;
     document.documentElement.lang = language;
     document.querySelectorAll('[data-en][data-sl]').forEach(element => { element.textContent = element.dataset[language]; });
-    document.title = language === 'sl' ? 'Lokalna AI in praktični programi | Apollo Solutions' : 'Local AI & Practical Software | Apollo Solutions';
+    document.title = language === 'sl' ? 'Modeli AI in namestitev DGX Spark | Apollo Solutions' : 'DGX Spark AI Models & Installation | Apollo Solutions';
     document.querySelector('meta[name="description"]').content = descriptions[language];
     document.querySelector('meta[property="og:title"]').content = document.title;
     document.querySelector('meta[property="og:description"]').content = descriptions[language];
