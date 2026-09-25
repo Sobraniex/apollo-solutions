@@ -1,32 +1,62 @@
 .privacy-section{padding-block:88px 84px;background:#f1edf5;color:#27212e;color-scheme:light;border-block:1px solid #d8cde3}
 .privacy-section .section-label{color:#71627d}
-.privacy-heading{display:grid;grid-template-columns:1.15fr .75fr;align-items:end;gap:80px;margin-top:39px}
-.privacy-heading .eyebrow,.privacy-policies .eyebrow{color:#815f97;margin-bottom:16px}
-.privacy-heading h2{font-size:clamp(43px,4.9vw,68px);line-height:1.08;max-width:770px}
-.privacy-heading>p{color:#62586a;font-size:16px;line-height:1.8;max-width:430px}
-.privacy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:48px}
-.privacy-card{display:flex;flex-direction:column;min-width:0;min-height:265px;background:#fff;border:1px solid #d9cfe2;border-radius:10px;padding:29px;box-shadow:0 12px 35px #2b143808}
-.privacy-card-number{font-size:10px;letter-spacing:.16em;color:#98647d}
-.privacy-card h3{font-size:26px;line-height:1.15;margin-top:27px}
-.privacy-card p{font-size:13px;line-height:1.75;color:#655a6b;margin-top:16px}
-.privacy-policies{display:grid;grid-template-columns:.5fr 1fr;gap:57px;margin-top:76px;padding-top:65px;border-top:1px solid #cfc2d9}
-.privacy-policies-intro h3{font-size:clamp(32px,3vw,43px);line-height:1.1;max-width:360px}
-.privacy-policies-intro>p:last-child{font-size:13px;line-height:1.8;color:#655a6b;margin-top:19px;max-width:360px}
-.privacy-provider-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.privacy-provider-list article{display:flex;flex-direction:column;min-width:0;padding:22px;background:#fff;border:1px solid #d9cfe2;border-radius:8px}
-.privacy-provider-list article:last-child{grid-column:1 / -1}
-.privacy-provider-list h4{font-size:17px;font-weight:600;letter-spacing:-.025em;margin:0}
-.privacy-provider-list article>div span{display:block;font-size:10px;color:#896b98;margin-top:5px}
-.privacy-provider-list p{font-size:12px;line-height:1.7;color:#62596a;margin-top:13px}
-.privacy-provider-list a{font-size:11px;color:#764e90;border-bottom:1px solid #a68ab9;align-self:flex-start;margin-top:auto;padding-top:15px;padding-bottom:2px}
-.privacy-provider-list a+a{margin-top:6px;padding-top:0}
-.privacy-provider-list a:hover,.privacy-eu a:hover,.privacy-next a:hover{opacity:.7}
-.privacy-eu{display:grid;grid-template-columns:1fr auto;align-items:end;gap:28px;margin-top:18px;padding:28px 30px;background:#292030;color:#f4eef9;border-radius:9px}
-.privacy-eu-tag{display:block;font-size:10px;letter-spacing:.16em;color:#ffb899}
-.privacy-eu p{font-size:13px;line-height:1.75;color:#d4c8dc;max-width:840px;margin-top:10px}
-.privacy-eu a{font-size:11px;color:#e4cffa;white-space:nowrap}
-.privacy-next{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:34px;padding-top:25px;border-top:1px solid #cfc2d9}
+.privacy-section .eyebrow{color:#815f97;margin-bottom:14px}
+.privacy-section h3{font-size:clamp(30px,3.2vw,44px);line-height:1.1}
+.privacy-section h4{font-size:21px;line-height:1.2}
+.privacy-section p{line-height:1.7}
+.privacy-heading{display:grid;grid-template-columns:1.15fr .75fr;align-items:end;gap:80px;margin-top:42px}
+.privacy-heading h2{font-size:clamp(42px,4.7vw,66px);line-height:1.07;max-width:780px}
+.privacy-heading>p{font-size:17px;color:#62586a;max-width:440px}
+.privacy-flow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:54px}
+.privacy-flow-label{grid-column:1/-1;display:flex;align-items:baseline;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.14em;color:#805e91;padding-bottom:8px}
+.privacy-flow-label p{font-size:13px;letter-spacing:0;color:#73657a}
+.privacy-route{display:grid;grid-template-columns:55px 1fr;gap:14px;min-height:230px;border:1px solid #d9cfe2;border-radius:11px;background:#fff;padding:29px;box-shadow:0 12px 35px #2b143808}
+.privacy-route.local{background:#302638;color:#f7effb;border-color:#302638}
+.privacy-route-num{font-size:12px;letter-spacing:.15em;color:#976f9e}
+.privacy-route.local .privacy-route-num{color:#ffb899}
+.privacy-route h3{font-size:30px;max-width:420px}
+.privacy-route p{font-size:14px;color:#665b6c;margin-top:18px;max-width:485px}
+.privacy-route.local p{color:#d5cadb}
+.privacy-chapter{display:grid;grid-template-columns:1fr .7fr;align-items:end;gap:45px;margin-top:84px;padding-top:48px;border-top:1px solid #cfc2d9}
+.privacy-chapter h3{max-width:600px}
+.privacy-chapter>p{font-size:14px;color:#665b6c;max-width:395px}
+.privacy-issues{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:28px}
+.privacy-issues article{padding:27px 26px;border-top:2px solid #9873ad;background:#ffffffb8;border-radius:0 0 9px 9px}
+.privacy-issues article>span{display:block;font-size:11px;letter-spacing:.15em;color:#9566ab;margin-bottom:24px}
+.privacy-issues h4{margin:0}
+.privacy-issues p{font-size:13px;color:#655a6b;margin-top:15px}
+.privacy-provider,.privacy-law,.privacy-eu{margin-top:82px;padding-top:48px;border-top:1px solid #cfc2d9}
+.privacy-provider-head,.privacy-law-head,.privacy-eu-head{display:grid;grid-template-columns:1fr 1fr;column-gap:45px;align-items:end}
+.privacy-provider-head .eyebrow,.privacy-law-head .eyebrow,.privacy-eu-head .eyebrow{grid-column:1/-1}
+.privacy-provider-head>p:last-child,.privacy-law-head>p:last-child,.privacy-eu-head>p:last-child{font-size:14px;color:#655a6b;max-width:470px}
+.privacy-provider-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:29px}
+.privacy-provider-grid article{display:flex;flex-direction:column;min-width:0;padding:25px;background:#fff;border:1px solid #d9cfe2;border-radius:9px}
+.privacy-provider-grid article:last-child{grid-column:1/-1}
+.privacy-provider-grid p{font-size:13px;color:#655a6b;margin-top:12px}
+.privacy-provider-links,.privacy-source-links{display:flex;flex-wrap:wrap;gap:7px 17px;margin-top:auto;padding-top:18px}
+.privacy-provider-links a,.privacy-source-links a{font-size:11px;color:#70498b;text-decoration:underline;text-underline-offset:3px}
+.privacy-provider-links a:hover,.privacy-source-links a:hover,.privacy-next a:hover{opacity:.68}
+.privacy-law-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:29px}
+.privacy-law-grid article{display:flex;flex-direction:column;border:1px solid #d9cfe2;border-radius:9px;padding:28px;background:#e8e0ef}
+.privacy-law-grid article>span{display:block;color:#9363a6;font-size:11px;letter-spacing:.16em;margin-bottom:22px}
+.privacy-law-grid p{font-size:13px;color:#584e61;margin-top:15px}
+.privacy-eu-grid{display:grid;grid-template-columns:.8fr 1fr;gap:15px;margin-top:29px}
+.privacy-timeline,.privacy-eu-action{background:#292030;color:#f4eef9;border-radius:9px;padding:30px}
+.privacy-timeline>div{display:grid;grid-template-columns:85px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid #ffffff28}
+.privacy-timeline>div:first-child{padding-top:0}
+.privacy-timeline>div:last-child{border:0;padding-bottom:0}
+.privacy-timeline time{font-size:11px;color:#ffb899;letter-spacing:.06em}
+.privacy-timeline p,.privacy-eu-action p{font-size:13px;color:#d7cadd}
+.privacy-eu-action h4{margin-bottom:17px}
+.privacy-eu-action .privacy-source-links a{color:#e7cff8}
+.privacy-takeaway{margin-top:82px;padding:42px 46px;background:#fff;border:1px solid #d9cfe2;border-radius:11px}
+.privacy-takeaway ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 45px;counter-reset:questions;list-style:none;padding:0;margin:23px 0 0}
+.privacy-takeaway li{counter-increment:questions;display:flex;gap:16px;padding:15px 0;border-top:1px solid #e6ddec;font-size:14px;line-height:1.5}
+.privacy-takeaway li::before{content:counter(questions,decimal-leading-zero);font-size:11px;color:#9466a7;letter-spacing:.1em;padding-top:2px;flex:none}
+.privacy-next{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:24px;padding-top:23px;border-top:1px solid #d9cfe2}
 .privacy-next p{font-size:14px;color:#655a6b}
 .privacy-next a{flex:none;color:#6d4388;font-size:13px;font-weight:600}
-@media(max-width:1000px){.privacy-heading{gap:40px}.privacy-policies{grid-template-columns:1fr;gap:30px}.privacy-policies-intro h3,.privacy-policies-intro>p:last-child{max-width:720px}.privacy-card{padding:22px}}
-@media(max-width:760px){.privacy-section{padding-block:61px}.privacy-heading{grid-template-columns:1fr;gap:21px;margin-top:29px}.privacy-heading h2{font-size:clamp(39px,10.5vw,54px)}.privacy-heading>p{font-size:15px}.privacy-grid{grid-template-columns:1fr;gap:12px;margin-top:29px}.privacy-card{min-height:0}.privacy-card h3{margin-top:17px}.privacy-policies{margin-top:54px;padding-top:45px}.privacy-provider-list{grid-template-columns:1fr}.privacy-provider-list article:last-child{grid-column:auto}.privacy-eu{grid-template-columns:1fr;gap:18px;padding:25px}.privacy-eu a{white-space:normal}.privacy-next{align-items:flex-start;flex-direction:column;gap:14px}.privacy-section .section-label>span:last-child{display:none}}
+@media(max-width:950px){.privacy-heading{gap:35px}.privacy-provider-head,.privacy-law-head,.privacy-eu-head{grid-template-columns:1fr;gap:14px}.privacy-chapter{grid-template-columns:1fr;gap:14px}.privacy-heading h2{font-size:clamp(40px,5vw,58px)}}
+@media(max-width:760px){.privacy-section{padding-block:60px}.privacy-section .section-label>span:last-child{display:none}.privacy-heading{grid-template-columns:1fr;gap:20px;margin-top:30px}.privacy-heading h2{font-size:clamp(38px,10vw,54px)}.privacy-heading>p{font-size:15px}.privacy-flow{grid-template-columns:1fr;margin-top:36px}.privacy-flow-label{display:block}.privacy-flow-label p{margin-top:5px}.privacy-route{min-height:0;padding:24px;grid-template-columns:34px 1fr}.privacy-route h3{font-size:27px}.privacy-chapter,.privacy-provider,.privacy-law,.privacy-eu{margin-top:58px;padding-top:37px}.privacy-issues,.privacy-provider-grid,.privacy-law-grid,.privacy-eu-grid{grid-template-columns:1fr}.privacy-issues{gap:10px}.privacy-issues article{padding:22px}.privacy-issues article>span{margin-bottom:13px}.privacy-provider-grid article:last-child{grid-column:auto}.privacy-timeline,.privacy-eu-action{padding:24px}.privacy-takeaway{margin-top:58px;padding:28px 24px}.privacy-takeaway ol{grid-template-columns:1fr}.privacy-next{align-items:flex-start;flex-direction:column;gap:12px}}
+@media(max-width:420px){.privacy-route{grid-template-columns:1fr;gap:7px}.privacy-timeline>div{grid-template-columns:72px 1fr;gap:10px}}
+.privacy-law-grid p+p{margin-top:10px}

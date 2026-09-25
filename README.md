@@ -35,11 +35,11 @@ No package installation is required. After editing homepage translations, run `p
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
 
-## Workflow and data privacy introduction — 25 September 2026
+## Guided AI and data privacy introduction — 25 September 2026
 
-- A new `00 / Before the models` section leads visitors from practical company workflows into data boundaries, local processing, and the DGX Spark catalog. The hero button points to this section.
-- Five provider summaries distinguish consumer from business/API terms where relevant and link to each provider's published policy. A separate EU note links to the European Commission's GDPR principles. The copy does not promise that local installation alone ensures privacy or legal compliance.
-- Privacy policy summaries were checked against primary sources on 25 September 2026; review them when provider terms change.
+- The `00 / Before the models` section uses a small shop’s customer email to compare hosted and carefully configured local AI data paths. Three separate cards explain model training, data retention, and lawful government requests.
+- Published provider terms show differences between personal chat and business/API accounts. The US and China legal cards explain jurisdiction and cross-border limits without suggesting automatic government access. The EU timeline reflects the AI Omnibus dates verified against European Commission guidance, alongside GDPR principles and practical preparation.
+- The five-question takeaway is available in English and Slovenian. The source links are on the page. Recheck provider terms and regulatory guidance when they change.
 
 ## Solo DGX Spark service page — 25 September 2026
 
