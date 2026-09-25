@@ -2,207 +2,60 @@
   'use strict';
   const root = document.getElementById('dostopnost');
   if (!root) return;
-  // Published USD API rates checked 25 Sep 2026. Uncached input; DeepSeek peak,
-  // Claude standard. This compares equal token counts, not equal task quality.
-  const rates = { premium: { input: 4, output: 20 }, efficient: { input: .3, output: 1.32 } };
-  const maxX = 3;
-  let view = 'combined';
 
-  function mix() {
-    return { input: view === 'output' ? 0 : 1, output: view === 'input' ? 0 : 1 };
-  }
+  // Uncached published USD API prices checked 25 Sep 2026.
+  const api = { claude: 24, deepseek: 1.62 };
+  const hardwareDefault = 4699;
+  const runningDefault = 25;
+  const months = 36;
 
-  function perUnit(name) {
-    const used = mix();
-    return rates[name].input * used.input + rates[name].output * used.output;
-  }
-
-  function money(value, sl, digits) {
-    const places = digits == null ? (Math.abs(value) >= 100 ? 0 : 2) : digits;
+  function format(value, sl = document.documentElement.lang === 'sl') {
     return new Intl.NumberFormat(sl ? 'sl-SI' : 'en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: places,
-      maximumFractionDigits: places
-    }).format(value);
-  }
-
-  function round(value) {
-    return Math.round(value * 10) / 10;
-  }
-
-  function pill(left, top, label, color) {
-    const width = Math.max(62, label.length * 7.1 + 18);
-    const height = 22;
-    return `<g>
-      <rect x="${round(left)}" y="${round(top)}" width="${round(width)}" height="${height}" rx="5" fill="#16111c" stroke="${color}" stroke-opacity="0.55"/>
-      <text x="${round(left + width / 2)}" y="${round(top + 15)}" text-anchor="middle" fill="${color}" font-size="11">${label}</text>
-    </g>`;
-  }
-
-  function renderChart(sl, premium, efficient) {
-    const chart = root.querySelector('#cost-chart');
-    const width = 640;
-    const height = 292;
-    const pad = { left: 52, right: 18, top: 28, bottom: 44 };
-    const innerWidth = width - pad.left - pad.right;
-    const innerHeight = height - pad.top - pad.bottom;
-    const maxY = perUnit('premium') * maxX || 1;
-    const x = value => round(pad.left + (value / maxX) * innerWidth);
-    const y = value => round(pad.top + (1 - value / maxY) * innerHeight);
-    const premiumEnd = perUnit('premium') * maxX;
-    const efficientEnd = perUnit('efficient') * maxX;
-    const exampleX = x(1);
-    const premiumY = y(premium);
-    const efficientY = y(efficient);
-    const axisTitle = sl ? 'Uporaba glede na ta primer →' : 'Usage relative to this example →';
-    const exampleLabel = sl ? 'ta primer' : 'this example';
-    const reduction = new Intl.NumberFormat(sl ? 'sl-SI' : 'en-US', { maximumFractionDigits: 1 }).format((1 - efficient / premium) * 100);
-    let grid = '';
-    for (let index = 0; index <= 3; index += 1) {
-      const value = maxY * index / 3;
-      const top = y(value);
-      const base = index === 0;
-      grid += `<line x1="${pad.left}" x2="${width - pad.right}" y1="${top}" y2="${top}" stroke="#c7b3f5" stroke-opacity="${base ? 0.34 : 0.1}"${base ? '' : ' stroke-dasharray="2 5"'}/>`;
-      const whole = Math.abs(value - Math.round(value)) < 0.05;
-      grid += `<text x="${pad.left - 8}" y="${top + 3.5}" text-anchor="end" fill="#9b89ab" font-size="10">${money(value, sl, whole || value >= 100 ? 0 : 1)}</text>`;
-    }
-    let xTicks = '';
-    for (let value = 0; value <= maxX; value += 1) {
-      const left = x(value);
-      const isExample = value === 1;
-      const label = isExample ? exampleLabel : value + '×';
-      xTicks += `<text x="${left}" y="${height - 14}" text-anchor="middle" fill="${isExample ? '#f0d2c0' : '#9b89ab'}" font-size="${isExample ? 10 : 10}" font-weight="${isExample ? 600 : 400}">${label}</text>`;
-    }
-    const gapY = round(premiumY + (efficientY - premiumY) * 0.4);
-    const efficientPillTop = Math.min(efficientY - 24, pad.top + innerHeight - 26);
-    const summary = sl
-      ? `Claude Opus 5.5 ${money(premium, true)} proti DeepSeek V4.1 Flash ${money(efficient, true)} v tem primeru.`
-      : `Claude Opus 5.5 costs ${money(premium, false)} versus DeepSeek V4.1 Flash at ${money(efficient, false)} for this example.`;
-    chart.setAttribute('aria-label', summary);
-    chart.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="presentation" width="100%" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <linearGradient id="eco-gap" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c7b3f5" stop-opacity="0.28"/>
-          <stop offset="1" stop-color="#c7b3f5" stop-opacity="0.05"/>
-        </linearGradient>
-        <clipPath id="eco-plot">
-          <rect x="${pad.left}" y="${pad.top}" width="${innerWidth}" height="${innerHeight}"/>
-        </clipPath>
-      </defs>
-      <rect x="${pad.left}" y="${pad.top}" width="${innerWidth}" height="${innerHeight}" fill="#140f19"/>
-      ${grid}
-      <g clip-path="url(#eco-plot)">
-        <rect x="${round(exampleX - 18)}" y="${pad.top}" width="36" height="${innerHeight}" fill="#ffa982" fill-opacity="0.07"/>
-        <path d="M${x(0)},${y(0)} L${x(maxX)},${y(premiumEnd)} L${x(maxX)},${y(efficientEnd)} Z" fill="url(#eco-gap)"/>
-        <path d="M${x(0)},${y(0)} L${x(maxX)},${y(premiumEnd)}" fill="none" stroke="#c7b3f5" stroke-width="2.6" stroke-linecap="round"/>
-        <path d="M${x(0)},${y(0)} L${x(maxX)},${y(efficientEnd)}" fill="none" stroke="#ffa982" stroke-width="3" stroke-linecap="round"/>
-      </g>
-      <line x1="${exampleX}" x2="${exampleX}" y1="${pad.top}" y2="${pad.top + innerHeight}" stroke="#ffd7c0" stroke-opacity="0.35"/>
-      <line x1="${exampleX}" x2="${exampleX}" y1="${premiumY}" y2="${efficientY}" stroke="#ffa982" stroke-width="1.5" stroke-dasharray="3 3"/>
-      <circle cx="${x(maxX)}" cy="${y(premiumEnd)}" r="3.4" fill="#c7b3f5"/>
-      <circle cx="${x(maxX)}" cy="${y(efficientEnd)}" r="3.4" fill="#ffa982"/>
-      <circle cx="${exampleX}" cy="${premiumY}" r="5.2" fill="#16111c" stroke="#c7b3f5" stroke-width="2.2"/>
-      <circle cx="${exampleX}" cy="${efficientY}" r="5.2" fill="#16111c" stroke="#ffa982" stroke-width="2.2"/>
-      ${pill(exampleX + 14, premiumY - 34, money(premium, sl), '#d7c6ee')}
-      ${pill(exampleX + 14, efficientPillTop, money(efficient, sl), '#ffc5a8')}
-      <g>
-        <rect x="${round(exampleX - 48)}" y="${round(gapY - 11)}" width="42" height="20" rx="4" fill="#24182a" stroke="#ffa982" stroke-opacity="0.45"/>
-        <text x="${round(exampleX - 27)}" y="${round(gapY + 4)}" text-anchor="middle" fill="#ffc5a8" font-size="10">−${reduction}%</text>
-      </g>
-      <text x="${x(maxX) - 10}" y="${y(premiumEnd) + 18}" text-anchor="end" fill="#d7c6ee" stroke="#140f19" stroke-width="4" paint-order="stroke" font-size="10">Claude</text>
-      <text x="${x(maxX) - 10}" y="${y(efficientEnd) - 12}" text-anchor="end" fill="#ffc5a8" stroke="#140f19" stroke-width="4" paint-order="stroke" font-size="10">DeepSeek</text>
-      ${xTicks}
-    </svg>`;
-    root.querySelector('#cost-axis-title').textContent = axisTitle;
-  }
-
-  function render() {
-    const sl = document.documentElement.lang === 'sl';
-    const premium = perUnit('premium');
-    const efficient = perUnit('efficient');
-    root.querySelector('#premium-cost').textContent = money(premium, sl);
-    root.querySelector('#efficient-cost').textContent = money(efficient, sl);
-    const reduction = new Intl.NumberFormat(sl ? 'sl-SI' : 'en-US', { maximumFractionDigits: 1 }).format((1 - efficient / premium) * 100);
-    root.querySelector('#cost-reduction').innerHTML = reduction + '<span>%</span>';
-    const captions = {
-      combined: ['Example: 1 million input + 1 million output tokens', 'Primer: 1 milijon vhodnih + 1 milijon izhodnih žetonov'],
-      input: ['Example: 1 million input tokens', 'Primer: 1 milijon vhodnih žetonov'],
-      output: ['Example: 1 million output tokens', 'Primer: 1 milijon izhodnih žetonov']
-    };
-    root.querySelector('#cost-caption').textContent = captions[view][sl ? 1 : 0];
-    root.querySelector('.cost-controls').setAttribute('aria-label', sl ? 'Primerjava uporabe' : 'Usage comparison');
-    root.querySelectorAll('[data-cost-view]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.costView === view)));
-    renderChart(sl, premium, efficient);
-  }
-
-  root.addEventListener('click', event => {
-    const button = event.target.closest('[data-cost-view]');
-    if (!button || !root.contains(button)) return;
-    view = button.dataset.costView;
-    render();
-  });
-  root.querySelector('.cost-controls').addEventListener('keydown', event => {
-    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-    const buttons = [...root.querySelectorAll('[data-cost-view]')];
-    const index = buttons.findIndex(button => button.dataset.costView === view);
-    const offset = event.key === 'ArrowRight' ? 1 : -1;
-    const next = buttons[(index + offset + buttons.length) % buttons.length];
-    view = next.dataset.costView;
-    next.focus();
-    render();
-    event.preventDefault();
-  });
-  document.addEventListener('apollo:language', render);
-  render();
-  root.querySelector('.cost-controls').hidden = false;
-
-  const longrun = root.querySelector('#longrun-cost');
-  if (longrun) {
-    const usageInput = longrun.querySelector('#longrun-usage');
-    const monthsInput = longrun.querySelector('#longrun-months');
-    const capexInput = longrun.querySelector('#longrun-capex');
-    const opexInput = longrun.querySelector('#longrun-opex');
-    const format = value => new Intl.NumberFormat(document.documentElement.lang === 'sl' ? 'sl-SI' : 'en-US', {
       style: 'currency', currency: 'USD', maximumFractionDigits: 0
     }).format(value);
-    const renderLongrun = () => {
-      const sl = document.documentElement.lang === 'sl';
-      const usage = Math.max(1, Math.min(100, Number(usageInput.value) || 1));
-      const months = Math.max(1, Math.min(60, Number(monthsInput.value) || 36));
-      const capex = Math.max(0, Number(capexInput.value) || 0);
-      const opex = Math.max(0, Number(opexInput.value) || 0);
-      const apiMonthly = usage * (rates.premium.input + rates.premium.output);
-      const apiTotal = apiMonthly * months;
-      const localTotal = capex + opex * months;
-      const saving = apiTotal - localTotal;
-      longrun.querySelector('#longrun-usage-out').textContent = usage;
-      longrun.querySelector('#longrun-api-total').textContent = format(apiTotal);
-      longrun.querySelector('#longrun-local-total').textContent = format(localTotal);
-      longrun.querySelector('#longrun-saving').textContent = `${saving >= 0 ? (sl ? 'Prihranek ' : 'Save ') : (sl ? 'Dodatno ' : 'Extra ')}${format(Math.abs(saving))}`;
-      const monthlyAdvantage = apiMonthly - opex;
-      const breakEven = monthlyAdvantage > 0 ? capex / monthlyAdvantage : Infinity;
-      longrun.querySelector('#longrun-break-even').textContent = Number.isFinite(breakEven)
-        ? (sl ? `Ocenjena povrnitev opreme: ${new Intl.NumberFormat('sl-SI', { maximumFractionDigits: 1 }).format(breakEven)} mes.` : `Estimated hardware payback: ${new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(breakEven)} months`)
-        : (sl ? 'Pri teh predpostavkah ni točke povrnitve' : 'No break-even under these assumptions');
-      const chart = longrun.querySelector('#longrun-chart');
-      const w = 700, h = 250, pad = { l: 66, r: 18, t: 16, b: 36 };
-      const maxY = Math.max(apiTotal, localTotal, 1);
-      const x = m => pad.l + (m / months) * (w - pad.l - pad.r);
-      const y = v => pad.t + (1 - v / maxY) * (h - pad.t - pad.b);
-      let grid = '';
-      for (let i = 0; i <= 4; i++) {
-        const value = maxY * i / 4, yy = y(value);
-        grid += `<line x1="${pad.l}" x2="${w-pad.r}" y1="${yy}" y2="${yy}" stroke="#c7b3f5" stroke-opacity="${i===0?.32:.1}" stroke-dasharray="2 5"/><text x="${pad.l-8}" y="${yy+3}" text-anchor="end" fill="#9b89ab" font-size="10">${format(value)}</text>`;
-      }
-      const points = (fn) => Array.from({length: 25}, (_, i) => {const m = months * i / 24; return `${i ? 'L' : 'M'}${x(m).toFixed(1)},${y(fn(m)).toFixed(1)}`}).join(' ');
-      const axis = sl ? 'Meseci uporabe →' : 'Months in use →';
-      const aria = sl ? `Primerjava skupnih stroškov v ${months} mesecih` : `Cumulative cost comparison over ${months} months`;
-      chart.setAttribute('aria-label', aria);
-      chart.innerHTML = `<svg viewBox="0 0 ${w} ${h}" role="presentation" width="100%"><rect x="${pad.l}" y="${pad.t}" width="${w-pad.l-pad.r}" height="${h-pad.t-pad.b}" fill="#140f19"/>${grid}<path d="${points(m=>apiMonthly*m)}" fill="none" stroke="#c7b3f5" stroke-width="3"/><path d="${points(m=>capex+opex*m)}" fill="none" stroke="#ffa982" stroke-width="3"/><circle cx="${x(months)}" cy="${y(apiTotal)}" r="4" fill="#c7b3f5"/><circle cx="${x(months)}" cy="${y(localTotal)}" r="4" fill="#ffa982"/><text x="${pad.l}" y="${h-10}" fill="#9b89ab" font-size="10">0</text><text x="${x(months)}" y="${h-10}" text-anchor="end" fill="#9b89ab" font-size="10">${months}</text><text x="${(pad.l+w-pad.r)/2}" y="${h-1}" text-anchor="middle" fill="#9b89ab" font-size="10">${axis}</text></svg>`;
-    };
-    [usageInput, monthsInput, capexInput, opexInput].forEach(input => input.addEventListener('input', renderLongrun));
-    document.addEventListener('apollo:language', renderLongrun);
-    renderLongrun();
   }
+
+  function renderApi() {
+    const sl = document.documentElement.lang === 'sl';
+    root.querySelector('#premium-cost').textContent = format(api.claude, sl);
+    root.querySelector('#efficient-cost').textContent = new Intl.NumberFormat(sl ? 'sl-SI' : 'en-US', {
+      style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2
+    }).format(api.deepseek);
+    const percent = ((1 - api.deepseek / api.claude) * 100).toFixed(1);
+    root.querySelector('#cost-reduction').innerHTML = `${new Intl.NumberFormat(sl ? 'sl-SI' : 'en-US').format(Number(percent))}<span>%</span>`;
+  }
+
+  const longrun = root.querySelector('#longrun-cost');
+  function renderLongrun() {
+    const sl = document.documentElement.lang === 'sl';
+    const monthlyBill = Math.max(0, Math.min(2000, Number(longrun.querySelector('#longrun-usage').value) || 0));
+    const hardware = Math.max(0, Number(longrun.querySelector('#longrun-capex').value) || 0);
+    const running = Math.max(0, Number(longrun.querySelector('#longrun-opex').value) || 0);
+    const hostedTotal = monthlyBill * months;
+    const localTotal = hardware + running * months;
+    const delta = hostedTotal - localTotal;
+    const denominator = Math.max(hostedTotal, localTotal, 1);
+    const hostedBar = longrun.querySelector('#hosted-cost-bar');
+    const localBar = longrun.querySelector('#local-cost-bar');
+
+    longrun.querySelector('#longrun-usage-out').textContent = format(monthlyBill, sl);
+    longrun.querySelector('#longrun-api-total').textContent = format(hostedTotal, sl);
+    longrun.querySelector('#longrun-local-total').textContent = format(localTotal, sl);
+    longrun.querySelector('#local-hardware-display').textContent = format(hardware, sl);
+    longrun.querySelector('#local-running-display').textContent = `${format(running, sl)} / ${sl ? 'mesec' : 'month'}`;
+    longrun.querySelector('#longrun-saving').textContent = `${delta >= 0 ? (sl ? 'Prihranek ' : 'Potentially save ') : (sl ? 'Več za ' : 'Costs more by ')}${format(Math.abs(delta), sl)}`;
+
+    const monthlyGap = monthlyBill - running;
+    const breakeven = monthlyGap > 0 ? hardware / monthlyGap : Infinity;
+    longrun.querySelector('#longrun-break-even').textContent = Number.isFinite(breakeven)
+      ? (sl ? `Ocenjena povrnitev opreme: ${new Intl.NumberFormat('sl-SI', { maximumFractionDigits: 1 }).format(breakeven)} mes.` : `Estimated hardware payback: ${new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(breakeven)} months`)
+      : (sl ? 'Ob teh stroških ni povrnitve' : 'No payback at this monthly bill');
+    hostedBar.style.width = `${Math.max(2, hostedTotal / denominator * 100)}%`;
+    localBar.style.width = `${Math.max(2, localTotal / denominator * 100)}%`;
+  }
+
+  renderApi();
+  renderLongrun();
+  longrun.querySelectorAll('input').forEach(input => input.addEventListener('input', renderLongrun));
+  document.addEventListener('apollo:language', () => { renderApi(); renderLongrun(); });
 })();

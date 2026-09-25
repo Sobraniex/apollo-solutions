@@ -49,10 +49,11 @@ The Hermes application lives separately in ../hermes-dental-clone/app.
 
 ## API cost comparison — 25 September 2026
 
-- Restored the interactive input/output cost chart using the then-current published standard Claude Opus 5.5 rates ($4 input, $20 output per million tokens) and DeepSeek V4.1 Flash peak rates ($0.30 input, $1.20 output per million tokens), with uncached input.
-- The 1M input + 1M output example is $24 versus $1.50, a 93.75% lower API token price for DeepSeek. The chart allows input-only and output-only views.
-- The explanation covers selective computation, smaller cache, cached input, off-peak pricing, provider pricing choices, and why equal tokens do not imply equal task quality. It also separates API fees from local hardware and installation costs.
-- Provider pages are linked directly in the section. The comparison is dated because rates can change.
+- Simplified the provider price visual to two cards: 1M input + 1M output tokens costs $24 on Claude Opus 5.5 and $1.62 on DeepSeek V4.1 Flash peak rates. Equal token counts do not mean equivalent answers or completed work.
+- Replaced the cumulative line chart with a plain three-year calculator. Visitors enter their monthly AI bill and can adjust the local hardware and monthly running-cost assumptions. It compares totals and shows a simple pair of cost bars and an estimated hardware payback period.
+- The default illustration uses a $250 monthly bill, NVIDIA’s $4,699 US DGX Spark MSRP, and $25 per month for local running costs. These assumptions produce $9,000 hosted spend versus $5,599 local spend over three years. Apollo installation, tax, staff time and downtime are excluded; no savings are guaranteed.
+- Added plain-language reasons businesses consider local AI: data route control, more predictable costs at regular usage and choice over models and updates, with security and task-fit limitations stated alongside.
+- Provider and hardware source links appear in the section. Prices are dated because rates and hardware pricing can change.
 
 ## DGX Spark catalog — 25 September 2026
 

@@ -120,6 +120,15 @@
 .cost-figure { margin: 24px 0 0; }
 .cost-figure figcaption { font-size: 10px; color: #b6a6c5; line-height: 1.6; }
 .cost-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+.api-price-figure .cost-legend { grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; }
+.api-price-figure .legend-item { align-items: center; min-height: 108px; }
+.api-price-figure .legend-item strong { font-size: clamp(25px, 3vw, 36px); }
+.api-price-figure .legend-item small { display: block; margin-top: 4px; color: #9b89ab; font-size: 9px; }
+.api-vs { color: #9b89ab; font-size: 9px; letter-spacing: .1em; }
+.token-plain-language { color: #a998b7; font-size: 11px; line-height: 1.6; margin-top: 5px; }
+.api-price-figure .cost-takeaway { margin-top: 18px; padding-top: 17px; }
+.api-price-figure .cost-takeaway>strong { font-size: 46px; }
+.api-price-figure .cost-takeaway .cost-down { display: none; }
 .legend-item { display: flex; gap: 10px; align-items: flex-start; padding: 12px 13px; border: 1px solid #b69cce2e; border-radius: 8px; background: #140f19; }
 .legend-item i { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
 .legend-premium i { background: #c7b3f5; box-shadow: 0 0 10px #c7b3f550; }
@@ -177,27 +186,37 @@
 .longrun-heading .eyebrow { color: var(--warm); font-size: 9px; letter-spacing: .12em; margin-bottom: 11px; }
 .longrun-heading h3 { font-size: clamp(22px, 2.6vw, 31px); letter-spacing: -.035em; }
 .longrun-heading p:not(.eyebrow) { color: var(--muted); font-size: 12px; margin-top: 8px; }
-.longrun-result { flex: 0 0 auto; min-width: 190px; padding: 15px 18px; border: 1px solid #ffa98240; border-radius: 8px; background: #140f19; text-align: right; }
+.longrun-result { flex: 0 0 auto; min-width: 210px; padding: 15px 18px; border: 1px solid #ffa98240; border-radius: 8px; background: #140f19; text-align: right; }
 .longrun-result span,.longrun-result small { display: block; color: #b6a6c5; font-size: 9px; }
 .longrun-result strong { display: block; color: #ffc5a8; font-size: 23px; font-weight: 500; margin: 5px 0; font-variant-numeric: tabular-nums; }
-.longrun-controls { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 13px; margin-top: 25px; }
-.longrun-controls label { min-width: 0; position: relative; display: flex; flex-direction: column; gap: 8px; padding: 13px; border: 1px solid #b69cce26; border-radius: 7px; background: #140f19; color: #e6d9f3; font-size: 10px; }
-.longrun-controls input,.longrun-controls select { width: 100%; min-width: 0; min-height: 38px; border: 1px solid #b69cce50; border-radius: 4px; padding: 8px 9px; background: #211a28; color: #f4f1f8; font: inherit; font-size: 13px; accent-color: #ffa982; }
-.longrun-controls input[type=range] { padding: 0; min-height: 18px; border: 0; background: transparent; }
-.longrun-controls output { position: absolute; right: 14px; top: 35px; color: #ffc5a8; font-variant-numeric: tabular-nums; }
-.longrun-controls label:has(input[type=range]) input { padding-right: 37px; }
-.longrun-controls small { min-height: 14px; color: #9b89ab; font-size: 9px; line-height: 1.5; }
-.longrun-controls small a { color: #d7bdec; }
-.longrun-chart-figure { margin: 24px 0 0; padding: 18px; border-radius: 8px; background: #140f19; }
-.longrun-chart-figure figcaption { color: #b6a6c5; font-size: 10px; margin-bottom: 8px; }
-#longrun-chart { width: 100%; overflow: hidden; }
-#longrun-chart svg { display: block; width: 100%; height: auto; font-family: inherit; font-variant-numeric: tabular-nums; }
-.longrun-legend { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-top: 9px; color: #d7c6ee; font-size: 10px; }
-.longrun-legend>span { display: flex; align-items: center; gap: 7px; }
-.longrun-legend i { width: 8px; height: 8px; border-radius: 50%; background: #c7b3f5; }
-.longrun-legend>span:last-child i { background: #ffa982; }
-.longrun-legend strong { color: #f4f1f8; font-weight: 500; font-variant-numeric: tabular-nums; }
+.simple-cost-inputs { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px; margin-top: 24px; }
+.monthly-bill-control,.local-assumption-card { min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 1px solid #b69cce30; border-radius: 8px; background: #140f19; color: #d7c6ee; font-size: 11px; }
+.monthly-bill-control strong,.local-assumption-card strong { color: #ffc5a8; font-size: 25px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.monthly-bill-control input[type=range] { width: 100%; accent-color: #ffa982; }
+.monthly-bill-control small,.local-assumption-card small { color: #9b89ab; font-size: 9px; line-height: 1.5; }
+.local-assumption-card a { color: #d7bdec; }
+.longrun-adjustments { margin-top: 13px; color: #bba9cd; font-size: 10px; }
+.longrun-adjustments summary { display: inline-block; cursor: pointer; }
+.longrun-adjustment-fields { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.longrun-adjustment-fields label { display: flex; flex-direction: column; gap: 6px; min-width: min(220px,100%); color: #b6a6c5; }
+.longrun-adjustment-fields input { width: 180px; max-width: 100%; border: 1px solid #b69cce50; border-radius: 4px; padding: 8px; background: #211a28; color: #f4f1f8; font: inherit; }
+.simple-cost-results { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 19px; }
+.simple-cost-results article { min-width: 0; padding: 17px; border-radius: 8px; background: #140f19; }
+.simple-cost-results article>span { display: block; color: #b6a6c5; font-size: 10px; }
+.simple-cost-results article>strong { display: block; margin: 5px 0 11px; color: #d7c6ee; font-size: 25px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.simple-cost-results article:nth-child(2)>strong { color: #ffc5a8; }
+.simple-cost-results article>small { display: block; margin-top: 8px; color: #9b89ab; font-size: 9px; }
+.simple-cost-bar { height: 8px; overflow: hidden; border-radius: 10px; background: #c7b3f51a; }
+.simple-cost-bar i { display: block; width: 0; height: 100%; border-radius: inherit; background: #c7b3f5; transition: width .25s ease; }
+.simple-cost-bar.local { background: #ffa9821a; }
+.simple-cost-bar.local i { background: #ffa982; }
 .longrun-caveat { margin-top: 14px; color: #a492b3; font-size: 10px; line-height: 1.8; }
+.local-case-list { display: grid; gap: 17px; margin-top: 26px; }
+.local-case-list article { display: grid; grid-template-columns: 25px 1fr; gap: 12px; }
+.local-case-list article>span { color: var(--warm); font-size: 10px; padding-top: 2px; }
+.local-case-list h4 { font-size: 13px; font-weight: 500; color: #e6d9f3; }
+.local-case-list p { margin-top: 5px; color: #aa99b9; font-size: 11px; line-height: 1.65; }
+.local-future-note { margin-top: 23px; padding-top: 16px; border-top: 1px solid #b69cce30; color: #d7c6ee; font-size: 11px; line-height: 1.7; }
 @media (max-width: 1000px) {
   .economy-heading { gap: 30px; }
   .economy-intro { max-width: 380px; font-size: 14px; }
@@ -208,7 +227,6 @@
   .setup-nodes div>span:last-child { font-size: 8px; }
   .cost-controls button { padding-inline: 10px; font-size: 10px; }
   .cost-down { display: none; }
-  .longrun-controls { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 760px) {
   .affordability-section { padding-block: 46px; }
@@ -219,6 +237,8 @@
   .economy-board { grid-template-columns: 1fr; }
   .cost-panel,.setup-panel { padding: 24px; }
   .cost-legend { grid-template-columns: 1fr 1fr; }
+  .api-price-figure .cost-legend { grid-template-columns: 1fr; }
+  .api-vs { justify-self: center; }
   .setup-panel { border-left: 0; border-top: 1px solid #b69cce30; }
   .economy-panel-heading h3 { font-size: 18px; }
   .cost-controls { width: 100%; }
@@ -231,6 +251,9 @@
   .economy-footer { flex-direction: column; align-items: flex-start; gap: 18px; padding: 22px 24px; }
   .longrun-heading { display: block; }
   .longrun-result { text-align: left; margin-top: 18px; }
+  .simple-cost-inputs { grid-template-columns: 1fr 1fr; }
+  .monthly-bill-control { grid-column: 1 / -1; }
+  .simple-cost-results { grid-template-columns: 1fr; }
 }
 @media (max-width: 360px) {
   .cost-panel,.setup-panel { padding: 19px; }
@@ -240,7 +263,8 @@
   .setup-nodes { gap: 6px; }
   .setup-nodes strong { font-size: 10px; }
   .cost-legend { grid-template-columns: 1fr; }
-  .longrun-controls { grid-template-columns: 1fr; }
+  .simple-cost-inputs { grid-template-columns: 1fr; }
+  .monthly-bill-control { grid-column: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cost-chart svg path { transition: none; }
