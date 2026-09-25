@@ -68,8 +68,8 @@
 .privacy-provider-grid{margin-top:0}
 .privacy-provider-grid article[data-carousel-slide]{min-width:0}
 .privacy-carousel.is-ready .privacy-carousel-window{overflow:hidden}
-.privacy-carousel.is-ready .privacy-provider-grid{display:flex;width:500%;gap:0;transition:transform .42s cubic-bezier(.2,.72,.25,1);will-change:transform}
-.privacy-carousel.is-ready .privacy-provider-grid article[data-carousel-slide]{flex:0 0 20%;grid-column:auto;min-height:230px}
+.privacy-carousel.is-ready .privacy-provider-grid{display:flex;gap:0;transition:transform .42s cubic-bezier(.2,.72,.25,1);will-change:transform}
+.privacy-carousel.is-ready .privacy-provider-grid article[data-carousel-slide]{grid-column:auto;min-height:230px}
 .privacy-carousel-controls{display:none}
 .privacy-carousel.is-ready .privacy-carousel-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px}
 .privacy-carousel-controls button{display:inline-flex;align-items:center;gap:8px;padding:8px 0;border:0;background:transparent;color:#70498b;font:inherit;font-size:12px;font-weight:600;cursor:pointer}
