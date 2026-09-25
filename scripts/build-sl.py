@@ -90,6 +90,7 @@ html = html.replace('content="Local AI for company workflows with clear data bou
 html = html.replace(f'href="{EN_URL}" />\n  <link rel="alternate"', f'href="{SL_URL}" />\n  <link rel="alternate"', 1)
 html = html.replace(f'property="og:url" content="{EN_URL}"', f'property="og:url" content="{SL_URL}"')
 html = html.replace('aria-label="Main navigation"', 'aria-label="Glavna navigacija"')
+html = html.replace('alt="Open AI computers linked in a peer-to-peer network"', 'alt="Odprti računalniki za AI, povezani v omrežje enakovrednih vozlišč"')
 
 target = ROOT / "sl" / "index.html"
 target.parent.mkdir(exist_ok=True)
