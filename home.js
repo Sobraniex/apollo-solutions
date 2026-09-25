@@ -44,7 +44,7 @@
     if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeMenu(true);
   });
   document.addEventListener('click', event => { if (!event.target.closest('.site-header')) closeMenu(); });
-  window.matchMedia('(min-width: 761px)').addEventListener('change', () => closeMenu());
+  window.matchMedia('(min-width: 1101px)').addEventListener('change', () => closeMenu());
   const providerCarousel = document.querySelector('[data-provider-carousel]');
   if (providerCarousel) {
     const track = providerCarousel.querySelector('[data-carousel-track]');

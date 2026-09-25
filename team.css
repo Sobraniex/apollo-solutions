@@ -31,10 +31,6 @@
 .team-role { margin-top: 5px; color: var(--warm); font-size: 11px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
 .team-bio { max-width: 36ch; margin-top: 13px; color: var(--muted); font-size: 14px; line-height: 1.65; }
 
-.footer-links { display: flex; align-items: center; gap: 24px; }
-.footer-links a { color: var(--fg); }
-.footer-links a:hover { color: var(--lilac); }
-
 @media (max-width: 760px) {
   .team-section { padding-block: 56px; }
   .team-layout { grid-template-columns: 1fr; gap: 30px; }
