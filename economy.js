@@ -28,7 +28,7 @@
   const longrun = root.querySelector('#longrun-cost');
   function renderLongrun() {
     const sl = document.documentElement.lang === 'sl';
-    const monthlyBill = Math.max(0, Math.min(2000, Number(longrun.querySelector('#longrun-usage').value) || 0));
+    const monthlyBill = Math.max(200, Math.min(2000, Number(longrun.querySelector('#longrun-usage').value) || 200));
     const hardware = Math.max(0, Number(longrun.querySelector('#longrun-capex').value) || 0);
     const running = Math.max(0, Number(longrun.querySelector('#longrun-opex').value) || 0);
     const hostedTotal = monthlyBill * months;
