@@ -1,6 +1,6 @@
 # Apollo Solutions
 
-Independent software studio in Slovenia. We build paid software for better workplaces: workflows, automation, local technology, and data protection. Hermes Dental is the first product.
+Independent AI and software studio in Slovenia. The homepage now leads with a developing local AI installation and integration service, AI workflows, and focused software. Hermes Dental is the first product and has its own product section and site.
 
 ## Live site
 
@@ -32,6 +32,14 @@ No package installation is required. After editing homepage translations, run `p
 - app.js and styles.css: retained for the historical articles.
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
+
+## Homepage direction — 25 September 2026
+
+- Local AI is the primary offer in the headline, navigation, service cards, and process section. The page explains hardware review, model selection, installation, integration, testing, and handover.
+- The service is labelled as in development. There is no invented booking link, public email address, hardware package, benchmark, or pricing promise.
+- Hermes Dental appears as a compact product card linking to its existing product site. Its detailed scope and plan information remain there.
+- Removed the dental-specific interactive workbench and model cost comparison from the homepage. The English and Slovenian pages and metadata share the new positioning.
+- This update is local only until the site owner approves publication.
 
 ## Site accuracy update — 25 September 2026
 
