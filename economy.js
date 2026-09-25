@@ -4,7 +4,7 @@
   if (!root) return;
   // Published USD API rates checked 25 Sep 2026. Uncached input; DeepSeek peak,
   // Claude standard. This compares equal token counts, not equal task quality.
-  const rates = { premium: { input: 4, output: 20 }, efficient: { input: .3, output: 1.2 } };
+  const rates = { premium: { input: 4, output: 20 }, efficient: { input: .3, output: 1.32 } };
   const maxX = 3;
   let view = 'combined';
 
@@ -156,4 +156,53 @@
   document.addEventListener('apollo:language', render);
   render();
   root.querySelector('.cost-controls').hidden = false;
+
+  const longrun = root.querySelector('#longrun-cost');
+  if (longrun) {
+    const usageInput = longrun.querySelector('#longrun-usage');
+    const monthsInput = longrun.querySelector('#longrun-months');
+    const capexInput = longrun.querySelector('#longrun-capex');
+    const opexInput = longrun.querySelector('#longrun-opex');
+    const format = value => new Intl.NumberFormat(document.documentElement.lang === 'sl' ? 'sl-SI' : 'en-US', {
+      style: 'currency', currency: 'USD', maximumFractionDigits: 0
+    }).format(value);
+    const renderLongrun = () => {
+      const sl = document.documentElement.lang === 'sl';
+      const usage = Math.max(1, Math.min(100, Number(usageInput.value) || 1));
+      const months = Math.max(1, Math.min(60, Number(monthsInput.value) || 36));
+      const capex = Math.max(0, Number(capexInput.value) || 0);
+      const opex = Math.max(0, Number(opexInput.value) || 0);
+      const apiMonthly = usage * (rates.premium.input + rates.premium.output);
+      const apiTotal = apiMonthly * months;
+      const localTotal = capex + opex * months;
+      const saving = apiTotal - localTotal;
+      longrun.querySelector('#longrun-usage-out').textContent = usage;
+      longrun.querySelector('#longrun-api-total').textContent = format(apiTotal);
+      longrun.querySelector('#longrun-local-total').textContent = format(localTotal);
+      longrun.querySelector('#longrun-saving').textContent = `${saving >= 0 ? (sl ? 'Prihranek ' : 'Save ') : (sl ? 'Dodatno ' : 'Extra ')}${format(Math.abs(saving))}`;
+      const monthlyAdvantage = apiMonthly - opex;
+      const breakEven = monthlyAdvantage > 0 ? capex / monthlyAdvantage : Infinity;
+      longrun.querySelector('#longrun-break-even').textContent = Number.isFinite(breakEven)
+        ? (sl ? `Ocenjena povrnitev opreme: ${new Intl.NumberFormat('sl-SI', { maximumFractionDigits: 1 }).format(breakEven)} mes.` : `Estimated hardware payback: ${new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(breakEven)} months`)
+        : (sl ? 'Pri teh predpostavkah ni točke povrnitve' : 'No break-even under these assumptions');
+      const chart = longrun.querySelector('#longrun-chart');
+      const w = 700, h = 250, pad = { l: 66, r: 18, t: 16, b: 36 };
+      const maxY = Math.max(apiTotal, localTotal, 1);
+      const x = m => pad.l + (m / months) * (w - pad.l - pad.r);
+      const y = v => pad.t + (1 - v / maxY) * (h - pad.t - pad.b);
+      let grid = '';
+      for (let i = 0; i <= 4; i++) {
+        const value = maxY * i / 4, yy = y(value);
+        grid += `<line x1="${pad.l}" x2="${w-pad.r}" y1="${yy}" y2="${yy}" stroke="#c7b3f5" stroke-opacity="${i===0?.32:.1}" stroke-dasharray="2 5"/><text x="${pad.l-8}" y="${yy+3}" text-anchor="end" fill="#9b89ab" font-size="10">${format(value)}</text>`;
+      }
+      const points = (fn) => Array.from({length: 25}, (_, i) => {const m = months * i / 24; return `${i ? 'L' : 'M'}${x(m).toFixed(1)},${y(fn(m)).toFixed(1)}`}).join(' ');
+      const axis = sl ? 'Meseci uporabe →' : 'Months in use →';
+      const aria = sl ? `Primerjava skupnih stroškov v ${months} mesecih` : `Cumulative cost comparison over ${months} months`;
+      chart.setAttribute('aria-label', aria);
+      chart.innerHTML = `<svg viewBox="0 0 ${w} ${h}" role="presentation" width="100%"><rect x="${pad.l}" y="${pad.t}" width="${w-pad.l-pad.r}" height="${h-pad.t-pad.b}" fill="#140f19"/>${grid}<path d="${points(m=>apiMonthly*m)}" fill="none" stroke="#c7b3f5" stroke-width="3"/><path d="${points(m=>capex+opex*m)}" fill="none" stroke="#ffa982" stroke-width="3"/><circle cx="${x(months)}" cy="${y(apiTotal)}" r="4" fill="#c7b3f5"/><circle cx="${x(months)}" cy="${y(localTotal)}" r="4" fill="#ffa982"/><text x="${pad.l}" y="${h-10}" fill="#9b89ab" font-size="10">0</text><text x="${x(months)}" y="${h-10}" text-anchor="end" fill="#9b89ab" font-size="10">${months}</text><text x="${(pad.l+w-pad.r)/2}" y="${h-1}" text-anchor="middle" fill="#9b89ab" font-size="10">${axis}</text></svg>`;
+    };
+    [usageInput, monthsInput, capexInput, opexInput].forEach(input => input.addEventListener('input', renderLongrun));
+    document.addEventListener('apollo:language', renderLongrun);
+    renderLongrun();
+  }
 })();
