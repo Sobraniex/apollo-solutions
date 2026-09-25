@@ -1,0 +1,45 @@
+.team-section {
+  padding-block: 80px;
+  border-top: 1px solid var(--line);
+  background: #17141d;
+}
+
+.team-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 90px);
+  align-items: start;
+}
+
+.team-intro .eyebrow { color: var(--warm); margin-bottom: 18px; }
+.team-intro h2 { font-size: clamp(38px, 4.5vw, 58px); line-height: 1.08; }
+.team-intro>p:last-child { max-width: 340px; margin-top: 20px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.team-card { min-width: 0; }
+.team-photo { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 6px; background: #2c2634; }
+.team-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.team-photo-samo img { object-position: center top; transform: scale(1.75); transform-origin: center top; }
+.team-photo-initials {
+  display: grid;
+  place-items: center;
+  border: 1px solid #c7b3f54d;
+  background: radial-gradient(circle at 70% 25%, #7456887a, transparent 47%), linear-gradient(150deg, #32273e, #1d1925);
+}
+.team-photo-initials span { color: var(--lilac); font-size: clamp(64px, 7vw, 104px); font-weight: 500; letter-spacing: -.08em; }
+.team-card h3 { margin-top: 18px; font-size: 24px; }
+.team-role { margin-top: 5px; color: var(--warm); font-size: 11px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+.team-bio { max-width: 36ch; margin-top: 13px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+.footer-links { display: flex; align-items: center; gap: 24px; }
+.footer-links a { color: var(--fg); }
+.footer-links a:hover { color: var(--lilac); }
+
+@media (max-width: 760px) {
+  .team-section { padding-block: 56px; }
+  .team-layout { grid-template-columns: 1fr; gap: 30px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .team-intro h2 { font-size: clamp(37px, 10vw, 52px); }
+  .team-photo { max-height: 440px; }
+  .team-photo-samo img { transform: none; }
+}

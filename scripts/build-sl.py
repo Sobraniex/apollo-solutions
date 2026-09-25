@@ -91,6 +91,7 @@ html = html.replace(f'href="{EN_URL}" />\n  <link rel="alternate"', f'href="{SL_
 html = html.replace(f'property="og:url" content="{EN_URL}"', f'property="og:url" content="{SL_URL}"')
 html = html.replace('aria-label="Main navigation"', 'aria-label="Glavna navigacija"')
 html = html.replace('alt="Open AI computers linked in a peer-to-peer network"', 'alt="Odprti računalniki za AI, povezani v omrežje enakovrednih vozlišč"')
+html = html.replace('alt="Portrait of Samo Benkovič"', 'alt="Portret Sama Benkoviča"')
 
 target = ROOT / "sl" / "index.html"
 target.parent.mkdir(exist_ok=True)
