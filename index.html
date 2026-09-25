@@ -23,6 +23,7 @@
   <script src="home.js" defer></script>
   <link rel="stylesheet" href="models.css" />
   <link rel="stylesheet" href="privacy.css" />
+  <link rel="stylesheet" href="blog.css" />
   <script src="economy.js" defer></script>
 </head>
 <body>
@@ -33,6 +34,7 @@
       <a href="#models"><span data-en="Models" data-sl="Modeli">Models</span></a>
       <a href="#services"><span data-en="Install services" data-sl="Namestitev">Install services</span></a>
       <a href="#dostopnost"><span data-en="Model costs" data-sl="Stroški modelov">Model costs</span></a>
+      <a href="#blog"><span data-en="Blog" data-sl="Blog">Blog</span></a>
       <a href="#delo"><span data-en="Hermes Dental" data-sl="Hermes Dental">Hermes Dental</span></a>
       <a class="nav-contact" href="#kontakt"><span data-en="Booking ↗" data-sl="Rezervacije ↗">Booking ↗</span></a>
     </nav>
@@ -216,6 +218,55 @@ only the beginning." data-sl="Delujoč model je
 šele začetek.">A working model is
 only the beginning.</span></h2></div>
       <div class="care-grid"><article><span class="care-icon" aria-hidden="true">01</span><h3 data-en="Fit the hardware" data-sl="Uskladimo z opremo">Fit the hardware</h3><p data-en="Check memory, storage, networking, and intended users before selecting a recipe." data-sl="Pred izbiro recepta preverimo pomnilnik, shrambo, omrežje in predvidene uporabnike.">Check memory, storage, networking, and intended users before selecting a recipe.</p></article><article><span class="care-icon" aria-hidden="true">02</span><h3 data-en="Verify the setup" data-sl="Preverimo postavitev">Verify the setup</h3><p data-en="Start the service, test a real request, and record the configuration that actually runs." data-sl="Zaženemo storitev, preizkusimo resnično zahtevo in zabeležimo konfiguracijo, ki dejansko deluje.">Start the service, test a real request, and record the configuration that actually runs.</p></article><article><span class="care-icon" aria-hidden="true">03</span><h3 data-en="Make it usable" data-sl="Omogočimo uporabo">Make it usable</h3><p data-en="Document access, updates, and limits. Connect apps or files only when the use case calls for them." data-sl="Dokumentiramo dostop, posodobitve in omejitve. Aplikacije ali datoteke povežemo le, kadar to zahteva primer uporabe.">Document access, updates, and limits. Connect apps or files only when the use case calls for them.</p></article></div>
+    </div></section>
+
+    <section class="blog-section" id="blog" aria-labelledby="blog-title"><div class="wrap">
+      <div class="section-label"><span data-en="04 / From the blog" data-sl="04 / Iz bloga">04 / From the blog</span><span data-en="Notes from building local AI" data-sl="Zapiski o lokalni AI">Notes from building local AI</span></div>
+      <div class="blog-heading"><div><p class="eyebrow" data-en="Field notes" data-sl="Zapiski iz prakse">Field notes</p><h2 id="blog-title" data-en="A closer look at the hardware." data-sl="Podrobneje o opremi.">A closer look at the hardware.</h2></div><p data-en="Practical comparisons to help you choose the right local AI setup." data-sl="Praktične primerjave za izbiro prave lokalne postavitve AI.">Practical comparisons to help you choose the right local AI setup.</p></div>
+      <details class="blog-card" id="dgx-spark-vs-strix-halo">
+        <summary>
+          <img class="blog-card-cover" src="images/blog/dgx-spark-vs-strix-halo-cover.jpg" alt="Illustration comparing a DGX Spark and an AMD Strix Halo desktop" width="1065" height="426" />
+          <span class="blog-card-preview"><span class="blog-card-kicker" data-en="Hardware comparison · September 2026" data-sl="Primerjava opreme · september 2026">Hardware comparison · September 2026</span><span class="blog-card-title" role="heading" aria-level="3" data-en="NVIDIA DGX Spark vs. AMD Strix Halo — choose wisely" data-sl="NVIDIA DGX Spark ali AMD Strix Halo — izberite premišljeno">NVIDIA DGX Spark vs. AMD Strix Halo — choose wisely</span><span class="blog-card-excerpt" data-en="Two compact local AI machines with 128 GB of unified memory. Which one fits your work?" data-sl="Dve kompaktni napravi za lokalno AI s 128 GB skupnega pomnilnika. Katera ustreza vašemu delu?">Two compact local AI machines with 128 GB of unified memory. Which one fits your work?</span><span class="blog-card-action"><span class="blog-open" data-en="Read the full post" data-sl="Preberite celoten zapis">Read the full post</span><span class="blog-close" data-en="Close the post" data-sl="Zaprite zapis">Close the post</span><span aria-hidden="true">↗</span></span></span>
+        </summary>
+        <article class="blog-article">
+          <div lang="en" class="blog-language">
+            <p class="blog-lede">I have hands-on experience with the DGX Spark, but not with the Strix Halo. This comparison combines that experience with published specifications and independent testing, including StorageReview’s head-to-head review.</p>
+            <h4>The hardware</h4>
+            <p>Both machines offer 128 GB of unified memory and can run large, suitably quantized models locally. NVIDIA lists the DGX Spark at 273 GB/s of memory bandwidth, up to 1 PFLOP of FP4 compute with sparsity, and support for models up to 200 billion parameters. It runs NVIDIA’s Linux-based DGX OS and includes a ConnectX-7 network interface for clustering.</p>
+            <p>AMD’s Ryzen AI Halo developer platform pairs a 16-core, 32-thread Ryzen AI Max+ 395 with Radeon 8060S graphics, an XDNA 2 NPU, 128 GB of memory, and 256 GB/s of bandwidth. It supports Windows 11 or Linux, so it can also serve as a general-purpose PC.</p>
+            <h4>What the tests show</h4>
+            <p>StorageReview’s vLLM tests found the Spark ahead in most higher-concurrency inference workloads, often by roughly 2–4×. The gap varied sharply by model, quantization, prompt length, and batch size; a few decode-heavy runs were much closer. The Halo held its own in CPU-focused tests and gives you native Windows support. For a single user running a particular model, check a benchmark that matches your actual workload before treating any headline multiplier as a promise.</p>
+            <h4>Why the network port matters</h4>
+            <p>The Spark’s built-in ConnectX-7 makes a two-machine setup practical when a model needs more memory. NVIDIA documents two QSFP ports on each Spark, each capped at 200 Gb/s and configured for Ethernet. The limits of a standalone ConnectX-7 card do not describe the Spark’s ports. A cluster also needs the right cable, software, and model setup; connecting two boxes does not automatically double single-request speed.</p>
+            <figure><img src="images/blog/dgx-spark-cluster.jpg" alt="Two compact DGX Spark devices connected by a cable" width="1540" height="1021" loading="lazy" /><figcaption>Two-machine setups make the Spark’s high-speed connection useful.</figcaption></figure>
+            <h4>Which would I choose?</h4>
+            <p><strong>Choose DGX Spark</strong> if your main work is local AI development, CUDA and PyTorch tooling, higher-throughput model serving, or a future two-node cluster. That is the machine I would pick for a dedicated AI workstation.</p>
+            <p><strong>Choose Strix Halo</strong> if you want a flexible Windows or Linux PC that can also run large local models, handle everyday work, and play games. Its x86 platform may be a better fit when one machine has to do several jobs.</p>
+            <figure><img src="images/blog/amd-ryzen-ai-halo.jpg" alt="AMD Ryzen AI Halo compact desktop computer" width="1920" height="823" loading="lazy" /><figcaption>The Halo is a more flexible desktop for mixed workloads.</figcaption></figure>
+            <h4>Bottom line</h4>
+            <p>For dedicated local AI work, I favor the DGX Spark’s software ecosystem and cluster path. For a more versatile everyday computer that still runs substantial models, the Strix Halo is compelling. Choose for the work you will actually do.</p>
+            <p class="blog-sources">Sources: <a href="https://docs.nvidia.com/dgx/dgx-spark/hardware.html" target="_blank" rel="noopener noreferrer">NVIDIA hardware guide</a>, <a href="https://docs.nvidia.com/dgx/dgx-spark/spark-clustering.html" target="_blank" rel="noopener noreferrer">NVIDIA clustering guide</a>, <a href="https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo/ryzen-ai-max-plus-395.html" target="_blank" rel="noopener noreferrer">AMD specifications</a>, and <a href="https://www.storagereview.com/review/amd-ryzen-ai-halo-review-a-dual-os-200b-parameter-desktop-takes-on-the-dgx-spark" target="_blank" rel="noopener noreferrer">StorageReview tests</a>.</p>
+          </div>
+          <div lang="sl" class="blog-language">
+            <p class="blog-lede">Z napravo DGX Spark imam neposredne izkušnje, s Strix Halo pa še ne. Primerjava združuje moje izkušnje, objavljene specifikacije in neodvisne preizkuse, med njimi neposredno primerjavo portala StorageReview.</p>
+            <h4>Oprema</h4>
+            <p>Obe napravi imata 128 GB skupnega pomnilnika in lahko lokalno poganjata velike, ustrezno kvantizirane modele. NVIDIA za DGX Spark navaja prepustnost pomnilnika 273 GB/s, do 1 PFLOP pri FP4 z redkostjo in podporo modelom do 200 milijard parametrov. Naprava uporablja Linuxov DGX OS in ima za povezovanje v gručo vgrajen omrežni vmesnik ConnectX-7.</p>
+            <p>AMD-jeva razvijalska platforma Ryzen AI Halo združuje 16-jedrni procesor Ryzen AI Max+ 395 z 32 nitmi, grafiko Radeon 8060S, enoto XDNA 2 NPU, 128 GB pomnilnika in prepustnost 256 GB/s. Podpira Windows 11 ali Linux, zato je uporabna tudi kot splošen osebni računalnik.</p>
+            <h4>Kaj kažejo preizkusi</h4>
+            <p>Pri večini preizkusov vLLM z več sočasnimi zahtevami je StorageReview izmeril prednost naprave Spark, pogosto približno 2–4-kratno. Razlika se je močno spreminjala glede na model, kvantizacijo, dolžino poziva in velikost serije; pri nekaterih preizkusih ustvarjanja odgovorov sta bili napravi precej bližje. Halo se je dobro odrezal pri procesorskih nalogah in omogoča uporabo sistema Windows. Če boste uporabljali določen model kot posameznik, poiščite preizkus, ki ustreza vašemu načinu dela.</p>
+            <h4>Zakaj je omrežni priključek pomemben</h4>
+            <p>Vgrajeni ConnectX-7 omogoča smiselno povezavo dveh naprav Spark, kadar model potrebuje več pomnilnika. NVIDIA navaja dva priključka QSFP na vsaki napravi, vsak z omejitvijo 200 Gb/s in podporo za Ethernet. Zmogljivosti samostojnih kartic ConnectX-7 niso enake omejitvam priključkov v napravi Spark. Za gručo potrebujete tudi ustrezen kabel, programsko opremo in nastavitve modela; povezava dveh naprav sama po sebi ne podvoji hitrosti posamezne zahteve.</p>
+            <figure><img src="images/blog/dgx-spark-cluster.jpg" alt="Dve kompaktni napravi DGX Spark, povezani s kablom" width="1540" height="1021" loading="lazy" /><figcaption>Hitra povezava pride do izraza pri uporabi dveh naprav.</figcaption></figure>
+            <h4>Kaj bi izbral?</h4>
+            <p><strong>DGX Spark</strong> bi izbral za razvoj lokalne AI, orodja CUDA in PyTorch, strežbo modelov z večjo prepustnostjo ali poznejšo povezavo dveh naprav. To je moja izbira za namensko delovno postajo za AI.</p>
+            <p><strong>Strix Halo</strong> je primernejši, če želite prilagodljiv računalnik z Windows ali Linuxom, ki poleg velikih lokalnih modelov služi vsakdanjemu delu in igranju iger. Platforma x86 je lahko boljša izbira, kadar mora ena naprava opravljati več različnih nalog.</p>
+            <figure><img src="images/blog/amd-ryzen-ai-halo.jpg" alt="Kompaktni računalnik AMD Ryzen AI Halo" width="1920" height="823" loading="lazy" /><figcaption>Halo ponuja več prilagodljivosti pri mešani uporabi.</figcaption></figure>
+            <h4>Sklep</h4>
+            <p>Za namensko lokalno delo z AI dajem prednost ekosistemu in možnosti povezovanja naprave DGX Spark. Če želite vsestranski vsakdanji računalnik, ki lahko poganja tudi velike modele, je Strix Halo privlačna izbira. Odločite se glede na delo, ki ga boste dejansko opravljali.</p>
+            <p class="blog-sources">Viri: <a href="https://docs.nvidia.com/dgx/dgx-spark/hardware.html" target="_blank" rel="noopener noreferrer">NVIDIA: oprema</a>, <a href="https://docs.nvidia.com/dgx/dgx-spark/spark-clustering.html" target="_blank" rel="noopener noreferrer">NVIDIA: povezovanje</a>, <a href="https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo/ryzen-ai-max-plus-395.html" target="_blank" rel="noopener noreferrer">AMD: specifikacije</a> in <a href="https://www.storagereview.com/review/amd-ryzen-ai-halo-review-a-dual-os-200b-parameter-desktop-takes-on-the-dgx-spark" target="_blank" rel="noopener noreferrer">StorageReview: preizkusi</a>.</p>
+          </div>
+        </article>
+      </details>
     </div></section>
 
     <section class="product-section compact-product" id="delo" aria-labelledby="product-title"><div class="wrap product-mini"><div><p class="eyebrow" data-en="Another Apollo product / macOS" data-sl="Drug Apollov izdelek / macOS">Another Apollo product / macOS</p><h2 id="product-title">Hermes Dental<span class="accent">.</span></h2><p data-en="Practice management for independent, single-chair dental clinics. Hermes has its own site with product details, screenshots, and plan information." data-sl="Program za samostojne zobozdravstvene ordinacije z enim stolom. Hermes ima svojo spletno stran s podrobnostmi, posnetki zaslona in informacijami o paketih.">Practice management for independent, single-chair dental clinics. Hermes has its own site with product details, screenshots, and plan information.</p></div><a class="product-mini-link" href="hermes/" data-product-link><span data-en="Visit Hermes Dental" data-sl="Obiščite Hermes Dental">Visit Hermes Dental</span><span aria-hidden="true">↗</span></a></div></section>
