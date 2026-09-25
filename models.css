@@ -69,6 +69,17 @@
 .install-card>a:hover { background: #d0baf812; }
 .service-availability { color: #ad9ebc; font-size: 12px; line-height: 1.7; margin-top: 23px; }
 
+.price-explain { display: flex; flex-direction: column; }
+.price-explain-list { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 0; }
+.price-explain-list li { display: grid; grid-template-columns: 30px 1fr; gap: 15px; padding: 18px 0; border-top: 1px solid #d0baf826; }
+.price-explain-list li>span { color: var(--warm); font-size: 11px; padding-top: 3px; }
+.price-explain-list h4 { margin: 0 0 7px; font-size: 16px; font-weight: 500; color: #eee5f5; }
+.price-explain-list p { color: #b9aac7; font-size: 12px; line-height: 1.7; }
+.local-cost-note { border: 1px solid #ffa98240; border-radius: 7px; background: #2b222c; padding: 17px 19px; margin-top: auto; }
+.local-cost-note strong { display: block; color: #f5c1a5; font-size: 13px; font-weight: 500; }
+.local-cost-note p { color: #c8b8c8; font-size: 12px; line-height: 1.7; margin-top: 7px; }
+.architecture-source { display: inline-block; color: var(--lilac); font-size: 11px; margin-top: 17px; }
+
 @media (max-width: 1000px) {
   .models-heading { gap: 38px; }
   .model-card,.install-card { padding: 22px; }

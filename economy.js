@@ -2,9 +2,9 @@
   'use strict';
   const root = document.getElementById('dostopnost');
   if (!root) return;
-  // Published USD API rates checked 18 Sep 2026. Uncached input; DeepSeek peak,
+  // Published USD API rates checked 25 Sep 2026. Uncached input; DeepSeek peak,
   // Claude standard. This compares equal token counts, not equal task quality.
-  const rates = { premium: { input: 5, output: 25 }, efficient: { input: .3, output: 1.2 } };
+  const rates = { premium: { input: 4, output: 20 }, efficient: { input: .3, output: 1.2 } };
   const maxX = 3;
   let view = 'combined';
 
@@ -77,8 +77,8 @@
     const gapY = round(premiumY + (efficientY - premiumY) * 0.4);
     const efficientPillTop = Math.min(efficientY - 24, pad.top + innerHeight - 26);
     const summary = sl
-      ? `Claude Opus 5 ${money(premium, true)} proti DeepSeek V4.1 Flash ${money(efficient, true)} v tem primeru.`
-      : `Claude Opus 5 costs ${money(premium, false)} versus DeepSeek V4.1 Flash at ${money(efficient, false)} for this example.`;
+      ? `Claude Opus 5.5 ${money(premium, true)} proti DeepSeek V4.1 Flash ${money(efficient, true)} v tem primeru.`
+      : `Claude Opus 5.5 costs ${money(premium, false)} versus DeepSeek V4.1 Flash at ${money(efficient, false)} for this example.`;
     chart.setAttribute('aria-label', summary);
     chart.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="presentation" width="100%" preserveAspectRatio="xMidYMid meet">
       <defs>

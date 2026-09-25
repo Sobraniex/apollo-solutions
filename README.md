@@ -33,6 +33,13 @@ No package installation is required. After editing homepage translations, run `p
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
 
+## API cost comparison — 25 September 2026
+
+- Restored the interactive input/output cost chart using the then-current published standard Claude Opus 5.5 rates ($4 input, $20 output per million tokens) and DeepSeek V4.1 Flash peak rates ($0.30 input, $1.20 output per million tokens), with uncached input.
+- The 1M input + 1M output example is $24 versus $1.50, a 93.75% lower API token price for DeepSeek. The chart allows input-only and output-only views.
+- The explanation covers selective computation, smaller cache, cached input, off-peak pricing, provider pricing choices, and why equal tokens do not imply equal task quality. It also separates API fees from local hardware and installation costs.
+- Provider pages are linked directly in the section. The comparison is dated because rates can change.
+
 ## DGX Spark catalog — 25 September 2026
 
 - Six model cards mirror the configurations listed by Mia AI Lab, with its published decode speeds explicitly labelled as reference figures. Apollo has not measured them.
