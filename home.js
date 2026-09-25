@@ -9,8 +9,8 @@
     return;
   }
   const descriptions = {
-    en: 'Explore six open-model configurations for NVIDIA DGX Sparks and Apollo’s 1, 2, and 4 Spark installation packages. Hermes Dental remains a separate Apollo product.',
-    sl: 'Raziščite šest konfiguracij odprtih modelov za NVIDIA DGX Spark ter Apollove pakete namestitve za eno, dve ali štiri naprave. Hermes Dental ostaja ločen izdelek.'
+    en: 'Explore local AI for company workflows with clear data boundaries, plus DGX Spark model options and Apollo installation services.',
+    sl: 'Raziščite lokalno AI za delovne procese podjetij z jasnimi mejami za podatke ter modele DGX Spark in Apollove storitve namestitve.'
   };
   function setLanguage(next) {
     language = next;

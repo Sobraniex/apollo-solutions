@@ -26,7 +26,7 @@ No package installation is required. After editing homepage translations, run `p
 
 ## Site structure
 
-- index.html, sl/index.html, home.css, studio.css, models.css, home.js: separate English and Slovenian homepage URLs. `scripts/build-sl.py` generates the Slovenian page from the bilingual source. The company-specific visual layers are isolated so plan pages keep their existing layout.
+- index.html, sl/index.html, home.css, studio.css, models.css, privacy.css, home.js: separate English and Slovenian homepage URLs. `scripts/build-sl.py` generates the Slovenian page from the bilingual source. The company-specific visual layers are isolated so plan pages keep their existing layout.
 - solo-dgx-spark.html, sl/solo-dgx-spark.html, solo-dgx-spark.css: dedicated bilingual €500 Solo installation offer. `scripts/build-sl.py` also regenerates the Slovenian service page.
 - hermes/: existing product site and documentation.
 - hermes/pricing.html, trial.html, plan-info.css, plan-info.js: public plan information and trial availability.
@@ -34,6 +34,12 @@ No package installation is required. After editing homepage translations, run `p
 - app.js and styles.css: retained for the historical articles.
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
+
+## Workflow and data privacy introduction — 25 September 2026
+
+- A new `00 / Before the models` section leads visitors from practical company workflows into data boundaries, local processing, and the DGX Spark catalog. The hero button points to this section.
+- Five provider summaries distinguish consumer from business/API terms where relevant and link to each provider's published policy. A separate EU note links to the European Commission's GDPR principles. The copy does not promise that local installation alone ensures privacy or legal compliance.
+- Privacy policy summaries were checked against primary sources on 25 September 2026; review them when provider terms change.
 
 ## Solo DGX Spark service page — 25 September 2026
 
