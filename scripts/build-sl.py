@@ -32,7 +32,7 @@ class SlovenianPage(HTMLParser):
         if "data-solo-link" in values:
             raw = raw.replace('href="../solo-dgx-spark.html"', 'href="solo-dgx-spark.html"')
         if "data-blog-link" in values:
-            raw = raw.replace('href="../blog/dgx-spark-vs-strix-halo.html"', 'href="blog/dgx-spark-vs-strix-halo.html"')
+            raw = raw.replace('href="../blog/', 'href="blog/')
         if values.get("id") == "langBtn":
             raw = raw.replace('href="../sl/"', 'href="../"')
             raw = raw.replace('aria-label="Switch to Slovenian"', 'aria-label="Switch to English"')

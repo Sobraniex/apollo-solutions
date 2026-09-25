@@ -22,6 +22,7 @@
   border-radius: 13px;
   background: linear-gradient(145deg, #211b29, #17131d);
 }
+.blog-card + .blog-card { margin-top: 18px; }
 
 .blog-card-link {
   display: grid;
@@ -59,6 +60,9 @@
 .blog-article figure img { width: 100%; border-radius: 8px; border: 1px solid var(--line); }
 .blog-article figcaption { color: #a89db5; margin-top: 10px; font-size: 12px; }
 .blog-article .blog-sources { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 36px; font-size: 13px; }
+.blog-article ul { color: #cec7d6; padding-left: 23px; margin: 0 0 25px; }
+.blog-article li { padding-left: 5px; margin-bottom: 10px; line-height: 1.75; }
+.blog-article li::marker { color: var(--warm); }
 .blog-sources a { color: var(--lilac); text-decoration: underline; text-underline-offset: 3px; }
 
 @media (max-width: 760px) {
