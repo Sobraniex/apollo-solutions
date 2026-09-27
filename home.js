@@ -9,14 +9,14 @@
     return;
   }
   const descriptions = {
-    en: 'Apollo Solutions builds tailored web shops and apps, and helps businesses explore local AI. See the three services and how we scope each project.',
-    sl: 'Apollo Solutions gradi spletne trgovine in aplikacije po meri ter podjetjem pomaga raziskati lokalno AI. Oglejte si storitve in način določanja obsega projekta.'
+    en: 'Apollo Solutions builds business websites, web shops and private apps, and prepares local LLM installations. Explore the four services.',
+    sl: 'Apollo Solutions gradi poslovne spletne strani, spletne trgovine in zasebne aplikacije ter pripravlja namestitve lokalnih jezikovnih modelov. Oglejte si štiri storitve.'
   };
   function setLanguage(next) {
     language = next;
     document.documentElement.lang = language;
     document.querySelectorAll('[data-en][data-sl]').forEach(element => { element.textContent = element.dataset[language]; });
-    document.title = language === 'sl' ? 'Spletne trgovine, aplikacije in lokalna AI | Apollo Solutions' : 'Web Shops, Apps & Local AI | Apollo Solutions';
+    document.title = language === 'sl' ? 'Spletne strani, trgovine, zasebne aplikacije in lokalna AI | Apollo Solutions' : 'Websites, Web Shops, Private Apps & Local AI | Apollo Solutions';
     document.querySelector('meta[name="description"]').content = descriptions[language];
     document.querySelector('meta[property="og:title"]').content = document.title;
     document.querySelector('meta[property="og:description"]').content = descriptions[language];
