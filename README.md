@@ -31,9 +31,16 @@ python3 -m http.server 8101 --bind 127.0.0.1
 
 No package installation is required. After editing homepage translations, run `python3 scripts/build-sl.py` to regenerate the static Slovenian homepage. Relative links also work at the GitHub Pages project path, /apollo-solutions/.
 
+## Dedicated service pages — 27 September 2026
+
+- The four homepage service panels link to crawlable English and Slovenian pages for business websites, web shops, private apps, and local LLM installations. Each page describes possible scope, a three-step process, questions to prepare, and related services.
+- `python3 scripts/build-sl.py` also runs `scripts/build-service-pages.py`, which generates the eight pages in `services/` and `sl/services/` from bilingual content. The local LLM page links to the existing Solo installation details and model catalog.
+- No unfinished customer work is presented as a portfolio item. Bespoke prices, delivery dates, and a public enquiry route remain unconfirmed.
+
 ## Site structure
 
 - index.html, sl/index.html, home.css, studio.css, models.css, privacy.css, home.js: separate English and Slovenian homepage URLs. `scripts/build-sl.py` generates the Slovenian page from the bilingual source. The company-specific visual layers are isolated so plan pages keep their existing layout.
+- services/, sl/services/, service-pages.css, scripts/build-service-pages.py: bilingual dedicated service pages and their shared presentation.
 - solo-dgx-spark.html, sl/solo-dgx-spark.html, solo-dgx-spark.css: dedicated bilingual €500 Solo installation offer. `scripts/build-sl.py` also regenerates the Slovenian service page.
 - hermes/: existing product site and documentation.
 - hermes/pricing.html, trial.html, plan-info.css, plan-info.js: public plan information and trial availability.

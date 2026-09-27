@@ -33,6 +33,8 @@ class SlovenianPage(HTMLParser):
             raw = raw.replace('href="../solo-dgx-spark.html"', 'href="solo-dgx-spark.html"')
         if "data-blog-link" in values:
             raw = raw.replace('href="../blog/', 'href="blog/')
+        if "data-service-link" in values:
+            raw = raw.replace('href="../services/', 'href="services/')
         if values.get("id") == "langBtn":
             raw = raw.replace('href="../sl/"', 'href="../"')
             raw = raw.replace('aria-label="Switch to Slovenian"', 'aria-label="Switch to English"')
@@ -114,3 +116,8 @@ solo_html = solo_html.replace('aria-label="Main navigation"', 'aria-label="Glavn
 solo_html = solo_html.replace('aria-label="Solo installation price and availability"', 'aria-label="Cena in razpoložljivost namestitve ene naprave"')
 solo_html = solo_html.replace('aria-label="Illustration of one DGX Spark running a local AI model"', 'aria-label="Prikaz ene naprave DGX Spark, na kateri deluje lokalni model AI"')
 (ROOT / "sl" / "solo-dgx-spark.html").write_text(solo_html, encoding="utf-8")
+
+# Build the dedicated service pages in both languages from one content source.
+from runpy import run_path
+
+run_path(str(ROOT / "scripts" / "build-service-pages.py"))["build"]()
