@@ -1,6 +1,12 @@
 # Apollo Solutions
 
-Independent AI and software studio in Slovenia. The homepage leads with six DGX Spark model configurations and three installation tiers. Hermes Dental has a small product section and its own site.
+Independent software studio in Slovenia. The homepage introduces web shops, apps, and local AI through one expandable service overview. Detailed DGX Spark model configurations and installation tiers remain available below it. Hermes Dental has a small product section and its own site.
+
+## Service direction — 27 September 2026
+
+- Lead with the customer's job: selling online, improving a workflow, or exploring a local AI use case. The three native HTML disclosure panels give each service a short introduction and details on click, including links to the existing AI research and Hermes Dental.
+- For web shops, scope catalogue, search, checkout, payments, fulfilment, integrations, and maintenance before selecting a platform. Treat speed and mobile usability as goals to measure on the finished shop, not existing performance claims.
+- The shared process and project information now cover all three services. The public enquiry route is still pending; no contact address, customer results, or shop portfolio was invented.
 
 ## Live site
 
