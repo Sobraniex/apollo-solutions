@@ -8,6 +8,12 @@ Independent software studio in Slovenia. The homepage introduces business websit
 - Same-page and direct links to those sections open the matching panel before scrolling. The service overview, process, product, contact, and team sections remain visible.
 - The privacy carousel is constrained to the phone viewport when its panel opens.
 
+## AI and work article — 29 September 2026
+
+- Added an original English and Slovenian Apollo perspective on Anthropic's April 2026 study of about 81,000 Claude users. The post distinguishes survey findings from Apollo's interpretation of possible effects on work in Europe and Slovenia.
+- Official Eurostat and SURS 2025 business adoption data provide local context. The post states the study's selection and inference limits and does not present job or GDP forecasts as measured outcomes.
+- The homepage blog card, language links, source links, and sitemap point to both versions.
+
 ## Service direction — 27 September 2026
 
 - Lead with the customer's job: presenting a business online, selling online, improving a workflow, or exploring a local AI use case. The four native HTML disclosure panels give each service a short introduction and details on click, including links to the existing AI research and Hermes Dental.
@@ -50,7 +56,8 @@ No package installation is required. After editing homepage translations, run `p
 - solo-dgx-spark.html, sl/solo-dgx-spark.html, solo-dgx-spark.css: dedicated bilingual €500 Solo installation offer. `scripts/build-sl.py` also regenerates the Slovenian service page.
 - hermes/: existing product site and documentation.
 - hermes/pricing.html, trial.html, plan-info.css, plan-info.js: public plan information and trial availability.
-- blog/ and news/: historical articles, no longer promoted on the homepage. They have archive notices and are excluded from indexing.
+- blog/: current bilingual posts plus older essays. Historical essays with superseded positioning have archive notices and are excluded from indexing.
+- news/: historical articles, excluded from indexing.
 - app.js and styles.css: retained for the historical articles.
 
 The Hermes application lives separately in ../hermes-dental-clone/app.
