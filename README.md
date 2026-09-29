@@ -2,6 +2,11 @@
 
 Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the data and cost guides on demand, while three blog posts appear immediately in a card grid. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental and FixIO have product sections and their own sites.
 
+## Private apps examples — 29 September 2026
+
+- The English and Slovenian private apps service pages show Hermes Dental and FixIO as linked project examples inside the scope section.
+- The collaboration invitation is visible, but its contact action waits for Apollo's public enquiry email. Set `PRIVATE_APPS_CONTACT_EMAIL` in `scripts/build-service-pages.py`, then run `python3 scripts/build-service-pages.py` to enable the email links on both pages.
+
 ## FixIO product page — 29 September 2026
 
 - Added FixIO beneath Hermes Dental on the homepage and created `fixio/`, a bilingual product page for the Windows repair-shop application.

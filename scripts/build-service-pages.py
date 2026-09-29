@@ -2,10 +2,12 @@
 
 from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://sobraniex.github.io/apollo-solutions/"
+PRIVATE_APPS_CONTACT_EMAIL = ""  # Add Apollo's public enquiry inbox to enable the contact buttons.
 
 UI = {
     "en": {
@@ -132,6 +134,17 @@ SERVICES = [
                 ("Test and hand over", "Verify the workflow with representative cases and record how the app is operated and maintained."),
             ],
             "questions": ["Which repeated task causes the most friction?", "Who needs access, and to which data?", "Which systems must the app work with?"],
+            "projects_eyebrow": "Apollo projects", "projects_title": "Built around real work.",
+            "projects_intro": "Explore two Apollo applications, each designed for a specific team's daily workflow.",
+            "projects": [
+                ("Hermes Dental", "macOS · Dental practices", "Practice management for independent, single-chair dental clinics: scheduling, patient records and daily operations in one app.", "Explore Hermes Dental"),
+                ("FixIO", "Windows · Repair shops", "A desktop workspace that connects repair tickets, customers, inventory and parts orders for a repair team.", "Explore FixIO"),
+            ],
+            "invite_title": "Need something for your business?", "invite_text": "Interested in an Apollo app, a tailored workflow, or working together on a new idea?",
+            "contact_label": "Discuss a project or collaboration ↗",
+            "contact_pending": "Project enquiries opening soon",
+            "next_title": "Let's talk about what you need.",
+            "next_text": "Tell us about your team, the work you want to improve and whether you are interested in Hermes Dental, FixIO or a new idea. We can discuss access, scope and next steps together.",
         },
         "sl": {
             "name": "Zasebne aplikacije", "meta": "Zasebne aplikacije | Apollo Solutions",
@@ -150,6 +163,17 @@ SERVICES = [
                 ("Preizkusimo in predamo", "Proces preverimo z reprezentativnimi primeri in zabeležimo uporabo ter vzdrževanje aplikacije."),
             ],
             "questions": ["Katera ponavljajoča se naloga povzroča največ težav?", "Kdo potrebuje dostop in do katerih podatkov?", "S katerimi sistemi mora aplikacija sodelovati?"],
+            "projects_eyebrow": "Apollovi projekti", "projects_title": "Ustvarjeno za resnično delo.",
+            "projects_intro": "Spoznajte dve Apollovi aplikaciji, zasnovani za vsakodnevno delo različnih ekip.",
+            "projects": [
+                ("Hermes Dental", "macOS · Zobne ordinacije", "Program za samostojne zobozdravstvene ordinacije z enim stolom: urnik, kartoteka in vsakodnevno delo v eni aplikaciji.", "Raziščite Hermes Dental"),
+                ("FixIO", "Windows · Servisne delavnice", "Namizno delovno okolje, ki za servisno ekipo povezuje popravila, stranke, zalogo in naročila delov.", "Raziščite FixIO"),
+            ],
+            "invite_title": "Potrebujete rešitev za svoje podjetje?", "invite_text": "Vas zanima Apollova aplikacija, prilagojen delovni proces ali sodelovanje pri novi ideji?",
+            "contact_label": "Pogovorimo se o projektu ali sodelovanju ↗",
+            "contact_pending": "Projektna povpraševanja kmalu na voljo",
+            "next_title": "Pogovorimo se o vaših potrebah.",
+            "next_text": "Opišite svojo ekipo, delo, ki ga želite izboljšati, in ali vas zanimajo Hermes Dental, FixIO ali nova ideja. Skupaj lahko preverimo dostop, obseg in naslednje korake.",
         },
     },
     {
@@ -225,6 +249,25 @@ def render(service, lang):
     ai_links = ""
     ai_details = ""
     ai_assets = ""
+    project_section = ""
+    contact_href = ""
+    if slug == "private-apps":
+        if PRIVATE_APPS_CONTACT_EMAIL:
+            subject = quote("Apollo Solutions app or collaboration enquiry" if not local else "Povpraševanje o aplikaciji ali sodelovanju")
+            contact_href = f"mailto:{PRIVATE_APPS_CONTACT_EMAIL}?subject={subject}"
+        project_specs = (
+            ("hermes/", "hermes/images/shots/urnik.png", "Hermes Dental schedule", "Urnik v aplikaciji Hermes Dental"),
+            ("fixio/", "fixio/images/dashboard.png", "FixIO repair shop dashboard", "Nadzorna plošča servisne delavnice v aplikaciji FixIO"),
+        )
+        project_cards = "".join(
+            f'<article class="service-project-card"><div class="service-project-visual"><img src="{assets}{image}" alt="{h(alt_sl if local else alt_en)}" loading="lazy" /></div>'
+            f'<div class="service-project-copy"><p class="service-project-type">{h(kind)}</p><h3>{h(name)}</h3><p>{h(description)}</p>'
+            f'<a href="{assets}{url}">{h(link)} <span aria-hidden="true">↗</span></a></div></article>'
+            for (name, kind, description, link), (url, image, alt_en, alt_sl) in zip(copy["projects"], project_specs)
+        )
+        project_action = (f'<a href="{h(contact_href)}">{h(copy["contact_label"])}</a>' if contact_href
+                          else f'<span class="service-project-status">{h(copy["contact_pending"])}</span>')
+        project_section = f'<div class="service-projects" aria-labelledby="projects-title"><div class="service-section-heading"><p class="eyebrow">{h(copy["projects_eyebrow"])}</p><h2 id="projects-title">{h(copy["projects_title"])}</h2><p>{h(copy["projects_intro"])}</p></div><div class="service-project-grid">{project_cards}</div><div class="service-project-invite"><div><h3>{h(copy["invite_title"])}</h3><p>{h(copy["invite_text"])}</p></div>{project_action}</div></div>'
     if slug == "local-llm-installations":
         ai_links = f'<div class="service-ai-links"><a href="#models">{h(ui["models"])}</a><a href="#services">{h(ui["options"])}</a></div>'
         models, installations = (ROOT / "content" / f"local-ai-details.{lang}.html").read_text(encoding="utf-8").split('\n\n<section class="install-section', 1)
@@ -239,6 +282,13 @@ def render(service, lang):
         "en": "Start with the task, the data the model may see, and the hardware you have.",
         "sl": "Začnemo z nalogo, podatki, ki jih model lahko vidi, in opremo, ki jo imate.",
     }[lang] if slug == "local-llm-installations" else ui["fit_intro"]
+    next_title = copy.get("next_title", ui["next_title"]) if contact_href else ui["next_title"]
+    next_text = copy.get("next_text", ui["next_text"]) if contact_href else ui["next_text"]
+    next_link = copy.get("contact_label", ui["back"]) if contact_href else ui["back"]
+    next_href = contact_href or f"{home}#solutions"
+    next_id = ' id="collaborate"' if contact_href else ""
+    nav_text = ("Contact ↗" if not local else "Kontakt ↗") if contact_href else ui["booking"]
+    nav_href = "#collaborate" if contact_href else f"{home}#kontakt"
     mark = '<svg class="apollo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg>'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -267,7 +317,7 @@ def render(service, lang):
   <a href="#main" class="skip-link">{h(ui["skip"])}</a>
   <header class="site-header"><div class="wrap header-inner service-header">
     <a class="brand" href="{home}" aria-label="Apollo Solutions">{mark}<span>Apollo <span class="brand-light">Solutions</span></span></a>
-    <nav aria-label="{h(ui["nav_label"])}"><a href="{home}#solutions">{h(ui["services"])}</a><a href="{home}#kontakt">{h(ui["booking"])}</a></nav>
+    <nav aria-label="{h(ui["nav_label"])}"><a href="{home}#solutions">{h(ui["services"])}</a><a href="{nav_href}">{h(nav_text)}</a></nav>
     <a class="language" href="{language_href}" aria-label="{h(ui["switch"])}">{ui["switch_text"]}</a>
   </div></header>
   <main id="main">
@@ -276,10 +326,10 @@ def render(service, lang):
       <p class="eyebrow">{h(copy["eyebrow"])}</p><h1 id="service-title">{h(copy["headline"])}</h1><p class="service-lede">{h(copy["intro"])}</p>
       <a class="service-hero-link" href="#scope">{h(ui["covers"])} <span aria-hidden="true">↓</span></a>
     </div><div class="service-hero-panel" aria-hidden="true"><div class="service-panel-top"><span>APOLLO / SERVICES</span><span>✦</span></div><div class="service-panel-orbit"><div>{h(copy["name"])}</div></div><ul>{signals}</ul></div></section>
-    <section class="service-fit" id="scope" aria-labelledby="fit-title"><div class="wrap"><div class="service-section-heading"><p class="eyebrow">{h(ui["fit"])}</p><h2 id="fit-title">{h(ui["covers"])}</h2><p>{h(fit_intro)}</p></div><div class="service-feature-grid">{cards}</div>{ai_links}</div></section>
+    <section class="service-fit" id="scope" aria-labelledby="fit-title"><div class="wrap"><div class="service-section-heading"><p class="eyebrow">{h(ui["fit"])}</p><h2 id="fit-title">{h(ui["covers"])}</h2><p>{h(fit_intro)}</p></div><div class="service-feature-grid">{cards}</div>{ai_links}{project_section}</div></section>
 {ai_details}    <section class="wrap service-process" aria-labelledby="process-title"><div class="service-section-heading"><p class="eyebrow">{h(ui["process_eyebrow"])}</p><h2 id="process-title">{h(ui["process"])}</h2><p>{h(ui["process_intro"])}</p></div><ol>{steps}</ol></section>
     <section class="service-prepare" aria-labelledby="prepare-title"><div class="wrap service-prepare-grid"><div><p class="eyebrow">{h(ui["prepare_eyebrow"])}</p><h2 id="prepare-title">{h(ui["prepare"])}</h2><p>{h(ui["prepare_intro"])}</p></div><ul>{questions}</ul></div></section>
-    <section class="wrap service-next" aria-labelledby="next-title"><div><p class="eyebrow">{h(ui["next"])}</p><h2 id="next-title">{h(ui["next_title"])}</h2><p>{h(ui["next_text"])}</p></div><a href="{home}#solutions">{h(ui["back"])}</a></section>
+    <section class="wrap service-next"{next_id} aria-labelledby="next-title"><div><p class="eyebrow">{h(ui["next"])}</p><h2 id="next-title">{h(next_title)}</h2><p>{h(next_text)}</p></div><a href="{h(next_href)}">{h(next_link)}</a></section>
     <section class="wrap service-related" aria-labelledby="related-title"><h2 id="related-title">{h(ui["related"])}</h2><div>{related}</div></section>
   </main>
   <footer class="wrap footer service-footer"><a class="brand" href="{home}">{mark}<span>Apollo <span class="brand-light">Solutions</span></span></a><span>{h(ui["footer"])}</span><a href="#main">{h(ui["top"])}</a></footer>
