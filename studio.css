@@ -348,9 +348,6 @@
 .ai-guide .reading-panel-inner { width: auto; min-height: 80px; padding: 16px 24px; }
 .ai-guide .reading-panel-inner > strong { color: var(--fg); font-size: clamp(21px, 2.5vw, 29px); font-weight: 500; letter-spacing: -.035em; line-height: 1.2; }
 .ai-guide .reading-panel-symbol { flex-basis: 32px; width: 32px; height: 32px; }
-.blog-panel > .reading-panel-summary { background: #251e2d; }
-.blog-panel > .reading-panel-summary:hover { background: #30263a; }
-.blog-panel .reading-panel-inner { min-height: 112px; }
 .solutions-overview-heading { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: end; margin-top: 34px; }
 .solutions-overview-heading h2 { max-width: 640px; font-size: clamp(38px, 4.8vw, 64px); line-height: 1.07; }
 .solutions-overview-heading > p { max-width: 480px; color: var(--muted); font-size: 16px; line-height: 1.7; }
@@ -401,7 +398,6 @@
   .ai-guide-list { width: 100%; margin-top: 27px; border-inline: 0; border-radius: 0; }
   .ai-guide .reading-panel-inner { min-height: 72px; gap: 14px; padding: 17px 20px; }
   .ai-guide .reading-panel-inner > strong { font-size: 21px; }
-  .blog-panel .reading-panel-inner { min-height: 100px; }
   .reading-panel-inner { width: calc(100% - 40px); min-height: 116px; gap: 18px; padding-block: 20px; }
   .reading-panel-copy strong { font-size: 26px; }
   .reading-panel-copy small { font-size: 12px; }

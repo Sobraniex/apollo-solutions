@@ -1,6 +1,11 @@
 # Apollo Solutions
 
-Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the data and cost guides on demand, while the blog starts closed. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental has a small product section and its own site.
+Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the data and cost guides on demand, while three blog posts appear immediately in a card grid. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental has a small product section and its own site.
+
+## Blog cards — 29 September 2026
+
+- The three current posts appear side by side on desktop, with two columns on tablets and one on phones.
+- The “View more posts” disclosure sits below them. Add future `blog-card` articles inside `blog-more-grid` in `index.html`; the temporary empty message hides when a card is present. Run `python3 scripts/build-sl.py` to update the Slovenian homepage.
 
 ## Local AI service details — 29 September 2026
 
@@ -12,11 +17,11 @@ Independent software studio in Slovenia. The homepage introduces business websit
 
 - Replaced the repeated “Explore more” rows with one compact Local AI question list. The data and cost questions open their full sections, including from direct links or the service card.
 - Made the services heading more inviting, and removed the How we work and Team sections from the homepage. Navigation on the homepage and generated service pages no longer links to Team.
-- Kept the Blog disclosure separate and translated all homepage changes into Slovenian.
+- Kept the Blog section separate and translated all homepage changes into Slovenian.
 
 ## Collapsible homepage reading — 29 September 2026
 
-- Three longer sections start closed on the English and Slovenian homepages: AI and business data, AI costs, and the blog. Model and installation details now open on the dedicated service pages.
+- The AI and business data and AI cost sections start closed on the English and Slovenian homepages. The blog now displays three cards by default, with a disclosure ready for future posts. Model and installation details open on the dedicated service pages.
 - Same-page and direct links to the homepage sections open the matching panel before scrolling. The service overview, product, and contact sections remain visible.
 - The privacy carousel is constrained to the phone viewport when its panel opens.
 
