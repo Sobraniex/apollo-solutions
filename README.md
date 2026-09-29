@@ -1,6 +1,12 @@
 # Apollo Solutions
 
-Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the data and cost guides on demand, while three blog posts appear immediately in a card grid. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental has a small product section and its own site.
+Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the data and cost guides on demand, while three blog posts appear immediately in a card grid. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental and FixIO have product sections and their own sites.
+
+## FixIO product page — 29 September 2026
+
+- Added FixIO beneath Hermes Dental on the homepage and created `fixio/`, a bilingual product page for the Windows repair-shop application.
+- The four interface screenshots were captured from the supplied `fixio-desktop-main.zip` frontend using invented demo data and a mocked local API. They show the dashboard, repair list, inventory, and orders. No customer data from a live shop is used.
+- FixIO is presented as an internal desktop project; the page makes no public download or pricing claim.
 
 ## Blog cards — 29 September 2026
 
@@ -40,10 +46,11 @@ Independent software studio in Slovenia. The homepage introduces business websit
 
 ## Live site
 
-One GitHub Pages URL for the studio and the first product:
+One GitHub Pages URL for the studio and its products:
 
 - Studio: https://sobraniex.github.io/apollo-solutions/
 - Hermes Dental: https://sobraniex.github.io/apollo-solutions/hermes/
+- FixIO: https://sobraniex.github.io/apollo-solutions/fixio/
 - macOS app: https://github.com/Sobraniex/apollo-solutions/releases/download/v0.3.3/Hermes-Dental-v0.3.3.zip
 
 ## Local preview
@@ -56,6 +63,7 @@ python3 -m http.server 8101 --bind 127.0.0.1
 - Studio: http://127.0.0.1:8101/
 - Solo DGX Spark installation: http://127.0.0.1:8101/solo-dgx-spark.html
 - Hermes: http://127.0.0.1:8101/hermes/
+- FixIO: http://127.0.0.1:8101/fixio/
 - Plans: http://127.0.0.1:8101/hermes/pricing.html
 
 No package installation is required. After editing homepage translations, run `python3 scripts/build-sl.py` to regenerate the static Slovenian homepage. Relative links also work at the GitHub Pages project path, /apollo-solutions/.
