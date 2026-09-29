@@ -1,6 +1,6 @@
 # Apollo Solutions
 
-Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the data and cost guides on demand, while three blog posts appear immediately in a card grid. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental and FixIO have product sections and their own sites.
+Independent software studio in Slovenia. The homepage leads with Apollo 1, an LLM in development for agentic workflows, and Apollo Agent, a focused agent in development with planned persona, task, and skill options. Business websites, web shops, private apps, and local LLM installations follow as four expandable service cards. A compact question list opens the data and cost guides on demand, while three blog posts appear immediately in a card grid. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental and FixIO have product sections and their own sites.
 
 ## Private apps examples — 29 September 2026
 

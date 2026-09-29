@@ -38,6 +38,29 @@
 .point-two { right: 20%; top: 15%; background: var(--lilac); }
 .system-bottom { border-top: 1px solid var(--line); padding-top: 17px; letter-spacing: 0; font-size: 11px; }
 .system-bottom>span:last-child { color: var(--warm); font-size: 20px; }
+.apollo-products { padding-block: 98px 108px; border-block: 1px solid #d0baf82c; background: radial-gradient(ellipse at 50% 0, #68477d2c, transparent 55%), #19151f; }
+.apollo-products .eyebrow { color: var(--warm); margin-bottom: 16px; }
+.apollo-products-heading { display: grid; grid-template-columns: 1.1fr .9fr; align-items: end; gap: 65px; margin-top: 38px; }
+.apollo-products-heading h2 { max-width: 760px; font-size: clamp(42px, 5.5vw, 72px); line-height: 1.04; }
+.apollo-products-heading > p { max-width: 450px; color: #c7bbd2; font-size: 17px; line-height: 1.75; }
+.apollo-products-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 47px; }
+.apollo-ai-card { display: flex; flex-direction: column; min-width: 0; min-height: 490px; padding: 29px; overflow: hidden; border: 1px solid #d0baf84d; border-radius: 12px; background: radial-gradient(circle at 50% 44%, #ab7dd52a, transparent 45%), linear-gradient(150deg, #30243c, #1b1822 78%); }
+.apollo-agent { border-color: #ffa98250; background: radial-gradient(circle at 50% 42%, #e8967722, transparent 45%), linear-gradient(150deg, #35262f, #1b1822 78%); }
+.apollo-ai-card-top { display: flex; justify-content: space-between; gap: 20px; color: #d1c2de; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+.apollo-ai-card-top span:last-child { color: var(--warm); letter-spacing: .03em; text-transform: none; }
+.apollo-ai-mark { position: relative; display: grid; place-items: center; align-self: center; flex: 1; width: min(250px, 75%); min-height: 240px; margin: 12px 0; }
+.apollo-ai-mark::before, .apollo-ai-mark::after { content: ''; position: absolute; inset: 15px 18px; border: 1px solid #d0baf85c; border-radius: 50%; transform: rotate(-28deg) scaleX(.76); }
+.apollo-ai-mark::after { inset: 39px 0; transform: rotate(47deg) scaleX(.58); border-color: #d0baf82f; }
+.apollo-ai-mark > span:first-child { position: relative; z-index: 1; display: grid; place-items: center; width: 112px; height: 112px; border: 1px solid #d0baf87d; border-radius: 29px; background: linear-gradient(145deg, #5b456e, #2b2335); box-shadow: 0 22px 60px #0005; color: #f5eaff; font-size: 72px; font-weight: 500; line-height: 1; letter-spacing: -.07em; }
+.agent-mark > span:first-child { width: 90px; height: 90px; border-color: #ffa98295; border-radius: 50%; background: radial-gradient(circle, #ffc1a6, #d27c75); box-shadow: 0 0 55px #ff927b50; }
+.agent-mark > span:nth-child(2), .agent-mark > span:nth-child(3) { position: absolute; z-index: 2; width: 13px; height: 13px; border: 2px solid #ffd5c2; border-radius: 50%; background: #533844; }
+.agent-mark > span:nth-child(2) { left: 17%; top: 28%; }
+.agent-mark > span:nth-child(3) { right: 16%; bottom: 25%; }
+.apollo-ai-card-copy { padding-top: 22px; border-top: 1px solid #ffffff25; }
+.apollo-ai-card-copy h3 { font-size: clamp(38px, 4.2vw, 56px); line-height: 1.02; }
+.apollo-ai-card-copy h3 em { color: var(--lilac); font-style: normal; }
+.apollo-agent .apollo-ai-card-copy h3 em { color: #ffc1a6; }
+.apollo-ai-card-copy p { max-width: 450px; margin-top: 15px; color: #c6b9d1; font-size: 15px; line-height: 1.7; }
 .mission-intro { padding-block: 75px 90px; }
 .mission-intro>.eyebrow { color: var(--warm); margin-bottom: 23px; }
 .mission-intro h2 { font-size: clamp(33px, 3.5vw, 48px); max-width: 900px; line-height: 1.15; }
@@ -393,6 +416,15 @@
 .fixio-home { border-top: 1px solid var(--line); }
 .contact-product-link { display: inline-block; font-size: 12px; margin-top: 8px; }
 @media (max-width: 760px) {
+  .apollo-products { padding-block: 63px 68px; }
+  .apollo-products-heading { grid-template-columns: 1fr; gap: 18px; margin-top: 27px; }
+  .apollo-products-heading h2 { font-size: clamp(39px, 9.5vw, 54px); }
+  .apollo-products-heading > p { font-size: 15px; }
+  .apollo-products-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 30px; }
+  .apollo-ai-card { min-height: 395px; padding: 24px; }
+  .apollo-ai-mark { min-height: 170px; }
+  .apollo-ai-mark > span:first-child { width: 88px; height: 88px; font-size: 56px; }
+  .agent-mark > span:first-child { width: 72px; height: 72px; }
   .ai-guide { padding-block: 54px 60px; }
   .ai-guide-intro { display: block; }
   .ai-guide-intro > p { margin-top: 15px; font-size: 14px; }
