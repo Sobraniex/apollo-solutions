@@ -17,7 +17,7 @@ UI = {
         "next": "Next step", "next_title": "Start with the task, then define the scope.",
         "next_text": "A public project enquiry route is being prepared. Pricing and delivery dates are agreed for each project; this page does not accept a booking.",
         "back": "Explore all services ↗", "related": "Other Apollo services", "solo": "See the one-Spark installation ↗",
-        "models": "Explore model options ↗", "footer": "Software. Intelligence. Human potential.",
+        "models": "Explore model options ↓", "model_panel": "Model options", "options": "Compare DGX Spark packages ↓", "options_panel": "DGX Spark packages", "footer": "Software. Intelligence. Human potential.",
         "top": "Back to top ↑", "nav_label": "Main navigation",
     },
     "sl": {
@@ -29,7 +29,7 @@ UI = {
         "next": "Naslednji korak", "next_title": "Začnite z nalogo, nato določimo obseg.",
         "next_text": "Javno pot za projektna povpraševanja še pripravljamo. Ceno in rok izvedbe dogovorimo za vsak projekt posebej; na tej strani ni mogoče oddati rezervacije.",
         "back": "Raziščite vse storitve ↗", "related": "Druge Apollove storitve", "solo": "Oglejte si namestitev ene naprave Spark ↗",
-        "models": "Raziščite možnosti modelov ↗", "footer": "Programi. Inteligenca. Človeški potencial.",
+        "models": "Raziščite možnosti modelov ↓", "model_panel": "Možnosti modelov", "options": "Primerjajte pakete DGX Spark ↓", "options_panel": "Paketi DGX Spark", "footer": "Programi. Inteligenca. Človeški potencial.",
         "top": "Nazaj na vrh ↑", "nav_label": "Glavna navigacija",
     },
 }
@@ -223,9 +223,22 @@ def render(service, lang):
         for other in SERVICES if other is not service
     )
     ai_links = ""
+    ai_details = ""
+    ai_assets = ""
     if slug == "local-llm-installations":
-        ai_links = f'<div class="service-ai-links"><a href="{home}solo-dgx-spark.html">{h(ui["solo"])}</a><a href="{home}#models">{h(ui["models"])}</a></div>'
+        ai_links = f'<div class="service-ai-links"><a href="#models">{h(ui["models"])}</a><a href="#services">{h(ui["options"])}</a></div>'
+        models, installations = (ROOT / "content" / f"local-ai-details.{lang}.html").read_text(encoding="utf-8").split('\n\n<section class="install-section', 1)
+        installations = '<section class="install-section' + installations
+        models = models.replace('id="models"', 'id="models-content"', 1)
+        installations = installations.replace('id="services"', 'id="services-content"', 1)
+        ai_details = f'''    <details class="service-detail-panel" id="models"><summary class="wrap"><span>{h(ui["model_panel"])}</span><span aria-hidden="true">+</span></summary>{models}</details>
+    <details class="service-detail-panel" id="services"><summary class="wrap"><span>{h(ui["options_panel"])}</span><span aria-hidden="true">+</span></summary>{installations}</details>\n'''
+        ai_assets = f'  <link rel="stylesheet" href="{assets}models.css" />\n  <script src="{assets}service-details.js" defer></script>\n'
     signals = "".join(f"<li>{h(item)}</li>" for item in copy["signal"])
+    fit_intro = {
+        "en": "Start with the task, the data the model may see, and the hardware you have.",
+        "sl": "Začnemo z nalogo, podatki, ki jih model lahko vidi, in opremo, ki jo imate.",
+    }[lang] if slug == "local-llm-installations" else ui["fit_intro"]
     mark = '<svg class="apollo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M13 51 30 12h5l17 39H41L32.5 29 24 51Z" fill="currentColor"/><path d="m8 43 43-18" fill="none" stroke="#ffa982" stroke-width="4"/><path d="m51 6 1.8 5.2L58 13l-5.2 1.8L51 20l-1.8-5.2L44 13l5.2-1.8Z" fill="#ffa982"/></svg>'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -248,7 +261,7 @@ def render(service, lang):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{assets}home.css" />
-  <link rel="stylesheet" href="{assets}service-pages.css" />
+{ai_assets}  <link rel="stylesheet" href="{assets}service-pages.css" />
 </head>
 <body>
   <a href="#main" class="skip-link">{h(ui["skip"])}</a>
@@ -263,8 +276,8 @@ def render(service, lang):
       <p class="eyebrow">{h(copy["eyebrow"])}</p><h1 id="service-title">{h(copy["headline"])}</h1><p class="service-lede">{h(copy["intro"])}</p>
       <a class="service-hero-link" href="#scope">{h(ui["covers"])} <span aria-hidden="true">↓</span></a>
     </div><div class="service-hero-panel" aria-hidden="true"><div class="service-panel-top"><span>APOLLO / SERVICES</span><span>✦</span></div><div class="service-panel-orbit"><div>{h(copy["name"])}</div></div><ul>{signals}</ul></div></section>
-    <section class="service-fit" id="scope" aria-labelledby="fit-title"><div class="wrap"><div class="service-section-heading"><p class="eyebrow">{h(ui["fit"])}</p><h2 id="fit-title">{h(ui["covers"])}</h2><p>{h(ui["fit_intro"])}</p></div><div class="service-feature-grid">{cards}</div>{ai_links}</div></section>
-    <section class="wrap service-process" aria-labelledby="process-title"><div class="service-section-heading"><p class="eyebrow">{h(ui["process_eyebrow"])}</p><h2 id="process-title">{h(ui["process"])}</h2><p>{h(ui["process_intro"])}</p></div><ol>{steps}</ol></section>
+    <section class="service-fit" id="scope" aria-labelledby="fit-title"><div class="wrap"><div class="service-section-heading"><p class="eyebrow">{h(ui["fit"])}</p><h2 id="fit-title">{h(ui["covers"])}</h2><p>{h(fit_intro)}</p></div><div class="service-feature-grid">{cards}</div>{ai_links}</div></section>
+{ai_details}    <section class="wrap service-process" aria-labelledby="process-title"><div class="service-section-heading"><p class="eyebrow">{h(ui["process_eyebrow"])}</p><h2 id="process-title">{h(ui["process"])}</h2><p>{h(ui["process_intro"])}</p></div><ol>{steps}</ol></section>
     <section class="service-prepare" aria-labelledby="prepare-title"><div class="wrap service-prepare-grid"><div><p class="eyebrow">{h(ui["prepare_eyebrow"])}</p><h2 id="prepare-title">{h(ui["prepare"])}</h2><p>{h(ui["prepare_intro"])}</p></div><ul>{questions}</ul></div></section>
     <section class="wrap service-next" aria-labelledby="next-title"><div><p class="eyebrow">{h(ui["next"])}</p><h2 id="next-title">{h(ui["next_title"])}</h2><p>{h(ui["next_text"])}</p></div><a href="{home}#solutions">{h(ui["back"])}</a></section>
     <section class="wrap service-related" aria-labelledby="related-title"><h2 id="related-title">{h(ui["related"])}</h2><div>{related}</div></section>

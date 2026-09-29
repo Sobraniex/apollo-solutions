@@ -8,6 +8,14 @@
     location.replace(new URL((language === 'sl' ? '../' : 'sl/') + location.hash, location.href));
     return;
   }
+  function redirectMovedAISections() {
+    if (location.hash === '#models' || location.hash === '#services') {
+      location.replace(new URL('services/local-llm-installations.html' + location.hash, location.href));
+      return true;
+    }
+    return false;
+  }
+  if (redirectMovedAISections()) return;
   const descriptions = {
     en: 'Apollo Solutions builds business websites, web shops and private apps, and prepares local LLM installations. Explore the four services.',
     sl: 'Apollo Solutions gradi poslovne spletne strani, spletne trgovine in zasebne aplikacije ter pripravlja namestitve lokalnih jezikovnih modelov. Oglejte si štiri storitve.'
@@ -54,7 +62,9 @@
     if (url.pathname !== location.pathname || url.search !== location.search) return;
     revealReadingTarget(url.hash, url.hash === location.hash);
   }, true);
-  window.addEventListener('hashchange', () => revealReadingTarget(location.hash, true));
+  window.addEventListener('hashchange', () => {
+    if (!redirectMovedAISections()) revealReadingTarget(location.hash, true);
+  });
   menuButton.addEventListener('click', () => {
     const open = navigation.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', String(open));

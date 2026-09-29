@@ -1,17 +1,23 @@
 # Apollo Solutions
 
-Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the deeper local AI material on demand, while the blog starts closed. Hermes Dental has a small product section and its own site.
+Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the data and cost guides on demand, while the blog starts closed. The local LLM service page contains the model catalog and DGX Spark packages. Hermes Dental has a small product section and its own site.
+
+## Local AI service details — 29 September 2026
+
+- Moved the six reference model configurations and the one, two, and four DGX Spark installation packages from the homepage to the English and Slovenian local LLM service pages. Both sections are expandable there.
+- Homepage and Solo installation links now lead to those service page panels. Old homepage `#models` and `#services` bookmarks redirect to the matching language page.
+- The published model figures remain attributed to Mia AI Lab; Apollo measurements, repositories, and booking links remain pending.
 
 ## Homepage simplification — 29 September 2026
 
-- Replaced the repeated “Explore more” rows with one compact Local AI question list. Each question still opens its full section, including from direct links or the service card.
+- Replaced the repeated “Explore more” rows with one compact Local AI question list. The data and cost questions open their full sections, including from direct links or the service card.
 - Made the services heading more inviting, and removed the How we work and Team sections from the homepage. Navigation on the homepage and generated service pages no longer links to Team.
 - Kept the Blog disclosure separate and translated all homepage changes into Slovenian.
 
 ## Collapsible homepage reading — 29 September 2026
 
-- Five longer sections start closed on the English and Slovenian homepages: AI and business data, open models, DGX Spark installation options, AI costs, and the blog.
-- Same-page and direct links to those sections open the matching panel before scrolling. The service overview, product, and contact sections remain visible.
+- Three longer sections start closed on the English and Slovenian homepages: AI and business data, AI costs, and the blog. Model and installation details now open on the dedicated service pages.
+- Same-page and direct links to the homepage sections open the matching panel before scrolling. The service overview, product, and contact sections remain visible.
 - The privacy carousel is constrained to the phone viewport when its panel opens.
 
 ## AI and work article — 29 September 2026
@@ -52,7 +58,7 @@ No package installation is required. After editing homepage translations, run `p
 ## Dedicated service pages — 27 September 2026
 
 - The four homepage service panels link to crawlable English and Slovenian pages for business websites, web shops, private apps, and local LLM installations. Each page describes possible scope, a three-step process, questions to prepare, and related services.
-- `python3 scripts/build-sl.py` also runs `scripts/build-service-pages.py`, which generates the eight pages in `services/` and `sl/services/` from bilingual content. The local LLM page links to the existing Solo installation details and model catalog.
+- `python3 scripts/build-sl.py` also runs `scripts/build-service-pages.py`, which generates the eight pages in `services/` and `sl/services/` from bilingual content. The local LLM page includes the model catalog and DGX Spark packages, with a link to the Solo installation details.
 - No unfinished customer work is presented as a portfolio item. Bespoke prices, delivery dates, and a public enquiry route remain unconfirmed.
 
 ## Site structure
@@ -70,15 +76,15 @@ The Hermes application lives separately in ../hermes-dental-clone/app.
 
 ## Guided AI and data privacy introduction — 25 September 2026
 
-- The `00 / Before the models` section uses a small shop’s customer email to compare hosted and carefully configured local AI data paths. Three separate cards explain model training, data retention, and lawful government requests.
+- The `01 / Data and AI` section uses a small shop’s customer email to compare hosted and carefully configured local AI data paths. Three separate cards explain model training, data retention, and lawful government requests.
 - Published provider terms show differences between personal chat and business/API accounts. The US and China legal cards explain jurisdiction and cross-border limits without suggesting automatic government access. The EU timeline reflects the AI Omnibus dates verified against European Commission guidance, alongside GDPR principles and practical preparation.
 - Eleven provider cards compare current terms for major consumer, business, and API services, including Google, Microsoft, Mistral, Meta, and Z.ai. Expandable case records summarize the reported Moonshot/Kimi-to-Claude routing and China investigation, Anthropic’s separate Z.ai distillation allegation, book-copy rulings and settlement, Italy’s annulled OpenAI fine, a temporary OpenAI litigation hold on logs, and Italy’s DeepSeek regulatory action. Each record links to source reporting or the underlying court or regulator document and separates findings, settlements, and disputed statements.
 - The five-question takeaway is available in English and Slovenian. The source links are on the page. Recheck provider terms and regulatory guidance when they change.
 
 ## Solo DGX Spark service page — 25 September 2026
 
-- The homepage Solo card links to a dedicated English or Slovenian page covering one compatible model on one customer-owned Spark, remote access, configuration, a test request, one session, handoff document, and seven days of follow-up.
-- Order and cart buttons are visible and disabled until a booking route exists. The €1,000 and €2,000 tiers, model catalog, price comparison, empty Apollo GitHub slots, and exact docs placeholder remain on the homepage.
+- The Solo installation page covers one compatible model on one customer-owned Spark, remote access, configuration, a test request, one session, handoff document, and seven days of follow-up.
+- Order and cart buttons are visible and disabled until a booking route exists. The €1,000 and €2,000 tiers, model catalog, empty Apollo GitHub slots, and exact docs placeholder are now on the local LLM service page; the price comparison remains on the homepage.
 
 ## API cost comparison — 25 September 2026
 
