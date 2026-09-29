@@ -390,17 +390,9 @@
 .product-mini p:not(.eyebrow) { color: var(--muted); font-size: 16px; line-height: 1.7; }
 .product-mini-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-width: 235px; padding: 18px 20px; border: 1px solid #d0baf858; border-radius: 6px; color: var(--lilac); font-size: 13px; }
 .product-mini-link:hover { background: #d0baf813; }
-.fixio-home { border-top: 1px solid var(--line); background: #171b24; }
-.fixio-home-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); align-items: center; gap: clamp(36px, 6vw, 90px); }
-.fixio-home-screen { display: block; padding: 11px; overflow: hidden; border: 1px solid #a9c5e738; border-radius: 12px; background: #101c2b; }
-.fixio-home-screen img { width: 100%; height: auto; border-radius: 5px; }
-.fixio-home-copy .eyebrow { margin-bottom: 15px; color: var(--warm); }
-.fixio-home-copy h2 { margin-bottom: 18px; font-size: clamp(38px, 4vw, 54px); }
-.fixio-home-copy p:not(.eyebrow) { max-width: 450px; color: var(--muted); font-size: 16px; line-height: 1.7; }
-.fixio-home-copy .product-mini-link { margin-top: 27px; }
+.fixio-home { border-top: 1px solid var(--line); }
 .contact-product-link { display: inline-block; font-size: 12px; margin-top: 8px; }
 @media (max-width: 760px) {
-  .fixio-home-grid { grid-template-columns: 1fr; gap: 30px; }
   .ai-guide { padding-block: 54px 60px; }
   .ai-guide-intro { display: block; }
   .ai-guide-intro > p { margin-top: 15px; font-size: 14px; }
