@@ -65,6 +65,9 @@
       url.searchParams.set('lang', next);
       link.href = url.href;
     });
+    document.querySelector('[data-private-apps-link]').href = next === 'sl'
+      ? '../sl/services/private-apps.html#scope'
+      : '../services/private-apps.html#scope';
     view.setAttribute('aria-label', next === 'sl' ? 'Odpri zaslon v polni velikosti' : 'Open screenshot at full size');
     document.querySelector('.site-header nav').setAttribute('aria-label', next === 'sl' ? 'Navigacija po strani' : 'Page navigation');
     document.querySelector('.gallery-controls').setAttribute('aria-label', next === 'sl' ? 'Izbira zaslona' : 'Screenshot selection');

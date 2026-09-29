@@ -10,6 +10,7 @@ Independent software studio in Slovenia. The homepage introduces business websit
 ## FixIO product page — 29 September 2026
 
 - Added FixIO beneath Hermes Dental on the homepage and created `fixio/`, a bilingual product page for the Windows repair-shop application.
+- Expanded the product page with six capability cards and a six-question FAQ, including team access, server setup, optional AI, and current availability. The content is translated for English and Slovenian visitors.
 - The four interface screenshots were captured from the supplied `fixio-desktop-main.zip` frontend using invented demo data and a mocked local API. They show the dashboard, repair list, inventory, and orders. No customer data from a live shop is used.
 - FixIO is presented as an internal desktop project; the page makes no public download or pricing claim.
 
