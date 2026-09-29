@@ -9,7 +9,7 @@ BASE = "https://sobraniex.github.io/apollo-solutions/"
 
 UI = {
     "en": {
-        "skip": "Skip to content", "services": "Services", "team": "Team", "booking": "Booking ↗",
+        "skip": "Skip to content", "services": "Services", "booking": "Booking ↗",
         "switch": "Switch to Slovenian", "switch_text": "SL",
         "covers": "What this service covers", "fit": "Where it helps", "fit_intro": "Start with the people and the job the product must do.",
         "process": "How we shape the work", "process_eyebrow": "Project process", "process_intro": "The exact features and delivery plan are agreed after we understand your needs.",
@@ -21,7 +21,7 @@ UI = {
         "top": "Back to top ↑", "nav_label": "Main navigation",
     },
     "sl": {
-        "skip": "Preskoči na vsebino", "services": "Storitve", "team": "Ekipa", "booking": "Rezervacije ↗",
+        "skip": "Preskoči na vsebino", "services": "Storitve", "booking": "Rezervacije ↗",
         "switch": "Switch to English", "switch_text": "EN",
         "covers": "Kaj vključuje storitev", "fit": "Kje pomaga", "fit_intro": "Začnemo pri ljudeh in nalogi, ki jo mora rešitev opraviti.",
         "process": "Kako oblikujemo projekt", "process_eyebrow": "Potek projekta", "process_intro": "Funkcije in načrt izvedbe določimo, ko razumemo vaše potrebe.",
@@ -254,7 +254,7 @@ def render(service, lang):
   <a href="#main" class="skip-link">{h(ui["skip"])}</a>
   <header class="site-header"><div class="wrap header-inner service-header">
     <a class="brand" href="{home}" aria-label="Apollo Solutions">{mark}<span>Apollo <span class="brand-light">Solutions</span></span></a>
-    <nav aria-label="{h(ui["nav_label"])}"><a href="{home}#solutions">{h(ui["services"])}</a><a href="{home}#team">{h(ui["team"])}</a><a href="{home}#kontakt">{h(ui["booking"])}</a></nav>
+    <nav aria-label="{h(ui["nav_label"])}"><a href="{home}#solutions">{h(ui["services"])}</a><a href="{home}#kontakt">{h(ui["booking"])}</a></nav>
     <a class="language" href="{language_href}" aria-label="{h(ui["switch"])}">{ui["switch_text"]}</a>
   </div></header>
   <main id="main">

@@ -1,11 +1,17 @@
 # Apollo Solutions
 
-Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through one expandable service overview. Longer AI, pricing, and blog sections are collapsed until a visitor opens them. Hermes Dental has a small product section and its own site.
+Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through four expandable service cards. A compact question list opens the deeper local AI material on demand, while the blog starts closed. Hermes Dental has a small product section and its own site.
+
+## Homepage simplification — 29 September 2026
+
+- Replaced the repeated “Explore more” rows with one compact Local AI question list. Each question still opens its full section, including from direct links or the service card.
+- Made the services heading more inviting, and removed the How we work and Team sections from the homepage. Navigation on the homepage and generated service pages no longer links to Team.
+- Kept the Blog disclosure separate and translated all homepage changes into Slovenian.
 
 ## Collapsible homepage reading — 29 September 2026
 
 - Five longer sections start closed on the English and Slovenian homepages: AI and business data, open models, DGX Spark installation options, AI costs, and the blog.
-- Same-page and direct links to those sections open the matching panel before scrolling. The service overview, process, product, contact, and team sections remain visible.
+- Same-page and direct links to those sections open the matching panel before scrolling. The service overview, product, and contact sections remain visible.
 - The privacy carousel is constrained to the phone viewport when its panel opens.
 
 ## AI and work article — 29 September 2026
