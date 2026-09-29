@@ -2,6 +2,8 @@
   const languageButton = document.getElementById('langBtn');
   const menuButton = document.getElementById('menuBtn');
   const navigation = document.getElementById('main-nav');
+  const morePosts = document.querySelector('.blog-more');
+  if (morePosts?.querySelector('.blog-more-grid .blog-card')) morePosts.hidden = false;
   const requestedLanguage = new URLSearchParams(location.search).get('lang');
   let language = document.documentElement.lang === 'sl' ? 'sl' : 'en';
   if (['en', 'sl'].includes(requestedLanguage) && requestedLanguage !== language) {

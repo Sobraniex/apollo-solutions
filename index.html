@@ -20,9 +20,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="studio.css" />
-  <script src="home.js" defer></script>
+  <script src="home.js?v=2" defer></script>
   <link rel="stylesheet" href="privacy.css" />
-  <link rel="stylesheet" href="blog.css" />
+  <link rel="stylesheet" href="blog.css?v=2" />
   <script src="economy.js" defer></script>
 </head>
 <body>
@@ -201,11 +201,10 @@
         </a>
       </article>
       </div>
-      <details class="blog-more">
-        <summary><span class="blog-more-open" data-en="View more posts" data-sl="Prikaži več zapisov">View more posts</span><span class="blog-more-close" data-en="Show fewer posts" data-sl="Prikaži manj zapisov">Show fewer posts</span><span aria-hidden="true">↓</span></summary>
+      <details class="blog-more" hidden>
+        <summary><span data-en="More posts" data-sl="Več zapisov">More posts</span><span aria-hidden="true">↓</span></summary>
         <div class="blog-more-grid">
-          <!-- Add future blog-card articles here, then remove the empty message. -->
-          <p class="blog-more-empty" data-en="More posts are on the way." data-sl="Kmalu bodo na voljo novi zapisi.">More posts are on the way.</p>
+          <!-- Add future blog-card articles here; the control appears when this grid has a card. -->
         </div>
       </details>
     </div></section>

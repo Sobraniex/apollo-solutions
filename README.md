@@ -4,8 +4,8 @@ Independent software studio in Slovenia. The homepage introduces business websit
 
 ## Blog cards — 29 September 2026
 
-- The three current posts appear side by side on desktop, with two columns on tablets and one on phones.
-- The “View more posts” disclosure sits below them. Add future `blog-card` articles inside `blog-more-grid` in `index.html`; the temporary empty message hides when a card is present. Run `python3 scripts/build-sl.py` to update the Slovenian homepage.
+- The three current posts appear as compact, equal-height cards side by side on desktop, with two columns on tablets and one on phones.
+- The “More posts” disclosure appears below the grid only after another `blog-card` article is added inside `blog-more-grid` in `index.html`. Run `python3 scripts/build-sl.py` to update the Slovenian homepage.
 
 ## Local AI service details — 29 September 2026
 
