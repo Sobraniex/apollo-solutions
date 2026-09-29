@@ -1,6 +1,12 @@
 # Apollo Solutions
 
-Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through one expandable service overview. Detailed DGX Spark model configurations and installation tiers remain available below it. Hermes Dental has a small product section and its own site.
+Independent software studio in Slovenia. The homepage introduces business websites, web shops, private apps, and local LLM installations through one expandable service overview. Longer AI, pricing, and blog sections are collapsed until a visitor opens them. Hermes Dental has a small product section and its own site.
+
+## Collapsible homepage reading — 29 September 2026
+
+- Five longer sections start closed on the English and Slovenian homepages: AI and business data, open models, DGX Spark installation options, AI costs, and the blog.
+- Same-page and direct links to those sections open the matching panel before scrolling. The service overview, process, product, contact, and team sections remain visible.
+- The privacy carousel is constrained to the phone viewport when its panel opens.
 
 ## Service direction — 27 September 2026
 

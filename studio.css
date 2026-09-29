@@ -318,6 +318,23 @@
 
 /* Local AI service and compact product presentation. */
 .solutions-overview { padding-block: 82px; }
+.reading-panel { border-top: 1px solid var(--line); background: #1b1721; }
+.reading-panel:last-of-type { border-bottom: 1px solid var(--line); }
+.reading-panel-summary { display: block; list-style: none; cursor: pointer; background: #1b1721; }
+.reading-panel-summary::-webkit-details-marker { display: none; }
+.reading-panel-summary:hover { background: #261e2d; }
+.reading-panel-summary:focus-visible { outline: 2px solid var(--lilac); outline-offset: -2px; }
+.reading-panel[open] > .reading-panel-summary { background: #292131; border-bottom: 1px solid var(--line); }
+.reading-panel-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; width: min(var(--max), calc(100% - 96px)); min-height: 130px; margin-inline: auto; padding-block: 26px; }
+.reading-panel-copy { display: grid; gap: 5px; min-width: 0; }
+.reading-panel-kicker { color: var(--warm); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.reading-panel-copy strong { color: var(--fg); font-size: clamp(25px, 3vw, 36px); font-weight: 500; letter-spacing: -.045em; line-height: 1.12; }
+.reading-panel-copy small { color: var(--muted); font-size: 14px; line-height: 1.5; }
+.reading-panel-symbol { position: relative; flex: 0 0 39px; width: 39px; height: 39px; border: 1px solid #d0baf86c; border-radius: 50%; }
+.reading-panel-symbol::before,.reading-panel-symbol::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--lilac); transform: translate(-50%, -50%); }
+.reading-panel-symbol::before { width: 13px; height: 1px; }
+.reading-panel-symbol::after { width: 1px; height: 13px; transition: transform .2s; }
+.reading-panel[open] .reading-panel-symbol::after { transform: translate(-50%, -50%) rotate(90deg); }
 .solutions-overview-heading { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: end; margin-top: 34px; }
 .solutions-overview-heading h2 { max-width: 640px; font-size: clamp(38px, 4.8vw, 64px); line-height: 1.07; }
 .solutions-overview-heading > p { max-width: 480px; color: var(--muted); font-size: 16px; line-height: 1.7; }
@@ -362,6 +379,10 @@
 .product-mini-link:hover { background: #d0baf813; }
 .contact-product-link { display: inline-block; font-size: 12px; margin-top: 8px; }
 @media (max-width: 760px) {
+  .reading-panel-inner { width: calc(100% - 40px); min-height: 116px; gap: 18px; padding-block: 20px; }
+  .reading-panel-copy strong { font-size: 26px; }
+  .reading-panel-copy small { font-size: 12px; }
+  .reading-panel-symbol { flex-basis: 34px; width: 34px; height: 34px; }
   .solutions-overview { padding-block: 54px; }
   .solutions-overview-heading { grid-template-columns: 1fr; gap: 16px; }
   .solutions-overview-heading h2 { font-size: clamp(35px, 9vw, 48px); }
@@ -381,6 +402,9 @@
   .local-ai-bottom, .product-mini { flex-direction: column; align-items: flex-start; }
   .product-mini { gap: 28px; }
   .product-mini-link { width: 100%; }
+}
+@media (max-width: 360px) {
+  .reading-panel-inner { width: calc(100% - 32px); }
 }
 .footer .brand svg { width: 30px; height: 30px; }
 .footer .brand { font-size: 15px; }

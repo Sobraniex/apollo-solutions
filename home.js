@@ -35,6 +35,26 @@
     menuButton.setAttribute('aria-expanded', 'false');
     if (returnFocus) menuButton.focus();
   }
+  function readingTarget(hash) {
+    if (!hash || hash === '#') return null;
+    try { return document.getElementById(decodeURIComponent(hash.slice(1))); }
+    catch { return null; }
+  }
+  function revealReadingTarget(hash, scroll = false) {
+    const target = readingTarget(hash);
+    const panel = target?.closest('[data-reading-panel]');
+    if (!panel) return;
+    panel.open = true;
+    if (scroll) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+  }
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    const url = new URL(link.getAttribute('href'), location.href);
+    if (url.pathname !== location.pathname || url.search !== location.search) return;
+    revealReadingTarget(url.hash, url.hash === location.hash);
+  }, true);
+  window.addEventListener('hashchange', () => revealReadingTarget(location.hash, true));
   menuButton.addEventListener('click', () => {
     const open = navigation.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', String(open));
@@ -87,4 +107,5 @@
     showProvider(0);
   }
   setLanguage(language);
+  revealReadingTarget(location.hash, true);
 })();

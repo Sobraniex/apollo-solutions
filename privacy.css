@@ -64,6 +64,7 @@
 .privacy-provider-head{display:block}
 .privacy-provider-head h3{font-size:clamp(29px,3vw,39px)}
 .privacy-provider-head>p:last-child{margin-top:15px}
+.privacy-carousel{min-width:0;max-width:100%}
 .privacy-carousel-window{min-width:0}
 .privacy-provider-grid{margin-top:0}
 .privacy-provider-grid article[data-carousel-slide]{min-width:0}
